@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" 
+  xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="microsoft.graph" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="microsoft.graph" 
+      xmlns="http://docs.oasis-open.org/odata/ns/edm">
       <EnumType Name="status">
         <Member Name="active" Value="0" />
         <Member Name="updated" Value="1" />
@@ -18,7 +20,7 @@
         <Member Name="contactsOnly" Value="1" />
         <Member Name="all" Value="2" />
       </EnumType>
-      <EnumType Name="attendeeType">
+      <EnumType Name="attendeeType2">
         <Member Name="required" Value="0" />
         <Member Name="optional" Value="1" />
         <Member Name="resource" Value="2" />
