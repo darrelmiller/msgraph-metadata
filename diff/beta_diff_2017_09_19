@@ -1,0 +1,10 @@
+<document>
+  <version>beta</version>
+  <changes>
+    <change>
+      <action>Deletion</action>
+      <type>EnumType</type>
+      <name>externalAudienceScope2</name>
+    </change>
+  </changes>
+</document>
