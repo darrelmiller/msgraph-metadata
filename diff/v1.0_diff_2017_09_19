@@ -2,11 +2,6 @@
   <version>v1.0</version>
   <changes>
     <change>
-      <action>Addition</action>
-      <type>EnumType</type>
-      <name>attendeeType</name>
-    </change>
-    <change>
       <action>Deletion</action>
       <type>EnumType</type>
       <name>attendeeType2</name>
