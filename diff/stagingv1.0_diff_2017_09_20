@@ -1,0 +1,10 @@
+<document>
+  <version>stagingv1.0</version>
+  <changes>
+    <change>
+      <action>Deletion</action>
+      <type>EnumType</type>
+      <name>attendeeType2</name>
+    </change>
+  </changes>
+</document>
