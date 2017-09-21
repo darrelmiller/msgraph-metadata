@@ -4,6 +4,11 @@
     <change>
       <action>Addition</action>
       <type>EnumType</type>
+      <name>attendeeType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
       <name>freeBusyStatus</name>
     </change>
   </changes>
