@@ -14,11 +14,6 @@
         <Member Name="contactsOnly" Value="1" />
         <Member Name="all" Value="2" />
       </EnumType>
-      <EnumType Name="attendeeType">
-        <Member Name="required" Value="0" />
-        <Member Name="optional" Value="1" />
-        <Member Name="resource" Value="2" />
-      </EnumType>
       <EnumType Name="activityDomain">
         <Member Name="unknown" Value="0" />
         <Member Name="work" Value="1" />
