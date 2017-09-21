@@ -2,9 +2,9 @@
   <version>stagingv1.0</version>
   <changes>
     <change>
-      <action>Deletion</action>
+      <action>Addition</action>
       <type>EnumType</type>
-      <name>attendeeType2</name>
+      <name>freeBusyStatus</name>
     </change>
   </changes>
 </document>
