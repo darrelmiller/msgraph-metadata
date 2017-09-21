@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" 
+  xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="microsoft.graph" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="microsoft.graph" 
+      xmlns="http://docs.oasis-open.org/odata/ns/edm">
       <EnumType Name="automaticRepliesStatus">
         <Member Name="disabled" Value="0" />
         <Member Name="alwaysEnabled" Value="1" />
@@ -16,14 +18,6 @@
         <Member Name="required" Value="0" />
         <Member Name="optional" Value="1" />
         <Member Name="resource" Value="2" />
-      </EnumType>
-      <EnumType Name="freeBusyStatus">
-        <Member Name="free" Value="0" />
-        <Member Name="tentative" Value="1" />
-        <Member Name="busy" Value="2" />
-        <Member Name="oof" Value="3" />
-        <Member Name="workingElsewhere" Value="4" />
-        <Member Name="unknown" Value="-1" />
       </EnumType>
       <EnumType Name="activityDomain">
         <Member Name="unknown" Value="0" />
