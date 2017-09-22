@@ -1,0 +1,364 @@
+<document>
+  <version>v1.0</version>
+  <changes>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>columnDefinition</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>columnLink</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>contentType</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>drive</name>
+      <old>
+        <EntityType Name="drive" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="driveType" Type="Edm.String" Unicode="false" />
+          <Property Name="owner" Type="microsoft.graph.identitySet" />
+          <Property Name="quota" Type="microsoft.graph.quota" />
+          <Property Name="sharePointIds" Type="microsoft.graph.sharepointIds" />
+          <NavigationProperty Name="items" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+          <NavigationProperty Name="root" Type="microsoft.graph.driveItem" ContainsTarget="true" />
+          <NavigationProperty Name="special" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="drive" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="driveType" Type="Edm.String" Unicode="false" />
+          <Property Name="owner" Type="microsoft.graph.identitySet" />
+          <Property Name="quota" Type="microsoft.graph.quota" />
+          <Property Name="sharePointIds" Type="microsoft.graph.sharepointIds" />
+          <Property Name="system" Type="microsoft.graph.systemFacet" />
+          <NavigationProperty Name="items" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+          <NavigationProperty Name="list" Type="microsoft.graph.list" ContainsTarget="true" />
+          <NavigationProperty Name="root" Type="microsoft.graph.driveItem" ContainsTarget="true" />
+          <NavigationProperty Name="special" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>driveItem</name>
+      <old>
+        <EntityType Name="driveItem" BaseType="microsoft.graph.baseItem" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="audio" Type="microsoft.graph.audio" />
+          <Property Name="content" Type="Edm.Stream" />
+          <Property Name="cTag" Type="Edm.String" Unicode="false" />
+          <Property Name="deleted" Type="microsoft.graph.deleted" />
+          <Property Name="file" Type="microsoft.graph.file" />
+          <Property Name="fileSystemInfo" Type="microsoft.graph.fileSystemInfo" />
+          <Property Name="folder" Type="microsoft.graph.folder" />
+          <Property Name="image" Type="microsoft.graph.image" />
+          <Property Name="location" Type="microsoft.graph.geoCoordinates" />
+          <Property Name="package" Type="microsoft.graph.package" />
+          <Property Name="photo" Type="microsoft.graph.photo" />
+          <Property Name="remoteItem" Type="microsoft.graph.remoteItem" />
+          <Property Name="root" Type="microsoft.graph.root" />
+          <Property Name="searchResult" Type="microsoft.graph.searchResult" />
+          <Property Name="shared" Type="microsoft.graph.shared" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <Property Name="size" Type="Edm.Int64" />
+          <Property Name="specialFolder" Type="microsoft.graph.specialFolder" />
+          <Property Name="video" Type="microsoft.graph.video" />
+          <Property Name="webDavUrl" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="children" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+          <NavigationProperty Name="permissions" Type="Collection(microsoft.graph.permission)" ContainsTarget="true" />
+          <NavigationProperty Name="thumbnails" Type="Collection(microsoft.graph.thumbnailSet)" ContainsTarget="true" />
+          <NavigationProperty Name="workbook" Type="microsoft.graph.workbook" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="driveItem" BaseType="microsoft.graph.baseItem" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="audio" Type="microsoft.graph.audio" />
+          <Property Name="content" Type="Edm.Stream" />
+          <Property Name="cTag" Type="Edm.String" Unicode="false" />
+          <Property Name="deleted" Type="microsoft.graph.deleted" />
+          <Property Name="file" Type="microsoft.graph.file" />
+          <Property Name="fileSystemInfo" Type="microsoft.graph.fileSystemInfo" />
+          <Property Name="folder" Type="microsoft.graph.folder" />
+          <Property Name="image" Type="microsoft.graph.image" />
+          <Property Name="location" Type="microsoft.graph.geoCoordinates" />
+          <Property Name="package" Type="microsoft.graph.package" />
+          <Property Name="photo" Type="microsoft.graph.photo" />
+          <Property Name="remoteItem" Type="microsoft.graph.remoteItem" />
+          <Property Name="root" Type="microsoft.graph.root" />
+          <Property Name="searchResult" Type="microsoft.graph.searchResult" />
+          <Property Name="shared" Type="microsoft.graph.shared" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <Property Name="size" Type="Edm.Int64" />
+          <Property Name="specialFolder" Type="microsoft.graph.specialFolder" />
+          <Property Name="video" Type="microsoft.graph.video" />
+          <Property Name="webDavUrl" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="children" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+          <NavigationProperty Name="listItem" Type="microsoft.graph.listItem" ContainsTarget="true" />
+          <NavigationProperty Name="permissions" Type="Collection(microsoft.graph.permission)" ContainsTarget="true" />
+          <NavigationProperty Name="thumbnails" Type="Collection(microsoft.graph.thumbnailSet)" ContainsTarget="true" />
+          <NavigationProperty Name="workbook" Type="microsoft.graph.workbook" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>fieldValueSet</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>list</name>
+      <old>
+        <EntityType Name="list" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <EntityType Name="list" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="list" Type="microsoft.graph.listInfo" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <Property Name="system" Type="microsoft.graph.systemFacet" />
+          <NavigationProperty Name="columns" Type="Collection(microsoft.graph.columnDefinition)" ContainsTarget="true" />
+          <NavigationProperty Name="contentTypes" Type="Collection(microsoft.graph.contentType)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="items" Type="Collection(microsoft.graph.listItem)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>listItem</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>sharedDriveItem</name>
+      <old>
+        <EntityType Name="sharedDriveItem" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="owner" Type="microsoft.graph.identitySet" />
+          <NavigationProperty Name="driveItem" Type="microsoft.graph.driveItem" ContainsTarget="true" />
+          <NavigationProperty Name="items" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+          <NavigationProperty Name="root" Type="microsoft.graph.driveItem" ContainsTarget="true" />
+          <NavigationProperty Name="site" Type="microsoft.graph.site" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="sharedDriveItem" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="owner" Type="microsoft.graph.identitySet" />
+          <NavigationProperty Name="driveItem" Type="microsoft.graph.driveItem" ContainsTarget="true" />
+          <NavigationProperty Name="items" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+          <NavigationProperty Name="list" Type="microsoft.graph.list" ContainsTarget="true" />
+          <NavigationProperty Name="listItem" Type="microsoft.graph.listItem" ContainsTarget="true" />
+          <NavigationProperty Name="root" Type="microsoft.graph.driveItem" ContainsTarget="true" />
+          <NavigationProperty Name="site" Type="microsoft.graph.site" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>site</name>
+      <old>
+        <EntityType Name="site" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="root" Type="microsoft.graph.root" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <Property Name="siteCollection" Type="microsoft.graph.siteCollection" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="sites" Type="Collection(microsoft.graph.site)" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="site" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="root" Type="microsoft.graph.root" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <Property Name="siteCollection" Type="microsoft.graph.siteCollection" />
+          <NavigationProperty Name="columns" Type="Collection(microsoft.graph.columnDefinition)" ContainsTarget="true" />
+          <NavigationProperty Name="contentTypes" Type="Collection(microsoft.graph.contentType)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="items" Type="Collection(microsoft.graph.baseItem)" ContainsTarget="true" />
+          <NavigationProperty Name="lists" Type="Collection(microsoft.graph.list)" ContainsTarget="true" />
+          <NavigationProperty Name="sites" Type="Collection(microsoft.graph.site)" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>booleanColumn</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>calculatedColumn</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>choiceColumn</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>contentTypeInfo</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>contentTypeOrder</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>currencyColumn</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>dateTimeColumn</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>defaultColumnValue</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>folder</name>
+      <old>
+        <ComplexType Name="folder" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="childCount" Type="Edm.Int32" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="folder" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="childCount" Type="Edm.Int32" />
+          <Property Name="view" Type="microsoft.graph.folderView" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>folderView</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>itemReference</name>
+      <old>
+        <ComplexType Name="itemReference" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="driveId" Type="Edm.String" Unicode="false" />
+          <Property Name="id" Type="Edm.String" Unicode="false" />
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+          <Property Name="path" Type="Edm.String" Unicode="false" />
+          <Property Name="shareId" Type="Edm.String" Unicode="false" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="itemReference" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="driveId" Type="Edm.String" Unicode="false" />
+          <Property Name="driveType" Type="Edm.String" Unicode="false" />
+          <Property Name="id" Type="Edm.String" Unicode="false" />
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+          <Property Name="path" Type="Edm.String" Unicode="false" />
+          <Property Name="shareId" Type="Edm.String" Unicode="false" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>listInfo</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>lookupColumn</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>numberColumn</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>personOrGroupColumn</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>systemFacet</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>textColumn</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>video</name>
+      <old>
+        <ComplexType Name="video" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="bitrate" Type="Edm.Int32" />
+          <Property Name="duration" Type="Edm.Int64" />
+          <Property Name="height" Type="Edm.Int32" />
+          <Property Name="width" Type="Edm.Int32" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="video" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="audioBitsPerSample" Type="Edm.Int32" />
+          <Property Name="audioChannels" Type="Edm.Int32" />
+          <Property Name="audioFormat" Type="Edm.String" Unicode="false" />
+          <Property Name="audioSamplesPerSecond" Type="Edm.Int32" />
+          <Property Name="bitrate" Type="Edm.Int32" />
+          <Property Name="duration" Type="Edm.Int64" />
+          <Property Name="fourCC" Type="Edm.String" Unicode="false" />
+          <Property Name="frameRate" Type="Edm.Double" />
+          <Property Name="height" Type="Edm.Int32" />
+          <Property Name="width" Type="Edm.Int32" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Action</type>
+      <name>createLink</name>
+      <old>
+        <Action Name="createLink" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.driveItem" />
+          <Parameter Name="scope" Type="Edm.String" Unicode="false" />
+          <Parameter Name="type" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.permission" />
+        </Action>
+      </old>
+      <new>
+        <Action Name="createLink" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.driveItem" />
+          <Parameter Name="type" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Parameter Name="scope" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.permission" />
+        </Action>
+      </new>
+    </change>
+  </changes>
+</document>
