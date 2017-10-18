@@ -1,0 +1,15 @@
+<document>
+  <version>stagingbeta</version>
+  <changes>
+    <change>
+      <action>Deletion</action>
+      <type>EntityType</type>
+      <name>IdentityProvider</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>EntitySet</type>
+      <name>identityProviders</name>
+    </change>
+  </changes>
+</document>
