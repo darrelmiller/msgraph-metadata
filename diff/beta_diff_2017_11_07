@@ -1,0 +1,27 @@
+<document>
+  <version>beta</version>
+  <changes>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>team</name>
+      <old>
+        <EntityType Name="team" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="memberSettings" Type="microsoft.graph.teamMemberSettings" />
+          <Property Name="messagingSettings" Type="microsoft.graph.teamMessagingSettings" />
+          <Property Name="funSettings" Type="microsoft.graph.teamFunSettings" />
+          <Property Name="guestSettings" Type="microsoft.graph.teamGuestSettings" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="team" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="memberSettings" Type="microsoft.graph.teamMemberSettings" />
+          <Property Name="messagingSettings" Type="microsoft.graph.teamMessagingSettings" />
+          <Property Name="funSettings" Type="microsoft.graph.teamFunSettings" />
+          <Property Name="guestSettings" Type="microsoft.graph.teamGuestSettings" />
+          <NavigationProperty Name="channels" Type="Collection(microsoft.graph.channel)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+  </changes>
+</document>
