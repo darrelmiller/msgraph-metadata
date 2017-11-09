@@ -1,0 +1,43 @@
+<document>
+  <version>v1.0</version>
+  <changes>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.user/events/Org.OData.Capabilities.V1.ChangeTracking</name>
+      <old>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="true" />
+          </Record>
+        </Annotation>
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="false" />
+          </Record>
+        </Annotation>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.calendar/events/Org.OData.Capabilities.V1.ChangeTracking</name>
+      <old>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="true" />
+          </Record>
+        </Annotation>
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="false" />
+          </Record>
+        </Annotation>
+      </new>
+    </change>
+  </changes>
+</document>
