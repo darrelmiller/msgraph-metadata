@@ -1,0 +1,128 @@
+<document>
+  <version>beta</version>
+  <changes>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>customTimeZone</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>daylightTimeZoneOffset</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>mailboxSettings</name>
+      <old>
+        <ComplexType Name="mailboxSettings" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="automaticRepliesSetting" Type="microsoft.graph.automaticRepliesSetting" />
+          <Property Name="archiveFolder" Type="Edm.String" Unicode="false" />
+          <Property Name="timeZone" Type="Edm.String" Unicode="false" />
+          <Property Name="language" Type="microsoft.graph.localeInfo" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="mailboxSettings" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="automaticRepliesSetting" Type="microsoft.graph.automaticRepliesSetting" />
+          <Property Name="archiveFolder" Type="Edm.String" Unicode="false" />
+          <Property Name="timeZone" Type="Edm.String" Unicode="false" />
+          <Property Name="language" Type="microsoft.graph.localeInfo" />
+          <Property Name="workingHours" Type="microsoft.graph.workingHours" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>standardTimeZoneOffset</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>timeZoneBase</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>workingHours</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.user/calendar/Org.OData.Capabilities.V1.ChangeTracking</name>
+      <old>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="true" />
+          </Record>
+        </Annotation>
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="false" />
+          </Record>
+        </Annotation>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.user/calendars/Org.OData.Capabilities.V1.ChangeTracking</name>
+      <old>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="true" />
+          </Record>
+        </Annotation>
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="false" />
+          </Record>
+        </Annotation>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.user/events/Org.OData.Capabilities.V1.ChangeTracking</name>
+      <old>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="true" />
+          </Record>
+        </Annotation>
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="false" />
+          </Record>
+        </Annotation>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.calendar/events/Org.OData.Capabilities.V1.ChangeTracking</name>
+      <old>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="true" />
+          </Record>
+        </Annotation>
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Capabilities.V1.ChangeTracking" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Record>
+            <PropertyValue Property="Supported" Bool="false" />
+          </Record>
+        </Annotation>
+      </new>
+    </change>
+  </changes>
+</document>
