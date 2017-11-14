@@ -1,0 +1,252 @@
+<document>
+  <version>stagingbeta</version>
+  <changes>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>mailboxUsageDetail</name>
+      <old>
+        <EntityType Name="mailboxUsageDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="deletedDate" Type="Edm.Date" />
+          <Property Name="createdDate" Type="Edm.Date" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="itemCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="issueWarningQuotaInByte" Type="Edm.Int64" />
+          <Property Name="prohibitSendQuotaInByte" Type="Edm.Int64" />
+          <Property Name="prohibitSendReceiveQuotaInByte" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="mailboxUsageDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="deletedDate" Type="Edm.Date" />
+          <Property Name="createdDate" Type="Edm.Date" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="itemCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="issueWarningQuotaInBytes" Type="Edm.Int64" />
+          <Property Name="prohibitSendQuotaInBytes" Type="Edm.Int64" />
+          <Property Name="prohibitSendReceiveQuotaInBytes" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>mailboxUsageQuotaStatusMailboxCounts</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>mailboxUsageStorage</name>
+      <old>
+        <EntityType Name="mailboxUsageStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="mailboxUsageStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>office365GroupsActivityDetail</name>
+      <old>
+        <EntityType Name="office365GroupsActivityDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="groupDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="ownerPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="groupType" Type="Edm.String" Unicode="false" />
+          <Property Name="memberCount" Type="Edm.Int64" />
+          <Property Name="guestCount" Type="Edm.Int64" />
+          <Property Name="exchangeReceivedEmailCount" Type="Edm.Int64" />
+          <Property Name="sharePointActiveFileCount" Type="Edm.Int64" />
+          <Property Name="yammerPostedMessageCount" Type="Edm.Int64" />
+          <Property Name="yammerReadMessageCount" Type="Edm.Int64" />
+          <Property Name="yammerLikedMessageCount" Type="Edm.Int64" />
+          <Property Name="exchangeMailboxTotalItemCount" Type="Edm.Int64" />
+          <Property Name="exchangeMailboxStorageUsedInByte" Type="Edm.Int64" />
+          <Property Name="sharePointTotalFileCount" Type="Edm.Int64" />
+          <Property Name="sharePointSiteStorageUsedInByte" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="office365GroupsActivityDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="groupDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="ownerPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="groupType" Type="Edm.String" Unicode="false" />
+          <Property Name="memberCount" Type="Edm.Int64" />
+          <Property Name="externalMemberCount" Type="Edm.Int64" />
+          <Property Name="exchangeReceivedEmailCount" Type="Edm.Int64" />
+          <Property Name="sharePointActiveFileCount" Type="Edm.Int64" />
+          <Property Name="yammerPostedMessageCount" Type="Edm.Int64" />
+          <Property Name="yammerReadMessageCount" Type="Edm.Int64" />
+          <Property Name="yammerLikedMessageCount" Type="Edm.Int64" />
+          <Property Name="exchangeMailboxTotalItemCount" Type="Edm.Int64" />
+          <Property Name="exchangeMailboxStorageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="sharePointTotalFileCount" Type="Edm.Int64" />
+          <Property Name="sharePointSiteStorageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>office365GroupsActivityStorage</name>
+      <old>
+        <EntityType Name="office365GroupsActivityStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="mailboxStorageUsedInByte" Type="Edm.Int64" />
+          <Property Name="siteStorageUsedInByte" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="office365GroupsActivityStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="mailboxStorageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="siteStorageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>oneDriveUsageAccountDetail</name>
+      <old>
+        <EntityType Name="oneDriveUsageAccountDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="ownerDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="fileCount" Type="Edm.Int64" />
+          <Property Name="activeFileCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="storageAllocatedInByte" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="oneDriveUsageAccountDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="ownerDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="fileCount" Type="Edm.Int64" />
+          <Property Name="activeFileCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="storageAllocatedInBytes" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>sharePointSiteUsageDetail</name>
+      <old>
+        <EntityType Name="sharePointSiteUsageDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="ownerDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="fileCount" Type="Edm.Int64" />
+          <Property Name="activeFileCount" Type="Edm.Int64" />
+          <Property Name="pageViewCount" Type="Edm.Int64" />
+          <Property Name="visitedPageCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="storageAllocatedInByte" Type="Edm.Int64" />
+          <Property Name="rootWebTemplate" Type="Edm.String" Unicode="false" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="sharePointSiteUsageDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="ownerDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="fileCount" Type="Edm.Int64" />
+          <Property Name="activeFileCount" Type="Edm.Int64" />
+          <Property Name="pageViewCount" Type="Edm.Int64" />
+          <Property Name="visitedPageCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="storageAllocatedInBytes" Type="Edm.Int64" />
+          <Property Name="rootWebTemplate" Type="Edm.String" Unicode="false" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>siteUsageStorage</name>
+      <old>
+        <EntityType Name="siteUsageStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteType" Type="Edm.String" Unicode="false" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="siteUsageStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteType" Type="Edm.String" Unicode="false" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>EntityType</type>
+      <name>mailboxUsageQuotaMailboxStatusCounts</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>getMailboxUsageQuotaStatusMailboxCounts</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Function</type>
+      <name>getMailboxUsageQuotaMailboxStatusCounts</name>
+    </change>
+  </changes>
+</document>
