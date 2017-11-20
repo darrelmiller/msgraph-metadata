@@ -1,0 +1,602 @@
+<document>
+  <version>beta</version>
+  <changes>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationAssignment</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationAssignmentResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationClass</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationOrganization</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationRoot</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationSchool</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationSubmission</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationSubmissionResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>educationUser</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>mailboxUsageDetail</name>
+      <old>
+        <EntityType Name="mailboxUsageDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="deletedDate" Type="Edm.Date" />
+          <Property Name="createdDate" Type="Edm.Date" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="itemCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="issueWarningQuotaInByte" Type="Edm.Int64" />
+          <Property Name="prohibitSendQuotaInByte" Type="Edm.Int64" />
+          <Property Name="prohibitSendReceiveQuotaInByte" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="mailboxUsageDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="deletedDate" Type="Edm.Date" />
+          <Property Name="createdDate" Type="Edm.Date" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="itemCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="issueWarningQuotaInBytes" Type="Edm.Int64" />
+          <Property Name="prohibitSendQuotaInBytes" Type="Edm.Int64" />
+          <Property Name="prohibitSendReceiveQuotaInBytes" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>mailboxUsageQuotaStatusMailboxCounts</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>mailboxUsageStorage</name>
+      <old>
+        <EntityType Name="mailboxUsageStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="mailboxUsageStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>office365GroupsActivityDetail</name>
+      <old>
+        <EntityType Name="office365GroupsActivityDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="groupDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="ownerPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="groupType" Type="Edm.String" Unicode="false" />
+          <Property Name="memberCount" Type="Edm.Int64" />
+          <Property Name="guestCount" Type="Edm.Int64" />
+          <Property Name="exchangeReceivedEmailCount" Type="Edm.Int64" />
+          <Property Name="sharePointActiveFileCount" Type="Edm.Int64" />
+          <Property Name="yammerPostedMessageCount" Type="Edm.Int64" />
+          <Property Name="yammerReadMessageCount" Type="Edm.Int64" />
+          <Property Name="yammerLikedMessageCount" Type="Edm.Int64" />
+          <Property Name="exchangeMailboxTotalItemCount" Type="Edm.Int64" />
+          <Property Name="exchangeMailboxStorageUsedInByte" Type="Edm.Int64" />
+          <Property Name="sharePointTotalFileCount" Type="Edm.Int64" />
+          <Property Name="sharePointSiteStorageUsedInByte" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="office365GroupsActivityDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="groupDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="ownerPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="groupType" Type="Edm.String" Unicode="false" />
+          <Property Name="memberCount" Type="Edm.Int64" />
+          <Property Name="externalMemberCount" Type="Edm.Int64" />
+          <Property Name="exchangeReceivedEmailCount" Type="Edm.Int64" />
+          <Property Name="sharePointActiveFileCount" Type="Edm.Int64" />
+          <Property Name="yammerPostedMessageCount" Type="Edm.Int64" />
+          <Property Name="yammerReadMessageCount" Type="Edm.Int64" />
+          <Property Name="yammerLikedMessageCount" Type="Edm.Int64" />
+          <Property Name="exchangeMailboxTotalItemCount" Type="Edm.Int64" />
+          <Property Name="exchangeMailboxStorageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="sharePointTotalFileCount" Type="Edm.Int64" />
+          <Property Name="sharePointSiteStorageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>office365GroupsActivityStorage</name>
+      <old>
+        <EntityType Name="office365GroupsActivityStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="mailboxStorageUsedInByte" Type="Edm.Int64" />
+          <Property Name="siteStorageUsedInByte" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="office365GroupsActivityStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="mailboxStorageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="siteStorageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>oneDriveUsageAccountDetail</name>
+      <old>
+        <EntityType Name="oneDriveUsageAccountDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="ownerDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="fileCount" Type="Edm.Int64" />
+          <Property Name="activeFileCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="storageAllocatedInByte" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="oneDriveUsageAccountDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="ownerDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="fileCount" Type="Edm.Int64" />
+          <Property Name="activeFileCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="storageAllocatedInBytes" Type="Edm.Int64" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>sharePointSiteUsageDetail</name>
+      <old>
+        <EntityType Name="sharePointSiteUsageDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="ownerDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="fileCount" Type="Edm.Int64" />
+          <Property Name="activeFileCount" Type="Edm.Int64" />
+          <Property Name="pageViewCount" Type="Edm.Int64" />
+          <Property Name="visitedPageCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="storageAllocatedInByte" Type="Edm.Int64" />
+          <Property Name="rootWebTemplate" Type="Edm.String" Unicode="false" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="sharePointSiteUsageDetail" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="ownerDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isDeleted" Type="Edm.Boolean" />
+          <Property Name="lastActivityDate" Type="Edm.Date" />
+          <Property Name="fileCount" Type="Edm.Int64" />
+          <Property Name="activeFileCount" Type="Edm.Int64" />
+          <Property Name="pageViewCount" Type="Edm.Int64" />
+          <Property Name="visitedPageCount" Type="Edm.Int64" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="storageAllocatedInBytes" Type="Edm.Int64" />
+          <Property Name="rootWebTemplate" Type="Edm.String" Unicode="false" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>siteUsageStorage</name>
+      <old>
+        <EntityType Name="siteUsageStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteType" Type="Edm.String" Unicode="false" />
+          <Property Name="storageUsedInByte" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="siteUsageStorage" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="reportRefreshDate" Type="Edm.Date" />
+          <Property Name="siteType" Type="Edm.String" Unicode="false" />
+          <Property Name="storageUsedInBytes" Type="Edm.Int64" />
+          <Property Name="reportDate" Type="Edm.Date" />
+          <Property Name="reportPeriod" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>synchronizationError</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>synchronizationProfile</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>synchronizationProfileStatus</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>EntityType</type>
+      <name>mailboxUsageQuotaMailboxStatusCounts</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>educationAssignmentStatus</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>educationExternalSource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>educationGender</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>educationSubmissionStatus</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>educationUserRole</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>synchronizationProfileState</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>synchronizationStatus</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>csvDataProvider</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationAssignmentClassRecipient</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationAssignmentGrade</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationAssignmentGradeType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationAssignmentGroupRecipient</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationAssignmentPointsGrade</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationAssignmentPointsGradeType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationAssignmentRecipient</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationExcelResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationFeedback</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationFileResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationItemBody</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationLinkResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationOneNoteResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationPowerPointResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationStudent</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationSubmissionIndividualRecipient</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationSubmissionRecipient</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationTeacher</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationTerm</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationWordResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>fileSynchronizationVerificationMessage</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>identityCreationConfiguration</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>identityDomain</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>identityMatchingConfiguration</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>identityMatchingOptions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>identitySynchronizationConfiguration</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>oneRosterApiDataProvider</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>powerSchoolDataProvider</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>synchronizationCustomization</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>synchronizationCustomizations</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>synchronizationCustomizationsBase</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>synchronizationDataProvider</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>synchronizationError</name>
+      <old>
+        <ComplexType Name="synchronizationError" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="code" Type="Edm.String" Unicode="false" />
+          <Property Name="message" Type="Edm.String" Unicode="false" />
+          <Property Name="tenantActionable" Type="Edm.Boolean" Nullable="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="synchronizationError" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="code" Type="Edm.String" Unicode="false" />
+          <Property Name="message" Type="Edm.String" Unicode="false" />
+          <Property Name="tenantActionable" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="entryType" Type="Edm.String" Unicode="false" />
+          <Property Name="errorCode" Type="Edm.String" Unicode="false" />
+          <Property Name="errorMessage" Type="Edm.String" Unicode="false" />
+          <Property Name="joiningValue" Type="Edm.String" Unicode="false" />
+          <Property Name="recordedDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="reportableIdentifier" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>synchronizationLicenseAssignment</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>getMailboxUsageQuotaStatusMailboxCounts</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>getResourcesFolderUrl</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>uploadUrl</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Function</type>
+      <name>getMailboxUsageQuotaMailboxStatusCounts</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>pause</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>publish</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>recall</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>release</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>renew</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>reset</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>resume</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>start</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>submit</name>
+    </change>
+  </changes>
+</document>
