@@ -1,0 +1,2305 @@
+<document>
+  <version>stagingbeta</version>
+  <changes>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>androidDeviceComplianceLocalActionLockDeviceWithPasscode</name>
+      <old>
+        <EntityType Name="androidDeviceComplianceLocalActionLockDeviceWithPasscode" BaseType="microsoft.graph.androidDeviceComplianceLocalActionBase" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="passcode" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="passcodeSignInFailureCountBeforeWipe" Type="Edm.Int32" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="androidDeviceComplianceLocalActionLockDeviceWithPasscode" BaseType="microsoft.graph.androidDeviceComplianceLocalActionBase" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="passcode" Type="Edm.String" Unicode="false" />
+          <Property Name="passcodeSignInFailureCountBeforeWipe" Type="Edm.Int32" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>androidManagedAppProtection</name>
+      <old>
+        <EntityType Name="androidManagedAppProtection" BaseType="microsoft.graph.targetedManagedAppProtection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="screenCaptureBlocked" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="disableAppEncryptionIfDeviceEncryptionIsEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="encryptAppData" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="deployedAppCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="minimumRequiredPatchVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="minimumWarningPatchVersion" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="mobileAppIdentifierDeployments" Type="Collection(microsoft.graph.mobileAppIdentifierDeployment)" ContainsTarget="true" />
+          <NavigationProperty Name="apps" Type="Collection(microsoft.graph.managedMobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="deploymentSummary" Type="microsoft.graph.managedAppPolicyDeploymentSummary" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="androidManagedAppProtection" BaseType="microsoft.graph.targetedManagedAppProtection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="screenCaptureBlocked" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="disableAppEncryptionIfDeviceEncryptionIsEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="encryptAppData" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="deployedAppCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="minimumRequiredPatchVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="minimumWarningPatchVersion" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="apps" Type="Collection(microsoft.graph.managedMobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="deploymentSummary" Type="microsoft.graph.managedAppPolicyDeploymentSummary" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>auditEvent</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>defaultManagedAppProtection</name>
+      <old>
+        <EntityType Name="defaultManagedAppProtection" BaseType="microsoft.graph.managedAppProtection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="appDataEncryptionType" Type="microsoft.graph.managedAppDataEncryptionType" Nullable="false" />
+          <Property Name="screenCaptureBlocked" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="encryptAppData" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="disableAppEncryptionIfDeviceEncryptionIsEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="minimumRequiredSdkVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="customSettings" Type="Collection(microsoft.graph.keyValuePair)" Nullable="false" />
+          <Property Name="deployedAppCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="minimumRequiredPatchVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="minimumWarningPatchVersion" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="mobileAppIdentifierDeployments" Type="Collection(microsoft.graph.mobileAppIdentifierDeployment)" ContainsTarget="true" />
+          <NavigationProperty Name="apps" Type="Collection(microsoft.graph.managedMobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="deploymentSummary" Type="microsoft.graph.managedAppPolicyDeploymentSummary" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="defaultManagedAppProtection" BaseType="microsoft.graph.managedAppProtection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="appDataEncryptionType" Type="microsoft.graph.managedAppDataEncryptionType" Nullable="false" />
+          <Property Name="screenCaptureBlocked" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="encryptAppData" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="disableAppEncryptionIfDeviceEncryptionIsEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="minimumRequiredSdkVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="customSettings" Type="Collection(microsoft.graph.keyValuePair)" Nullable="false" />
+          <Property Name="deployedAppCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="minimumRequiredPatchVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="minimumWarningPatchVersion" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="apps" Type="Collection(microsoft.graph.managedMobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="deploymentSummary" Type="microsoft.graph.managedAppPolicyDeploymentSummary" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>deviceAppManagement</name>
+      <old>
+        <EntityType Name="deviceAppManagement" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="windowsStoreForBusinessLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="isEnabledForWindowsStoreForBusiness" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="windowsStoreForBusinessLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="windowsStoreForBusinessLastCompletedApplicationSyncTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="windowsManagementApp" Type="microsoft.graph.windowsManagementApp" />
+          <NavigationProperty Name="mobileApps" Type="Collection(microsoft.graph.mobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="mobileAppCategories" Type="Collection(microsoft.graph.mobileAppCategory)" ContainsTarget="true" />
+          <NavigationProperty Name="enterpriseCodeSigningCertificates" Type="Collection(microsoft.graph.enterpriseCodeSigningCertificate)" ContainsTarget="true" />
+          <NavigationProperty Name="iosLobAppProvisioningConfigurations" Type="Collection(microsoft.graph.iosLobAppProvisioningConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="symantecCodeSigningCertificate" Type="microsoft.graph.symantecCodeSigningCertificate" ContainsTarget="true" />
+          <NavigationProperty Name="mobileAppConfigurations" Type="Collection(microsoft.graph.managedDeviceMobileAppConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="sideLoadingKeys" Type="Collection(microsoft.graph.sideLoadingKey)" ContainsTarget="true" />
+          <NavigationProperty Name="vppTokens" Type="Collection(microsoft.graph.vppToken)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppPolicies" Type="Collection(microsoft.graph.managedAppPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="iosManagedAppProtections" Type="Collection(microsoft.graph.iosManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="androidManagedAppProtections" Type="Collection(microsoft.graph.androidManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="defaultManagedAppProtections" Type="Collection(microsoft.graph.defaultManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="targetedManagedAppConfigurations" Type="Collection(microsoft.graph.targetedManagedAppConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="mdmWindowsInformationProtectionPolicies" Type="Collection(microsoft.graph.mdmWindowsInformationProtectionPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsInformationProtectionPolicies" Type="Collection(microsoft.graph.windowsInformationProtectionPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppStatuses" Type="Collection(microsoft.graph.managedAppStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="managedEBooks" Type="Collection(microsoft.graph.managedEBook)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="deviceAppManagement" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="windowsStoreForBusinessLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="microsoftStoreForBusinessLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="isEnabledForWindowsStoreForBusiness" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="isEnabledForMicrosoftStoreForBusiness" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="windowsStoreForBusinessLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="microsoftStoreForBusinessLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="windowsStoreForBusinessLastCompletedApplicationSyncTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="microsoftStoreForBusinessLastCompletedApplicationSyncTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="windowsManagementApp" Type="microsoft.graph.windowsManagementApp" />
+          <NavigationProperty Name="mobileApps" Type="Collection(microsoft.graph.mobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="mobileAppCategories" Type="Collection(microsoft.graph.mobileAppCategory)" ContainsTarget="true" />
+          <NavigationProperty Name="enterpriseCodeSigningCertificates" Type="Collection(microsoft.graph.enterpriseCodeSigningCertificate)" ContainsTarget="true" />
+          <NavigationProperty Name="iosLobAppProvisioningConfigurations" Type="Collection(microsoft.graph.iosLobAppProvisioningConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="symantecCodeSigningCertificate" Type="microsoft.graph.symantecCodeSigningCertificate" ContainsTarget="true" />
+          <NavigationProperty Name="mobileAppConfigurations" Type="Collection(microsoft.graph.managedDeviceMobileAppConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="sideLoadingKeys" Type="Collection(microsoft.graph.sideLoadingKey)" ContainsTarget="true" />
+          <NavigationProperty Name="vppTokens" Type="Collection(microsoft.graph.vppToken)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppPolicies" Type="Collection(microsoft.graph.managedAppPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="iosManagedAppProtections" Type="Collection(microsoft.graph.iosManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="androidManagedAppProtections" Type="Collection(microsoft.graph.androidManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="defaultManagedAppProtections" Type="Collection(microsoft.graph.defaultManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="targetedManagedAppConfigurations" Type="Collection(microsoft.graph.targetedManagedAppConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="mdmWindowsInformationProtectionPolicies" Type="Collection(microsoft.graph.mdmWindowsInformationProtectionPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsInformationProtectionPolicies" Type="Collection(microsoft.graph.windowsInformationProtectionPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppStatuses" Type="Collection(microsoft.graph.managedAppStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="managedEBooks" Type="Collection(microsoft.graph.managedEBook)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>deviceConfiguration</name>
+      <old>
+        <EntityType Name="deviceConfiguration" BaseType="microsoft.graph.entity" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="createdDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="version" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="groupAssignments" Type="Collection(microsoft.graph.deviceConfigurationGroupAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStatuses" Type="Collection(microsoft.graph.deviceConfigurationDeviceStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="userStatuses" Type="Collection(microsoft.graph.deviceConfigurationUserStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStatusOverview" Type="microsoft.graph.deviceConfigurationDeviceOverview" ContainsTarget="true" />
+          <NavigationProperty Name="userStatusOverview" Type="microsoft.graph.deviceConfigurationUserOverview" ContainsTarget="true" />
+          <NavigationProperty Name="deviceSettingStateSummaries" Type="Collection(microsoft.graph.settingStateDeviceSummary)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="deviceConfiguration" BaseType="microsoft.graph.entity" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="createdDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="version" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="groupAssignments" Type="Collection(microsoft.graph.deviceConfigurationGroupAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.deviceConfigurationAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStatuses" Type="Collection(microsoft.graph.deviceConfigurationDeviceStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="userStatuses" Type="Collection(microsoft.graph.deviceConfigurationUserStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStatusOverview" Type="microsoft.graph.deviceConfigurationDeviceOverview" ContainsTarget="true" />
+          <NavigationProperty Name="userStatusOverview" Type="microsoft.graph.deviceConfigurationUserOverview" ContainsTarget="true" />
+          <NavigationProperty Name="deviceSettingStateSummaries" Type="Collection(microsoft.graph.settingStateDeviceSummary)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>deviceConfigurationAssignment</name>
+      <old>
+        <EntityType Name="deviceConfigurationAssignment" BaseType="microsoft.graph.entity" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationProperty Name="deviceConfiguration" Type="microsoft.graph.deviceConfiguration" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="deviceConfigurationAssignment" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="target" Type="microsoft.graph.deviceAndAppManagementAssignmentTarget" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>deviceConfigurationGroupAssignment</name>
+      <old>
+        <EntityType Name="deviceConfigurationGroupAssignment" BaseType="microsoft.graph.deviceConfigurationAssignment" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="targetGroupId" Type="Edm.String" Unicode="false" />
+          <Property Name="excludeGroup" Type="Edm.Boolean" Nullable="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="deviceConfigurationGroupAssignment" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="targetGroupId" Type="Edm.String" Unicode="false" />
+          <Property Name="excludeGroup" Type="Edm.Boolean" Nullable="false" />
+          <NavigationProperty Name="deviceConfiguration" Type="microsoft.graph.deviceConfiguration" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>deviceManagement</name>
+      <old>
+        <EntityType Name="deviceManagement" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="subscriptionState" Type="microsoft.graph.deviceManagementSubscriptionState" Nullable="false" />
+          <Property Name="subscriptions" Type="microsoft.graph.deviceManagementSubscriptions" Nullable="false" />
+          <Property Name="adminConsent" Type="microsoft.graph.adminConsent" />
+          <Property Name="settings" Type="microsoft.graph.deviceManagementSettings" />
+          <Property Name="intuneBrand" Type="microsoft.graph.intuneBrand" />
+          <NavigationProperty Name="termsAndConditions" Type="Collection(microsoft.graph.termsAndConditions)" ContainsTarget="true" />
+          <NavigationProperty Name="androidForWorkSettings" Type="microsoft.graph.androidForWorkSettings" ContainsTarget="true" />
+          <NavigationProperty Name="androidForWorkAppConfigurationSchemas" Type="Collection(microsoft.graph.androidForWorkAppConfigurationSchema)" ContainsTarget="true" />
+          <NavigationProperty Name="enrollmentProfiles" Type="Collection(microsoft.graph.enrollmentProfile)" ContainsTarget="true" />
+          <NavigationProperty Name="importedDeviceIdentities" Type="Collection(microsoft.graph.importedDeviceIdentity)" ContainsTarget="true" />
+          <NavigationProperty Name="importedAppleDeviceIdentities" Type="Collection(microsoft.graph.importedAppleDeviceIdentity)" ContainsTarget="true" />
+          <NavigationProperty Name="remoteActionAudits" Type="Collection(microsoft.graph.remoteActionAudit)" ContainsTarget="true" />
+          <NavigationProperty Name="applePushNotificationCertificate" Type="microsoft.graph.applePushNotificationCertificate" ContainsTarget="true" />
+          <NavigationProperty Name="deviceManagementScripts" Type="Collection(microsoft.graph.deviceManagementScript)" ContainsTarget="true" />
+          <NavigationProperty Name="managedDeviceOverview" Type="microsoft.graph.managedDeviceOverview" />
+          <NavigationProperty Name="detectedApps" Type="Collection(microsoft.graph.detectedApp)" ContainsTarget="true" />
+          <NavigationProperty Name="managedDevices" Type="Collection(microsoft.graph.managedDevice)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceConfigurations" Type="Collection(microsoft.graph.deviceConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCompliancePolicies" Type="Collection(microsoft.graph.deviceCompliancePolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="softwareUpdateStatusSummary" Type="microsoft.graph.softwareUpdateStatusSummary" />
+          <NavigationProperty Name="deviceCompliancePolicyDeviceStateSummary" Type="microsoft.graph.deviceCompliancePolicyDeviceStateSummary" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCompliancePolicySettingStateSummaries" Type="Collection(microsoft.graph.deviceCompliancePolicySettingStateSummary)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceConfigurationDeviceStateSummaries" Type="microsoft.graph.deviceConfigurationDeviceStateSummary" ContainsTarget="true" />
+          <NavigationProperty Name="deviceConfigurationUserStateSummaries" Type="microsoft.graph.deviceConfigurationUserStateSummary" ContainsTarget="true" />
+          <NavigationProperty Name="cartToClassAssociations" Type="Collection(microsoft.graph.cartToClassAssociation)" ContainsTarget="true" />
+          <NavigationProperty Name="iosUpdateStatuses" Type="Collection(microsoft.graph.iosUpdateDeviceStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCategories" Type="Collection(microsoft.graph.deviceCategory)" ContainsTarget="true" />
+          <NavigationProperty Name="exchangeConnectors" Type="Collection(microsoft.graph.deviceManagementExchangeConnector)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceEnrollmentConfigurations" Type="Collection(microsoft.graph.deviceEnrollmentConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="exchangeOnPremisesPolicy" Type="microsoft.graph.deviceManagementExchangeOnPremisesPolicy" ContainsTarget="true" />
+          <NavigationProperty Name="mobileThreatDefenseConnectors" Type="Collection(microsoft.graph.mobileThreatDefenseConnector)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceManagementPartners" Type="Collection(microsoft.graph.deviceManagementPartner)" ContainsTarget="true" />
+          <NavigationProperty Name="depOnboardingSettings" Type="Collection(microsoft.graph.depOnboardingSetting)" ContainsTarget="true" />
+          <NavigationProperty Name="notificationMessageTemplates" Type="Collection(microsoft.graph.notificationMessageTemplate)" ContainsTarget="true" />
+          <NavigationProperty Name="roleDefinitions" Type="Collection(microsoft.graph.roleDefinition)" ContainsTarget="true" />
+          <NavigationProperty Name="roleAssignments" Type="Collection(microsoft.graph.roleAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="resourceOperations" Type="Collection(microsoft.graph.resourceOperation)" ContainsTarget="true" />
+          <NavigationProperty Name="telecomExpenseManagementPartners" Type="Collection(microsoft.graph.telecomExpenseManagementPartner)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsAutopilotSettings" Type="microsoft.graph.windowsAutopilotSettings" ContainsTarget="true" />
+          <NavigationProperty Name="windowsAutopilotDeviceIdentities" Type="Collection(microsoft.graph.windowsAutopilotDeviceIdentity)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsAutopilotDeploymentProfiles" Type="Collection(microsoft.graph.windowsAutopilotDeploymentProfile)" ContainsTarget="true" />
+          <NavigationProperty Name="remoteAssistancePartners" Type="Collection(microsoft.graph.remoteAssistancePartner)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsInformationProtectionAppLearningSummaries" Type="Collection(microsoft.graph.windowsInformationProtectionAppLearningSummary)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsMalwareInformation" Type="Collection(microsoft.graph.windowsMalwareInformation)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="deviceManagement" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="subscriptionState" Type="microsoft.graph.deviceManagementSubscriptionState" Nullable="false" />
+          <Property Name="subscriptions" Type="microsoft.graph.deviceManagementSubscriptions" Nullable="false" />
+          <Property Name="adminConsent" Type="microsoft.graph.adminConsent" />
+          <Property Name="deviceProtectionOverview" Type="microsoft.graph.deviceProtectionOverview" />
+          <Property Name="settings" Type="microsoft.graph.deviceManagementSettings" />
+          <Property Name="intuneBrand" Type="microsoft.graph.intuneBrand" />
+          <NavigationProperty Name="termsAndConditions" Type="Collection(microsoft.graph.termsAndConditions)" ContainsTarget="true" />
+          <NavigationProperty Name="androidForWorkSettings" Type="microsoft.graph.androidForWorkSettings" ContainsTarget="true" />
+          <NavigationProperty Name="androidForWorkAppConfigurationSchemas" Type="Collection(microsoft.graph.androidForWorkAppConfigurationSchema)" ContainsTarget="true" />
+          <NavigationProperty Name="enrollmentProfiles" Type="Collection(microsoft.graph.enrollmentProfile)" ContainsTarget="true" />
+          <NavigationProperty Name="importedDeviceIdentities" Type="Collection(microsoft.graph.importedDeviceIdentity)" ContainsTarget="true" />
+          <NavigationProperty Name="importedAppleDeviceIdentities" Type="Collection(microsoft.graph.importedAppleDeviceIdentity)" ContainsTarget="true" />
+          <NavigationProperty Name="remoteActionAudits" Type="Collection(microsoft.graph.remoteActionAudit)" ContainsTarget="true" />
+          <NavigationProperty Name="applePushNotificationCertificate" Type="microsoft.graph.applePushNotificationCertificate" ContainsTarget="true" />
+          <NavigationProperty Name="deviceManagementScripts" Type="Collection(microsoft.graph.deviceManagementScript)" ContainsTarget="true" />
+          <NavigationProperty Name="managedDeviceOverview" Type="microsoft.graph.managedDeviceOverview" />
+          <NavigationProperty Name="detectedApps" Type="Collection(microsoft.graph.detectedApp)" ContainsTarget="true" />
+          <NavigationProperty Name="managedDevices" Type="Collection(microsoft.graph.managedDevice)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsMalwareInformation" Type="Collection(microsoft.graph.windowsMalwareInformation)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceConfigurations" Type="Collection(microsoft.graph.deviceConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCompliancePolicies" Type="Collection(microsoft.graph.deviceCompliancePolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceSetupConfigurations" Type="Collection(microsoft.graph.deviceSetupConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="softwareUpdateStatusSummary" Type="microsoft.graph.softwareUpdateStatusSummary" />
+          <NavigationProperty Name="deviceCompliancePolicyDeviceStateSummary" Type="microsoft.graph.deviceCompliancePolicyDeviceStateSummary" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCompliancePolicySettingStateSummaries" Type="Collection(microsoft.graph.deviceCompliancePolicySettingStateSummary)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceConfigurationDeviceStateSummaries" Type="microsoft.graph.deviceConfigurationDeviceStateSummary" ContainsTarget="true" />
+          <NavigationProperty Name="deviceConfigurationUserStateSummaries" Type="microsoft.graph.deviceConfigurationUserStateSummary" ContainsTarget="true" />
+          <NavigationProperty Name="cartToClassAssociations" Type="Collection(microsoft.graph.cartToClassAssociation)" ContainsTarget="true" />
+          <NavigationProperty Name="iosUpdateStatuses" Type="Collection(microsoft.graph.iosUpdateDeviceStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="ndesConnectors" Type="Collection(microsoft.graph.ndesConnector)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCategories" Type="Collection(microsoft.graph.deviceCategory)" ContainsTarget="true" />
+          <NavigationProperty Name="exchangeConnectors" Type="Collection(microsoft.graph.deviceManagementExchangeConnector)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceEnrollmentConfigurations" Type="Collection(microsoft.graph.deviceEnrollmentConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="exchangeOnPremisesPolicy" Type="microsoft.graph.deviceManagementExchangeOnPremisesPolicy" ContainsTarget="true" />
+          <NavigationProperty Name="exchangeOnPremisesPolicies" Type="Collection(microsoft.graph.deviceManagementExchangeOnPremisesPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="conditionalAccessSettings" Type="microsoft.graph.onPremisesConditionalAccessSettings" ContainsTarget="true" />
+          <NavigationProperty Name="mobileThreatDefenseConnectors" Type="Collection(microsoft.graph.mobileThreatDefenseConnector)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceManagementPartners" Type="Collection(microsoft.graph.deviceManagementPartner)" ContainsTarget="true" />
+          <NavigationProperty Name="depOnboardingSettings" Type="Collection(microsoft.graph.depOnboardingSetting)" ContainsTarget="true" />
+          <NavigationProperty Name="notificationMessageTemplates" Type="Collection(microsoft.graph.notificationMessageTemplate)" ContainsTarget="true" />
+          <NavigationProperty Name="roleDefinitions" Type="Collection(microsoft.graph.roleDefinition)" ContainsTarget="true" />
+          <NavigationProperty Name="roleAssignments" Type="Collection(microsoft.graph.roleAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="resourceOperations" Type="Collection(microsoft.graph.resourceOperation)" ContainsTarget="true" />
+          <NavigationProperty Name="telecomExpenseManagementPartners" Type="Collection(microsoft.graph.telecomExpenseManagementPartner)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsAutopilotSettings" Type="microsoft.graph.windowsAutopilotSettings" ContainsTarget="true" />
+          <NavigationProperty Name="windowsAutopilotDeviceIdentities" Type="Collection(microsoft.graph.windowsAutopilotDeviceIdentity)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsAutopilotDeploymentProfiles" Type="Collection(microsoft.graph.windowsAutopilotDeploymentProfile)" ContainsTarget="true" />
+          <NavigationProperty Name="remoteAssistancePartners" Type="Collection(microsoft.graph.remoteAssistancePartner)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsInformationProtectionAppLearningSummaries" Type="Collection(microsoft.graph.windowsInformationProtectionAppLearningSummary)" ContainsTarget="true" />
+          <NavigationProperty Name="auditEvents" Type="Collection(microsoft.graph.auditEvent)" ContainsTarget="true" />
+          <NavigationProperty Name="troubleshootingEvents" Type="Collection(microsoft.graph.deviceManagementTroubleshootingEvent)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>deviceManagementExchangeConnector</name>
+      <old>
+        <EntityType Name="deviceManagementExchangeConnector" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="lastSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="status" Type="microsoft.graph.deviceManagementExchangeConnectorStatus" Nullable="false" />
+          <Property Name="primarySmtpAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="serverName" Type="Edm.String" Unicode="false" />
+          <Property Name="exchangeConnectorType" Type="microsoft.graph.deviceManagementExchangeConnectorType" Nullable="false" />
+          <Property Name="version" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="deviceManagementExchangeConnector" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="lastSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="status" Type="microsoft.graph.deviceManagementExchangeConnectorStatus" Nullable="false" />
+          <Property Name="primarySmtpAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="serverName" Type="Edm.String" Unicode="false" />
+          <Property Name="exchangeConnectorType" Type="microsoft.graph.deviceManagementExchangeConnectorType" Nullable="false" />
+          <Property Name="version" Type="Edm.String" Unicode="false" />
+          <Property Name="exchangeAlias" Type="Edm.String" Unicode="false" />
+          <Property Name="exchangeOrganization" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>deviceManagementTroubleshootingEvent</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>deviceSetupConfiguration</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>enrollmentTroubleshootingEvent</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>iosManagedAppProtection</name>
+      <old>
+        <EntityType Name="iosManagedAppProtection" BaseType="microsoft.graph.targetedManagedAppProtection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="appDataEncryptionType" Type="microsoft.graph.managedAppDataEncryptionType" Nullable="false" />
+          <Property Name="minimumRequiredSdkVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="deployedAppCount" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="mobileAppIdentifierDeployments" Type="Collection(microsoft.graph.mobileAppIdentifierDeployment)" ContainsTarget="true" />
+          <NavigationProperty Name="apps" Type="Collection(microsoft.graph.managedMobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="deploymentSummary" Type="microsoft.graph.managedAppPolicyDeploymentSummary" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="iosManagedAppProtection" BaseType="microsoft.graph.targetedManagedAppProtection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="appDataEncryptionType" Type="microsoft.graph.managedAppDataEncryptionType" Nullable="false" />
+          <Property Name="minimumRequiredSdkVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="deployedAppCount" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="apps" Type="Collection(microsoft.graph.managedMobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="deploymentSummary" Type="microsoft.graph.managedAppPolicyDeploymentSummary" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>macOSOfficeSuiteApp</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>managedAndroidStoreApp</name>
+      <old>
+        <EntityType Name="managedAndroidStoreApp" BaseType="microsoft.graph.managedApp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="packageId" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="managedAndroidStoreApp" BaseType="microsoft.graph.managedApp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="packageId" Type="Edm.String" Unicode="false" />
+          <Property Name="appStoreUrl" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="minimumSupportedOperatingSystem" Type="microsoft.graph.androidMinimumOperatingSystem" Nullable="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>managedDevice</name>
+      <old>
+        <EntityType Name="managedDevice" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="userId" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceName" Type="Edm.String" Unicode="false" />
+          <Property Name="hardwareInformation" Type="microsoft.graph.hardwareInformation" />
+          <Property Name="ownerType" Type="microsoft.graph.ownerType" Nullable="false" />
+          <Property Name="deviceActionResults" Type="Collection(microsoft.graph.deviceActionResult)" />
+          <Property Name="managementState" Type="microsoft.graph.managementState" Nullable="false" />
+          <Property Name="enrolledDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="lastSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="chassisType" Type="microsoft.graph.chassisType" Nullable="false" />
+          <Property Name="operatingSystem" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceType" Type="microsoft.graph.deviceType" Nullable="false" />
+          <Property Name="complianceState" Type="microsoft.graph.complianceState" Nullable="false" />
+          <Property Name="jailBroken" Type="Edm.String" Unicode="false" />
+          <Property Name="managementAgent" Type="microsoft.graph.managementAgentType" Nullable="false" />
+          <Property Name="osVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="easActivated" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="easDeviceId" Type="Edm.String" Unicode="false" />
+          <Property Name="easActivationDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="aadRegistered" Type="Edm.Boolean" />
+          <Property Name="deviceEnrollmentType" Type="microsoft.graph.deviceEnrollmentType" Nullable="false" />
+          <Property Name="lostModeState" Type="microsoft.graph.lostModeState" Nullable="false" />
+          <Property Name="activationLockBypassCode" Type="Edm.String" Unicode="false" />
+          <Property Name="emailAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="azureActiveDirectoryDeviceId" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceRegistrationState" Type="microsoft.graph.deviceRegistrationState" Nullable="false" />
+          <Property Name="deviceCategoryDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isSupervised" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="exchangeLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="exchangeAccessState" Type="microsoft.graph.deviceManagementExchangeAccessState" Nullable="false" />
+          <Property Name="exchangeAccessStateReason" Type="microsoft.graph.deviceManagementExchangeAccessStateReason" Nullable="false" />
+          <Property Name="remoteAssistanceSessionUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="isEncrypted" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="model" Type="Edm.String" Unicode="false" />
+          <Property Name="manufacturer" Type="Edm.String" Unicode="false" />
+          <Property Name="imei" Type="Edm.String" Unicode="false" />
+          <Property Name="complianceGracePeriodExpirationDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="serialNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="phoneNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="androidSecurityPatchLevel" Type="Edm.String" Unicode="false" />
+          <Property Name="userDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="configurationManagerClientEnabledFeatures" Type="microsoft.graph.configurationManagerClientEnabledFeatures" />
+          <Property Name="wiFiMacAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceHealthAttestationState" Type="microsoft.graph.deviceHealthAttestationState" />
+          <Property Name="subscriberCarrier" Type="Edm.String" Unicode="false" />
+          <Property Name="meid" Type="Edm.String" Unicode="false" />
+          <Property Name="totalStorageSpaceInBytes" Type="Edm.Int64" Nullable="false" />
+          <Property Name="freeStorageSpaceInBytes" Type="Edm.Int64" Nullable="false" />
+          <NavigationProperty Name="deviceConfigurationStates" Type="Collection(microsoft.graph.deviceConfigurationState)" ContainsTarget="true" />
+          <NavigationProperty Name="detectedApps" Type="Collection(microsoft.graph.detectedApp)" />
+          <NavigationProperty Name="deviceCategory" Type="microsoft.graph.deviceCategory" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCompliancePolicyStates" Type="Collection(microsoft.graph.deviceCompliancePolicyState)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="managedDevice" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="userId" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceName" Type="Edm.String" Unicode="false" />
+          <Property Name="hardwareInformation" Type="microsoft.graph.hardwareInformation" />
+          <Property Name="ownerType" Type="microsoft.graph.ownerType" Nullable="false" />
+          <Property Name="deviceActionResults" Type="Collection(microsoft.graph.deviceActionResult)" />
+          <Property Name="managementState" Type="microsoft.graph.managementState" Nullable="false" />
+          <Property Name="enrolledDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="lastSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="chassisType" Type="microsoft.graph.chassisType" Nullable="false" />
+          <Property Name="operatingSystem" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceType" Type="microsoft.graph.deviceType" Nullable="false" />
+          <Property Name="complianceState" Type="microsoft.graph.complianceState" Nullable="false" />
+          <Property Name="jailBroken" Type="Edm.String" Unicode="false" />
+          <Property Name="managementAgent" Type="microsoft.graph.managementAgentType" Nullable="false" />
+          <Property Name="osVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="easActivated" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="easDeviceId" Type="Edm.String" Unicode="false" />
+          <Property Name="easActivationDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="aadRegistered" Type="Edm.Boolean" />
+          <Property Name="deviceEnrollmentType" Type="microsoft.graph.deviceEnrollmentType" Nullable="false" />
+          <Property Name="lostModeState" Type="microsoft.graph.lostModeState" Nullable="false" />
+          <Property Name="activationLockBypassCode" Type="Edm.String" Unicode="false" />
+          <Property Name="emailAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="azureActiveDirectoryDeviceId" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceRegistrationState" Type="microsoft.graph.deviceRegistrationState" Nullable="false" />
+          <Property Name="deviceCategoryDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isSupervised" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="exchangeLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="exchangeAccessState" Type="microsoft.graph.deviceManagementExchangeAccessState" Nullable="false" />
+          <Property Name="exchangeAccessStateReason" Type="microsoft.graph.deviceManagementExchangeAccessStateReason" Nullable="false" />
+          <Property Name="remoteAssistanceSessionUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="remoteAssistanceSessionErrorString" Type="Edm.String" Unicode="false" />
+          <Property Name="isEncrypted" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="model" Type="Edm.String" Unicode="false" />
+          <Property Name="manufacturer" Type="Edm.String" Unicode="false" />
+          <Property Name="imei" Type="Edm.String" Unicode="false" />
+          <Property Name="complianceGracePeriodExpirationDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="serialNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="phoneNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="androidSecurityPatchLevel" Type="Edm.String" Unicode="false" />
+          <Property Name="userDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="configurationManagerClientEnabledFeatures" Type="microsoft.graph.configurationManagerClientEnabledFeatures" />
+          <Property Name="wiFiMacAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceHealthAttestationState" Type="microsoft.graph.deviceHealthAttestationState" />
+          <Property Name="subscriberCarrier" Type="Edm.String" Unicode="false" />
+          <Property Name="meid" Type="Edm.String" Unicode="false" />
+          <Property Name="totalStorageSpaceInBytes" Type="Edm.Int64" Nullable="false" />
+          <Property Name="freeStorageSpaceInBytes" Type="Edm.Int64" Nullable="false" />
+          <NavigationProperty Name="deviceConfigurationStates" Type="Collection(microsoft.graph.deviceConfigurationState)" ContainsTarget="true" />
+          <NavigationProperty Name="detectedApps" Type="Collection(microsoft.graph.detectedApp)" />
+          <NavigationProperty Name="deviceCategory" Type="microsoft.graph.deviceCategory" ContainsTarget="true" />
+          <NavigationProperty Name="windowsProtectionState" Type="microsoft.graph.windowsProtectionState" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCompliancePolicyStates" Type="Collection(microsoft.graph.deviceCompliancePolicyState)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>managedIOSStoreApp</name>
+      <old>
+        <EntityType Name="managedIOSStoreApp" BaseType="microsoft.graph.managedApp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="bundleId" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="managedIOSStoreApp" BaseType="microsoft.graph.managedApp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="bundleId" Type="Edm.String" Unicode="false" />
+          <Property Name="appStoreUrl" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="applicableDeviceType" Type="microsoft.graph.iosDeviceType" Nullable="false" />
+          <Property Name="minimumSupportedOperatingSystem" Type="microsoft.graph.iosMinimumOperatingSystem" Nullable="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>microsoftStoreForBusinessApp</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>mobileAppInstallSummary</name>
+      <old>
+        <EntityType Name="mobileAppInstallSummary" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="installedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="failedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notInstalledDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="installedUserCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="failedUserCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notInstalledUserCount" Type="Edm.Int32" Nullable="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="mobileAppInstallSummary" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="installedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="failedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notApplicableDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notInstalledDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="pendingInstallDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="installedUserCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="failedUserCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notApplicableUserCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notInstalledUserCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="pendingInstallUserCount" Type="Edm.Int32" Nullable="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>ndesConnector</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>targetedManagedAppConfiguration</name>
+      <old>
+        <EntityType Name="targetedManagedAppConfiguration" BaseType="microsoft.graph.managedAppConfiguration" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="deployedAppCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="targetedSecurityGroupIds" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="targetedSecurityGroupsCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="isAssigned" Type="Edm.Boolean" Nullable="false" />
+          <NavigationProperty Name="mobileAppIdentifierDeployments" Type="Collection(microsoft.graph.mobileAppIdentifierDeployment)" ContainsTarget="true" />
+          <NavigationProperty Name="apps" Type="Collection(microsoft.graph.managedMobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="deploymentSummary" Type="microsoft.graph.managedAppPolicyDeploymentSummary" ContainsTarget="true" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.targetedManagedAppPolicyAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="targetedSecurityGroups" Type="Collection(microsoft.graph.directoryObject)" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="targetedManagedAppConfiguration" BaseType="microsoft.graph.managedAppConfiguration" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="deployedAppCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="isAssigned" Type="Edm.Boolean" Nullable="false" />
+          <NavigationProperty Name="apps" Type="Collection(microsoft.graph.managedMobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="deploymentSummary" Type="microsoft.graph.managedAppPolicyDeploymentSummary" ContainsTarget="true" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.targetedManagedAppPolicyAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>targetedManagedAppProtection</name>
+      <old>
+        <EntityType Name="targetedManagedAppProtection" BaseType="microsoft.graph.managedAppProtection" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="targetedSecurityGroupsCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="isAssigned" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="targetedSecurityGroupIds" Type="Collection(Edm.String)" Unicode="false" />
+          <NavigationProperty Name="targetedSecurityGroups" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.targetedManagedAppPolicyAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="targetedManagedAppProtection" BaseType="microsoft.graph.managedAppProtection" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="isAssigned" Type="Edm.Boolean" Nullable="false" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.targetedManagedAppPolicyAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>user</name>
+      <old>
+        <EntityType Name="user" BaseType="microsoft.graph.directoryObject" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="accountEnabled" Type="Edm.Boolean" />
+          <Property Name="assignedLicenses" Type="Collection(microsoft.graph.assignedLicense)" Nullable="false" />
+          <Property Name="assignedPlans" Type="Collection(microsoft.graph.assignedPlan)" Nullable="false" />
+          <Property Name="businessPhones" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="city" Type="Edm.String" Unicode="false" />
+          <Property Name="companyName" Type="Edm.String" Unicode="false" />
+          <Property Name="country" Type="Edm.String" Unicode="false" />
+          <Property Name="department" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceKeys" Type="Collection(microsoft.graph.deviceKey)" Nullable="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="employeeId" Type="Edm.String" Unicode="false" />
+          <Property Name="givenName" Type="Edm.String" Unicode="false" />
+          <Property Name="imAddresses" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="jobTitle" Type="Edm.String" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="mobilePhone" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesImmutableId" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesLastSyncDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="onPremisesProvisioningErrors" Type="Collection(microsoft.graph.onPremisesProvisioningError)" />
+          <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSyncEnabled" Type="Edm.Boolean" />
+          <Property Name="onPremisesDomainName" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSamAccountName" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesUserPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordPolicies" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordProfile" Type="microsoft.graph.passwordProfile" />
+          <Property Name="officeLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="postalCode" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredDataLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="provisionedPlans" Type="Collection(microsoft.graph.provisionedPlan)" Nullable="false" />
+          <Property Name="proxyAddresses" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="refreshTokensValidFromDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="showInAddressList" Type="Edm.Boolean" />
+          <Property Name="state" Type="Edm.String" Unicode="false" />
+          <Property Name="streetAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="surname" Type="Edm.String" Unicode="false" />
+          <Property Name="usageLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="userType" Type="Edm.String" Unicode="false" />
+          <Property Name="mailboxSettings" Type="microsoft.graph.mailboxSettings" />
+          <Property Name="aboutMe" Type="Edm.String" Unicode="false" />
+          <Property Name="birthday" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="hireDate" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="interests" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="mySite" Type="Edm.String" Unicode="false" />
+          <Property Name="pastProjects" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="preferredName" Type="Edm.String" Unicode="false" />
+          <Property Name="responsibilities" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="schools" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="skills" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="identityUserRisk" Type="microsoft.graph.identityUserRisk" />
+          <Property Name="deviceEnrollmentLimit" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="ownedDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="registeredDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="manager" Type="microsoft.graph.directoryObject" />
+          <NavigationProperty Name="directReports" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="createdObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="ownedObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="scopedRoleMemberOf" Type="Collection(microsoft.graph.scopedRoleMembership)" ContainsTarget="true" />
+          <NavigationProperty Name="licenseDetails" Type="Collection(microsoft.graph.licenseDetails)" ContainsTarget="true" />
+          <NavigationProperty Name="activities" Type="Collection(microsoft.graph.activity)" ContainsTarget="true" />
+          <NavigationProperty Name="outlook" Type="microsoft.graph.outlookUser" ContainsTarget="true" />
+          <NavigationProperty Name="messages" Type="Collection(microsoft.graph.message)" ContainsTarget="true" />
+          <NavigationProperty Name="joinedGroups" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
+          <NavigationProperty Name="mailFolders" Type="Collection(microsoft.graph.mailFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="calendars" Type="Collection(microsoft.graph.calendar)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarGroups" Type="Collection(microsoft.graph.calendarGroup)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarView" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="events" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="people" Type="Collection(microsoft.graph.person)" ContainsTarget="true" />
+          <NavigationProperty Name="contacts" Type="Collection(microsoft.graph.contact)" ContainsTarget="true" />
+          <NavigationProperty Name="contactFolders" Type="Collection(microsoft.graph.contactFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="inferenceClassification" Type="microsoft.graph.inferenceClassification" ContainsTarget="true" />
+          <NavigationProperty Name="photo" Type="microsoft.graph.profilePhoto" ContainsTarget="true" />
+          <NavigationProperty Name="photos" Type="Collection(microsoft.graph.profilePhoto)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="insights" Type="microsoft.graph.officeGraphInsights" ContainsTarget="true" />
+          <NavigationProperty Name="planner" Type="microsoft.graph.plannerUser" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+          <NavigationProperty Name="managedDevices" Type="Collection(microsoft.graph.managedDevice)" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" />
+          <NavigationProperty Name="devices" Type="Collection(microsoft.graph.device)" ContainsTarget="true" />
+          <NavigationProperty Name="joinedTeams" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="user" BaseType="microsoft.graph.directoryObject" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="accountEnabled" Type="Edm.Boolean" />
+          <Property Name="assignedLicenses" Type="Collection(microsoft.graph.assignedLicense)" Nullable="false" />
+          <Property Name="assignedPlans" Type="Collection(microsoft.graph.assignedPlan)" Nullable="false" />
+          <Property Name="businessPhones" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="city" Type="Edm.String" Unicode="false" />
+          <Property Name="companyName" Type="Edm.String" Unicode="false" />
+          <Property Name="country" Type="Edm.String" Unicode="false" />
+          <Property Name="department" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceKeys" Type="Collection(microsoft.graph.deviceKey)" Nullable="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="employeeId" Type="Edm.String" Unicode="false" />
+          <Property Name="givenName" Type="Edm.String" Unicode="false" />
+          <Property Name="imAddresses" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="jobTitle" Type="Edm.String" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="mobilePhone" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesImmutableId" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesLastSyncDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="onPremisesProvisioningErrors" Type="Collection(microsoft.graph.onPremisesProvisioningError)" />
+          <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSyncEnabled" Type="Edm.Boolean" />
+          <Property Name="onPremisesDomainName" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSamAccountName" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesUserPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordPolicies" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordProfile" Type="microsoft.graph.passwordProfile" />
+          <Property Name="officeLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="postalCode" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredDataLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="provisionedPlans" Type="Collection(microsoft.graph.provisionedPlan)" Nullable="false" />
+          <Property Name="proxyAddresses" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="refreshTokensValidFromDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="showInAddressList" Type="Edm.Boolean" />
+          <Property Name="state" Type="Edm.String" Unicode="false" />
+          <Property Name="streetAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="surname" Type="Edm.String" Unicode="false" />
+          <Property Name="usageLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="userType" Type="Edm.String" Unicode="false" />
+          <Property Name="mailboxSettings" Type="microsoft.graph.mailboxSettings" />
+          <Property Name="aboutMe" Type="Edm.String" Unicode="false" />
+          <Property Name="birthday" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="hireDate" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="interests" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="mySite" Type="Edm.String" Unicode="false" />
+          <Property Name="pastProjects" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="preferredName" Type="Edm.String" Unicode="false" />
+          <Property Name="responsibilities" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="schools" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="skills" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="identityUserRisk" Type="microsoft.graph.identityUserRisk" />
+          <Property Name="deviceEnrollmentLimit" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="ownedDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="registeredDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="manager" Type="microsoft.graph.directoryObject" />
+          <NavigationProperty Name="directReports" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="createdObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="ownedObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="scopedRoleMemberOf" Type="Collection(microsoft.graph.scopedRoleMembership)" ContainsTarget="true" />
+          <NavigationProperty Name="licenseDetails" Type="Collection(microsoft.graph.licenseDetails)" ContainsTarget="true" />
+          <NavigationProperty Name="activities" Type="Collection(microsoft.graph.activity)" ContainsTarget="true" />
+          <NavigationProperty Name="outlook" Type="microsoft.graph.outlookUser" ContainsTarget="true" />
+          <NavigationProperty Name="messages" Type="Collection(microsoft.graph.message)" ContainsTarget="true" />
+          <NavigationProperty Name="joinedGroups" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
+          <NavigationProperty Name="mailFolders" Type="Collection(microsoft.graph.mailFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="calendars" Type="Collection(microsoft.graph.calendar)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarGroups" Type="Collection(microsoft.graph.calendarGroup)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarView" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="events" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="people" Type="Collection(microsoft.graph.person)" ContainsTarget="true" />
+          <NavigationProperty Name="contacts" Type="Collection(microsoft.graph.contact)" ContainsTarget="true" />
+          <NavigationProperty Name="contactFolders" Type="Collection(microsoft.graph.contactFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="inferenceClassification" Type="microsoft.graph.inferenceClassification" ContainsTarget="true" />
+          <NavigationProperty Name="photo" Type="microsoft.graph.profilePhoto" ContainsTarget="true" />
+          <NavigationProperty Name="photos" Type="Collection(microsoft.graph.profilePhoto)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="insights" Type="microsoft.graph.officeGraphInsights" ContainsTarget="true" />
+          <NavigationProperty Name="planner" Type="microsoft.graph.plannerUser" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+          <NavigationProperty Name="managedDevices" Type="Collection(microsoft.graph.managedDevice)" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" />
+          <NavigationProperty Name="devices" Type="Collection(microsoft.graph.device)" ContainsTarget="true" />
+          <NavigationProperty Name="joinedTeams" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceManagementTroubleshootingEvents" Type="Collection(microsoft.graph.deviceManagementTroubleshootingEvent)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>windows10CompliancePolicy</name>
+      <old>
+        <EntityType Name="windows10CompliancePolicy" BaseType="microsoft.graph.deviceCompliancePolicy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="passwordRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordBlockSimple" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordRequiredToUnlockFromIdle" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordMinutesOfInactivityBeforeLock" Type="Edm.Int32" />
+          <Property Name="passwordExpirationDays" Type="Edm.Int32" />
+          <Property Name="passwordMinimumLength" Type="Edm.Int32" />
+          <Property Name="passwordMinimumCharacterSetCount" Type="Edm.Int32" />
+          <Property Name="passwordRequiredType" Type="microsoft.graph.requiredPasswordType" Nullable="false" />
+          <Property Name="passwordPreviousPasswordBlockCount" Type="Edm.Int32" />
+          <Property Name="requireHealthyDeviceReport" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="osMinimumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="osMaximumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="mobileOsMinimumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="mobileOsMaximumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="earlyLaunchAntiMalwareDriverEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="bitLockerEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="secureBootEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="codeIntegrityEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="storageRequireEncryption" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="activeFirewallRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="uacRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="defenderEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="defenderVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="signatureOutOfDate" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="rtpEnabled" Type="Edm.Boolean" Nullable="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="windows10CompliancePolicy" BaseType="microsoft.graph.deviceCompliancePolicy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="passwordRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordBlockSimple" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordRequiredToUnlockFromIdle" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordMinutesOfInactivityBeforeLock" Type="Edm.Int32" />
+          <Property Name="passwordExpirationDays" Type="Edm.Int32" />
+          <Property Name="passwordMinimumLength" Type="Edm.Int32" />
+          <Property Name="passwordMinimumCharacterSetCount" Type="Edm.Int32" />
+          <Property Name="passwordRequiredType" Type="microsoft.graph.requiredPasswordType" Nullable="false" />
+          <Property Name="passwordPreviousPasswordBlockCount" Type="Edm.Int32" />
+          <Property Name="requireHealthyDeviceReport" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="osMinimumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="osMaximumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="mobileOsMinimumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="mobileOsMaximumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="earlyLaunchAntiMalwareDriverEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="bitLockerEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="secureBootEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="codeIntegrityEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="storageRequireEncryption" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="activeFirewallRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="uacRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="defenderEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="defenderVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="signatureOutOfDate" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="rtpEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="validOperatingSystemBuildRanges" Type="Collection(microsoft.graph.operatingSystemVersionRange)" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>windows10MobileCompliancePolicy</name>
+      <old>
+        <EntityType Name="windows10MobileCompliancePolicy" BaseType="microsoft.graph.deviceCompliancePolicy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="passwordRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordBlockSimple" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordMinimumLength" Type="Edm.Int32" />
+          <Property Name="passwordMinimumCharacterSetCount" Type="Edm.Int32" />
+          <Property Name="passwordRequiredType" Type="microsoft.graph.requiredPasswordType" Nullable="false" />
+          <Property Name="passwordPreviousPasswordBlockCount" Type="Edm.Int32" />
+          <Property Name="passwordExpirationDays" Type="Edm.Int32" />
+          <Property Name="passwordMinutesOfInactivityBeforeLock" Type="Edm.Int32" />
+          <Property Name="passwordRequireToUnlockFromIdle" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="osMinimumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="osMaximumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="earlyLaunchAntiMalwareDriverEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="bitLockerEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="secureBootEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="codeIntegrityEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="storageRequireEncryption" Type="Edm.Boolean" Nullable="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="windows10MobileCompliancePolicy" BaseType="microsoft.graph.deviceCompliancePolicy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="passwordRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordBlockSimple" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="passwordMinimumLength" Type="Edm.Int32" />
+          <Property Name="passwordMinimumCharacterSetCount" Type="Edm.Int32" />
+          <Property Name="passwordRequiredType" Type="microsoft.graph.requiredPasswordType" Nullable="false" />
+          <Property Name="passwordPreviousPasswordBlockCount" Type="Edm.Int32" />
+          <Property Name="passwordExpirationDays" Type="Edm.Int32" />
+          <Property Name="passwordMinutesOfInactivityBeforeLock" Type="Edm.Int32" />
+          <Property Name="passwordRequireToUnlockFromIdle" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="osMinimumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="osMaximumVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="earlyLaunchAntiMalwareDriverEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="bitLockerEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="secureBootEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="codeIntegrityEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="storageRequireEncryption" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="activeFirewallRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="uacRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="validOperatingSystemBuildRanges" Type="Collection(microsoft.graph.operatingSystemVersionRange)" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>windowsDefenderAdvancedThreatProtectionConfiguration</name>
+      <old>
+        <EntityType Name="windowsDefenderAdvancedThreatProtectionConfiguration" BaseType="microsoft.graph.deviceConfiguration" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="advancedThreatProtectionOnboardingBlob" Type="Edm.String" Unicode="false" />
+          <Property Name="allowSampleSharing" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="advancedThreatProtectionOffboardingBlob" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="windowsDefenderAdvancedThreatProtectionConfiguration" BaseType="microsoft.graph.deviceConfiguration" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="advancedThreatProtectionOnboardingBlob" Type="Edm.String" Unicode="false" />
+          <Property Name="allowSampleSharing" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="enableExpeditedTelemetryReporting" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="advancedThreatProtectionOffboardingBlob" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>windowsDomainJoinConfiguration</name>
+      <old>
+        <EntityType Name="windowsDomainJoinConfiguration" BaseType="microsoft.graph.deviceConfiguration" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="computerNameStaticPrefix" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="computerNameSuffixRandomCharCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="activeDirectoryDomainName" Type="Edm.String" Nullable="false" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="windowsDomainJoinConfiguration" BaseType="microsoft.graph.deviceSetupConfiguration" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="computerNameStaticPrefix" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="computerNameSuffixRandomCharCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="activeDirectoryDomainName" Type="Edm.String" Nullable="false" Unicode="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>windowsInformationProtection</name>
+      <old>
+        <EntityType Name="windowsInformationProtection" BaseType="microsoft.graph.managedAppPolicy" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="enforcementLevel" Type="microsoft.graph.windowsInformationProtectionEnforcementLevel" Nullable="false" />
+          <Property Name="enterpriseDomain" Type="Edm.String" Unicode="false" />
+          <Property Name="enterpriseProtectedDomainNames" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="protectionUnderLockConfigRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="dataRecoveryCertificate" Type="microsoft.graph.windowsInformationProtectionDataRecoveryCertificate" />
+          <Property Name="revokeOnUnenrollDisabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="rightsManagementServicesTemplateId" Type="Edm.Guid" />
+          <Property Name="azureRightsManagementServicesAllowed" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="iconsVisible" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="allowedApps" Type="Collection(microsoft.graph.windowsInformationProtectionApp)" />
+          <Property Name="protectedApps" Type="Collection(microsoft.graph.windowsInformationProtectionApp)" />
+          <Property Name="exemptApps" Type="Collection(microsoft.graph.windowsInformationProtectionApp)" />
+          <Property Name="enterpriseNetworkDomainNames" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="enterpriseCloudResources" Type="Collection(microsoft.graph.windowsInformationProtectionCloudResourceCollection)" />
+          <Property Name="enterpriseProxiedDomains" Type="Collection(microsoft.graph.windowsInformationProtectionProxiedDomainCollection)" />
+          <Property Name="enterpriseIPRanges" Type="Collection(microsoft.graph.windowsInformationProtectionIPRangeCollection)" />
+          <Property Name="enterpriseIPRangesAreAuthoritative" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="enterpriseProxyServers" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="enterpriseInternalProxyServers" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="enterpriseProxyServersAreAuthoritative" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="neutralDomainResources" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="indexingEncryptedStoresOrItemsBlocked" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="smbAutoEncryptedFileExtensions" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="targetedSecurityGroupIds" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="isAssigned" Type="Edm.Boolean" Nullable="false" />
+          <NavigationProperty Name="allowedAppLockerFiles" Type="Collection(microsoft.graph.windowsInformationProtectionAppLockerFile)" ContainsTarget="true" />
+          <NavigationProperty Name="protectedAppLockerFiles" Type="Collection(microsoft.graph.windowsInformationProtectionAppLockerFile)" ContainsTarget="true" />
+          <NavigationProperty Name="exemptAppLockerFiles" Type="Collection(microsoft.graph.windowsInformationProtectionAppLockerFile)" ContainsTarget="true" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.targetedManagedAppPolicyAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="windowsInformationProtection" BaseType="microsoft.graph.managedAppPolicy" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="enforcementLevel" Type="microsoft.graph.windowsInformationProtectionEnforcementLevel" Nullable="false" />
+          <Property Name="enterpriseDomain" Type="Edm.String" Unicode="false" />
+          <Property Name="enterpriseProtectedDomainNames" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="protectionUnderLockConfigRequired" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="dataRecoveryCertificate" Type="microsoft.graph.windowsInformationProtectionDataRecoveryCertificate" />
+          <Property Name="revokeOnUnenrollDisabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="rightsManagementServicesTemplateId" Type="Edm.Guid" />
+          <Property Name="azureRightsManagementServicesAllowed" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="iconsVisible" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="protectedApps" Type="Collection(microsoft.graph.windowsInformationProtectionApp)" />
+          <Property Name="exemptApps" Type="Collection(microsoft.graph.windowsInformationProtectionApp)" />
+          <Property Name="enterpriseNetworkDomainNames" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="enterpriseProxiedDomains" Type="Collection(microsoft.graph.windowsInformationProtectionProxiedDomainCollection)" />
+          <Property Name="enterpriseIPRanges" Type="Collection(microsoft.graph.windowsInformationProtectionIPRangeCollection)" />
+          <Property Name="enterpriseIPRangesAreAuthoritative" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="enterpriseProxyServers" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="enterpriseInternalProxyServers" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="enterpriseProxyServersAreAuthoritative" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="neutralDomainResources" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="indexingEncryptedStoresOrItemsBlocked" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="smbAutoEncryptedFileExtensions" Type="Collection(microsoft.graph.windowsInformationProtectionResourceCollection)" />
+          <Property Name="isAssigned" Type="Edm.Boolean" Nullable="false" />
+          <NavigationProperty Name="protectedAppLockerFiles" Type="Collection(microsoft.graph.windowsInformationProtectionAppLockerFile)" ContainsTarget="true" />
+          <NavigationProperty Name="exemptAppLockerFiles" Type="Collection(microsoft.graph.windowsInformationProtectionAppLockerFile)" ContainsTarget="true" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.targetedManagedAppPolicyAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>windowsManagedDevice</name>
+      <old>
+        <EntityType Name="windowsManagedDevice" BaseType="microsoft.graph.managedDevice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationProperty Name="windowsProtectionState" Type="microsoft.graph.windowsProtectionState" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="windowsManagedDevice" BaseType="microsoft.graph.managedDevice" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>windowsMobileMSI</name>
+      <old>
+        <EntityType Name="windowsMobileMSI" BaseType="microsoft.graph.mobileLobApp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="commandLine" Type="Edm.String" Unicode="false" />
+          <Property Name="productCode" Type="Edm.String" Unicode="false" />
+          <Property Name="productVersion" Type="Edm.String" Unicode="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="windowsMobileMSI" BaseType="microsoft.graph.mobileLobApp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="commandLine" Type="Edm.String" Unicode="false" />
+          <Property Name="productCode" Type="Edm.String" Unicode="false" />
+          <Property Name="productVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="ignoreVersionDetection" Type="Edm.Boolean" Nullable="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>EntityType</type>
+      <name>mobileAppIdentifierDeployment</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EnumType</type>
+      <name>appleSubjectNameFormat</name>
+      <old>
+        <EnumType Name="appleSubjectNameFormat" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="commonName" Value="0" />
+          <Member Name="commonNameAsEmail" Value="1" />
+          <Member Name="custom" Value="2" />
+          <Member Name="commonNameIncludingEmail" Value="3" />
+          <Member Name="directoryPath" Value="4" />
+          <Member Name="commonNameAsIMEI" Value="5" />
+          <Member Name="commonNameAsSerialNumber" Value="6" />
+        </EnumType>
+      </old>
+      <new>
+        <EnumType Name="appleSubjectNameFormat" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="commonName" Value="0" />
+          <Member Name="commonNameAsEmail" Value="1" />
+          <Member Name="custom" Value="2" />
+          <Member Name="commonNameIncludingEmail" Value="3" />
+          <Member Name="commonNameAsIMEI" Value="5" />
+          <Member Name="commonNameAsSerialNumber" Value="6" />
+        </EnumType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>depTokenType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>deviceEnrollmentFailureReason</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EnumType</type>
+      <name>managedAppPinCharacterSet</name>
+      <old>
+        <EnumType Name="managedAppPinCharacterSet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="any" Value="0" />
+          <Member Name="numeric" Value="1" />
+          <Member Name="alphanumeric" Value="2" />
+          <Member Name="alphanumericAndSymbol" Value="3" />
+        </EnumType>
+      </old>
+      <new>
+        <EnumType Name="managedAppPinCharacterSet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="numeric" Value="0" />
+          <Member Name="alphanumericAndSymbol" Value="1" />
+        </EnumType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>microsoftStoreForBusinessLicenseType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>ndesConnectorState</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EnumType</type>
+      <name>remoteAction</name>
+      <old>
+        <EnumType Name="remoteAction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="unknown" Value="0" />
+          <Member Name="factoryReset" Value="1" />
+          <Member Name="removeCompanyData" Value="2" />
+          <Member Name="resetPasscode" Value="3" />
+          <Member Name="remoteLock" Value="4" />
+          <Member Name="enableLostMode" Value="5" />
+          <Member Name="disableLostMode" Value="6" />
+          <Member Name="locateDevice" Value="7" />
+          <Member Name="rebootNow" Value="8" />
+          <Member Name="recoverPasscode" Value="9" />
+          <Member Name="cleanWindowsDevice" Value="10" />
+          <Member Name="logoutSharedAppleDeviceActiveUser" Value="11" />
+        </EnumType>
+      </old>
+      <new>
+        <EnumType Name="remoteAction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="unknown" Value="0" />
+          <Member Name="factoryReset" Value="1" />
+          <Member Name="removeCompanyData" Value="2" />
+          <Member Name="resetPasscode" Value="3" />
+          <Member Name="remoteLock" Value="4" />
+          <Member Name="enableLostMode" Value="5" />
+          <Member Name="disableLostMode" Value="6" />
+          <Member Name="locateDevice" Value="7" />
+          <Member Name="rebootNow" Value="8" />
+          <Member Name="recoverPasscode" Value="9" />
+          <Member Name="cleanWindowsDevice" Value="10" />
+          <Member Name="logoutSharedAppleDeviceActiveUser" Value="11" />
+          <Member Name="quickScan" Value="12" />
+          <Member Name="fullScan" Value="13" />
+          <Member Name="windowsDefenderUpdateSignatures" Value="14" />
+          <Member Name="factoryResetKeepEnrollmentData" Value="15" />
+        </EnumType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EnumType</type>
+      <name>resultantAppState</name>
+      <old>
+        <EnumType Name="resultantAppState" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="installed" Value="1" />
+          <Member Name="failed" Value="2" />
+          <Member Name="notInstalled" Value="3" />
+          <Member Name="uninstallFailed" Value="4" />
+          <Member Name="unknown" Value="99" />
+          <Member Name="notApplicable" Value="-1" />
+        </EnumType>
+      </old>
+      <new>
+        <EnumType Name="resultantAppState" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="installed" Value="1" />
+          <Member Name="failed" Value="2" />
+          <Member Name="notInstalled" Value="3" />
+          <Member Name="uninstallFailed" Value="4" />
+          <Member Name="pendingInstall" Value="5" />
+          <Member Name="unknown" Value="99" />
+          <Member Name="notApplicable" Value="-1" />
+        </EnumType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EnumType</type>
+      <name>subjectNameFormat</name>
+      <old>
+        <EnumType Name="subjectNameFormat" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="commonName" Value="0" />
+          <Member Name="commonNameIncludingEmail" Value="1" />
+          <Member Name="commonNameAsEmail" Value="2" />
+          <Member Name="custom" Value="3" />
+          <Member Name="directoryPath" Value="4" />
+          <Member Name="commonNameAsIMEI" Value="5" />
+          <Member Name="commonNameAsSerialNumber" Value="6" />
+        </EnumType>
+      </old>
+      <new>
+        <EnumType Name="subjectNameFormat" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="commonName" Value="0" />
+          <Member Name="commonNameIncludingEmail" Value="1" />
+          <Member Name="commonNameAsEmail" Value="2" />
+          <Member Name="custom" Value="3" />
+          <Member Name="commonNameAsIMEI" Value="5" />
+          <Member Name="commonNameAsSerialNumber" Value="6" />
+        </EnumType>
+      </new>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>EnumType</type>
+      <name>deviceConfigurationAuthority</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>EnumType</type>
+      <name>deviceConfigurationVersions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>auditActor</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>auditProperty</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>auditResource</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>bulkManagedDeviceActionResult</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>deviceProtectionOverview</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>iosMinimumOperatingSystem</name>
+      <old>
+        <ComplexType Name="iosMinimumOperatingSystem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="v8_0" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="v9_0" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="v10_0" Type="Edm.Boolean" Nullable="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="iosMinimumOperatingSystem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="v8_0" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="v9_0" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="v10_0" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="v11_0" Type="Edm.Boolean" Nullable="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>microsoftStoreForBusinessAppAssignmentSettings</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>operatingSystemVersionRange</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>remoteLockActionResult</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>windowsInformationProtectionApp</name>
+      <old>
+        <ComplexType Name="windowsInformationProtectionApp" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="publisherName" Type="Edm.String" Unicode="false" />
+          <Property Name="productName" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="windowsInformationProtectionApp" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="publisherName" Type="Edm.String" Unicode="false" />
+          <Property Name="productName" Type="Edm.String" Unicode="false" />
+          <Property Name="denied" Type="Edm.Boolean" Nullable="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>ComplexType</type>
+      <name>windowsInformationProtectionCloudResource</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>ComplexType</type>
+      <name>windowsInformationProtectionCloudResourceCollection</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>getAuditActivityTypes</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>getAuditCategories</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Action</type>
+      <name>assign</name>
+      <old>
+        <Action Name="assign" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.deviceConfiguration" />
+          <Parameter Name="deviceConfigurationGroupAssignments" Type="Collection(microsoft.graph.deviceConfigurationGroupAssignment)" />
+          <ReturnType Type="Collection(microsoft.graph.deviceConfigurationAssignment)" />
+        </Action>
+      </old>
+      <new>
+        <Action Name="assign" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.deviceConfiguration" />
+          <Parameter Name="deviceConfigurationGroupAssignments" Type="Collection(microsoft.graph.deviceConfigurationGroupAssignment)" />
+          <Parameter Name="assignments" Type="Collection(microsoft.graph.deviceConfigurationAssignment)" />
+          <ReturnType Type="Collection(microsoft.graph.deviceConfigurationAssignment)" />
+        </Action>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>executeAction</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>setDefaultProfile</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>shareForSchoolDataSyncService</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>shutDown</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>syncMicrosoftStoreForBusinessApps</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>unshareForSchoolDataSyncService</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Action</type>
+      <name>wipe</name>
+      <old>
+        <Action Name="wipe" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.managedDevice" />
+        </Action>
+      </old>
+      <new>
+        <Action Name="wipe" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.managedDevice" />
+          <Parameter Name="keepEnrollmentData" Type="Edm.Boolean" Nullable="false" />
+        </Action>
+      </new>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Action</type>
+      <name>updateMobileAppIdentifierDeployments</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Action</type>
+      <name>updateMobileAppIdentifierDeployments</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Action</type>
+      <name>updateMobileAppIdentifierDeployments</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Action</type>
+      <name>updateTargetedSecurityGroups</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Action</type>
+      <name>updateTargetedSecurityGroups</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Action</type>
+      <name>updateTargetedSecurityGroups</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntitySet</type>
+      <name>users</name>
+      <old>
+        <EntitySet Name="users" EntityType="microsoft.graph.user" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationPropertyBinding Path="ownedDevices" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="registeredDevices" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="manager" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="directReports" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="memberOf" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="createdObjects" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="ownedObjects" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="microsoft.graph.baseItem/createdByUser" Target="users" />
+          <NavigationPropertyBinding Path="microsoft.graph.baseItem/lastModifiedByUser" Target="users" />
+          <NavigationPropertyBinding Path="managedDevices" Target="managedDevices" />
+        </EntitySet>
+      </old>
+      <new>
+        <EntitySet Name="users" EntityType="microsoft.graph.user" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationPropertyBinding Path="ownedDevices" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="registeredDevices" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="manager" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="directReports" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="memberOf" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="createdObjects" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="ownedObjects" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="microsoft.graph.baseItem/createdByUser" Target="users" />
+          <NavigationPropertyBinding Path="microsoft.graph.baseItem/lastModifiedByUser" Target="users" />
+        </EntitySet>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode/passcode/Org.OData.Core.V1.Computed</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagementTroubleshootingEvent/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.user/deviceManagementTroubleshootingEvents/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/totalReportedDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/inactiveThreatAgentDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/unknownStateThreatAgentDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/pendingSignatureUpdateDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/cleanDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/pendingFullScanDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/pendingRestartDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/pendingManualStepsDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/pendingOfflineScanDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceProtectionOverview/criticalFailuresDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagement/deviceProtectionOverview/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceSetupConfiguration/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagement/deviceSetupConfigurations/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.ndesConnector/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagement/ndesConnectors/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagement/exchangeOnPremisesPolicies/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagement/conditionalAccessSettings/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagement/auditEvents/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagement/troubleshootingEvents/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceAppManagement/microsoftStoreForBusinessLastSuccessfulSyncDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceAppManagement/isEnabledForMicrosoftStoreForBusiness/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceAppManagement/microsoftStoreForBusinessLanguage/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceAppManagement/microsoftStoreForBusinessLastCompletedApplicationSyncTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppInstallSummary/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Contains properties for the installation summary of a mobile app for a device." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Contains properties for the installation summary of a mobile app." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings/useDeviceContext/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppInstallSummary/notApplicableDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppInstallSummary/pendingInstallDeviceCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppInstallSummary/notApplicableUserCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppInstallSummary/notInstalledUserCount/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Number of Users that did not install this app." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Number of Users that have 1 or more devices that did not install this app." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppInstallSummary/pendingInstallUserCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.macOSOfficeSuiteApp/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedAndroidStoreApp/appStoreUrl/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedAndroidStoreApp/minimumSupportedOperatingSystem/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedIOSStoreApp/bundleId/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="The app's bundle ID." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="The app's Bundle ID." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedIOSStoreApp/appStoreUrl/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedIOSStoreApp/applicableDeviceType/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.iosMinimumOperatingSystem/v11_0/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedIOSStoreApp/minimumSupportedOperatingSystem/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsMobileMSI/ignoreVersionDetection/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.microsoftStoreForBusinessApp/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.microsoftStoreForBusinessApp/usedLicenseCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.microsoftStoreForBusinessApp/totalLicenseCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.microsoftStoreForBusinessApp/productKey/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.microsoftStoreForBusinessApp/licenseType/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.microsoftStoreForBusinessApp/packageIdentityName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDevice/remoteAssistanceSessionErrorString/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsProtectionState/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDevice/windowsProtectionState/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.bulkManagedDeviceActionResult/successfulDeviceIds/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.bulkManagedDeviceActionResult/failedDeviceIds/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.bulkManagedDeviceActionResult/notFoundDeviceIds/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.bulkManagedDeviceActionResult/notSupportedDeviceIds/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.remoteLockActionResult/unlockPin/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsDeviceMalwareState/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceConfigurationGroupAssignment/deviceConfiguration/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceConfigurationAssignment/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceConfigurationAssignment/target/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceConfiguration/assignments/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceConfiguration/deviceStatuses/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Device configuration installation stauts by device." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Device configuration installation status by device." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration/enableExpeditedTelemetryReporting/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windows10GeneralConfiguration/passwordMinimumCharacterSetCount/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="The number of character sets required in the password. Valid values 1 to 4" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="The number of character sets required in the password." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windows10PFXImportCertificateProfile/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Windows 10 Desktop and Mobile PFX Import certificate profile" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Deprecated" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode/passcode/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Passcode to reset to Android device." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Passcode to reset to Android device. This property is read-only." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.operatingSystemVersionRange/description/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.operatingSystemVersionRange/lowestVersion/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.operatingSystemVersionRange/highestVersion/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windows10CompliancePolicy/validOperatingSystemBuildRanges/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windows10MobileCompliancePolicy/activeFirewallRequired/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windows10MobileCompliancePolicy/uacRequired/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windows10MobileCompliancePolicy/validOperatingSystemBuildRanges/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceSetupConfiguration/createdDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceSetupConfiguration/description/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceSetupConfiguration/lastModifiedDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceSetupConfiguration/displayName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceSetupConfiguration/version/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsDomainJoinConfiguration/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Windows Domain Join configuration." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Windows Domain Join device setup configuration." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsDomainJoinConfiguration/computerNameSuffixRandomCharCount/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Dynamically generated characters used as suffix for computer name. This property can only be set during creation." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Dynamically generated characters used as suffix for computer name. Valid values 3 to 14. This property can only be set during creation." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.ndesConnector/lastConnectionDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.ndesConnector/state/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.ndesConnector/displayName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagementExchangeConnector/exchangeAlias/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagementExchangeConnector/exchangeOrganization/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtectionApp/denied/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtection/enterpriseInternalProxyServers/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="This is the comma-separated list of internal proxy servers. For example, &quot;157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59&quot;. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseCloudResources policy to force traffic to the matched cloud resources through these proxies" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="This is the comma-separated list of internal proxy servers. For example, &quot;157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59&quot;. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/displayName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/componentName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/type/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/permissions/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/userPermissions/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/applicationId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/applicationDisplayName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/userPrincipalName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/servicePrincipalName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/ipAddress/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditActor/userId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/actor/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/activity/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/activityDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/activityType/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/activityOperationType/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/activityResult/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/correlationId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditResource/displayName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditProperty/displayName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditProperty/oldValue/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditProperty/newValue/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditResource/modifiedProperties/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditResource/type/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditResource/resourceId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/resources/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.auditEvent/category/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagementTroubleshootingEvent/eventDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceManagementTroubleshootingEvent/correlationId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/managedDeviceIdentifier/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/operatingSystem/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/osVersion/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/userId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/deviceId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/enrollmentType/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/failureCategory/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.enrollmentTroubleshootingEvent/failureReason/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode/passcode/Org.OData.Core.V1.Permissions</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsManagedDevice/windowsProtectionState/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceConfigurationAssignment/deviceConfiguration/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windows10PFXImportCertificateProfile/keyStorageProvider/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppIdentifierDeployment/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppIdentifierDeployment/mobileAppIdentifier/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileAppIdentifierDeployment/version/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.targetedManagedAppConfiguration/targetedSecurityGroupIds/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.targetedManagedAppConfiguration/targetedSecurityGroupsCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.targetedManagedAppConfiguration/mobileAppIdentifierDeployments/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.targetedManagedAppConfiguration/targetedSecurityGroups/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.targetedManagedAppProtection/targetedSecurityGroupsCount/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.targetedManagedAppProtection/targetedSecurityGroupIds/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.targetedManagedAppProtection/targetedSecurityGroups/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtection/allowedApps/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtectionCloudResourceCollection/displayName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtectionCloudResource/ipAddressOrFQDN/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtectionCloudResource/proxy/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtectionCloudResourceCollection/resources/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtection/enterpriseCloudResources/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtection/targetedSecurityGroupIds/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.windowsInformationProtection/allowedAppLockerFiles/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.defaultManagedAppProtection/mobileAppIdentifierDeployments/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.androidManagedAppProtection/mobileAppIdentifierDeployments/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.iosManagedAppProtection/mobileAppIdentifierDeployments/Org.OData.Core.V1.Description</name>
+    </change>
+  </changes>
+</document>
