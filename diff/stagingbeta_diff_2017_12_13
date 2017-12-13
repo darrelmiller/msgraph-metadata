@@ -1,0 +1,64 @@
+<document>
+  <version>stagingbeta</version>
+  <changes>
+    <change>
+      <action>Deletion</action>
+      <type>EntityType</type>
+      <name>macOSLobApp</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EnumType</type>
+      <name>managementAgentType</name>
+      <old>
+        <EnumType Name="managementAgentType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="eas" Value="1" />
+          <Member Name="mdm" Value="2" />
+          <Member Name="easMdm" Value="3" />
+          <Member Name="intuneClient" Value="4" />
+          <Member Name="easIntuneClient" Value="5" />
+          <Member Name="configurationManagerClient" Value="8" />
+          <Member Name="unknown" Value="16" />
+          <Member Name="jamf" Value="32" />
+          <Member Name="configManagerClient" Value="32768" />
+          <Member Name="configurationManagerClientMdm" Value="32770" />
+          <Member Name="configurationManagerClientMdmEas" Value="32771" />
+        </EnumType>
+      </old>
+      <new>
+        <EnumType Name="managementAgentType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="eas" Value="1" />
+          <Member Name="mdm" Value="2" />
+          <Member Name="easMdm" Value="3" />
+          <Member Name="intuneClient" Value="4" />
+          <Member Name="easIntuneClient" Value="5" />
+          <Member Name="configManagerClient" Value="8" />
+          <Member Name="configurationManagerClientMdm" Value="10" />
+          <Member Name="configurationManagerClientMdmEas" Value="11" />
+          <Member Name="unknown" Value="16" />
+          <Member Name="jamf" Value="32" />
+        </EnumType>
+      </new>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.macOSLobApp/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.macOSLobApp/bundleId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.macOSLobApp/minimumSupportedOperatingSystem/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.macOSLobApp/versionNumber/Org.OData.Core.V1.Description</name>
+    </change>
+  </changes>
+</document>
