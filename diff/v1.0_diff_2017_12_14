@@ -1,0 +1,94 @@
+<document>
+  <version>v1.0</version>
+  <changes>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>group</name>
+      <old>
+        <EntityType Name="group" BaseType="microsoft.graph.directoryObject" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="classification" Type="Edm.String" Unicode="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="groupTypes" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailEnabled" Type="Edm.Boolean" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesLastSyncDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSyncEnabled" Type="Edm.Boolean" />
+          <Property Name="proxyAddresses" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="securityEnabled" Type="Edm.Boolean" />
+          <Property Name="visibility" Type="Edm.String" Unicode="false" />
+          <Property Name="allowExternalSenders" Type="Edm.Boolean" />
+          <Property Name="autoSubscribeNewMembers" Type="Edm.Boolean" />
+          <Property Name="isSubscribedByMail" Type="Edm.Boolean" />
+          <Property Name="unseenCount" Type="Edm.Int32" />
+          <NavigationProperty Name="members" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="createdOnBehalfOf" Type="microsoft.graph.directoryObject" />
+          <NavigationProperty Name="owners" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="settings" Type="Collection(microsoft.graph.groupSetting)" ContainsTarget="true" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="threads" Type="Collection(microsoft.graph.conversationThread)" ContainsTarget="true" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="calendarView" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="events" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="conversations" Type="Collection(microsoft.graph.conversation)" ContainsTarget="true" />
+          <NavigationProperty Name="photo" Type="microsoft.graph.profilePhoto" ContainsTarget="true" />
+          <NavigationProperty Name="photos" Type="Collection(microsoft.graph.profilePhoto)" ContainsTarget="true" />
+          <NavigationProperty Name="acceptedSenders" Type="Collection(microsoft.graph.directoryObject)" ContainsTarget="true" />
+          <NavigationProperty Name="rejectedSenders" Type="Collection(microsoft.graph.directoryObject)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="sites" Type="Collection(microsoft.graph.site)" ContainsTarget="true" />
+          <NavigationProperty Name="planner" Type="microsoft.graph.plannerGroup" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="group" BaseType="microsoft.graph.directoryObject" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="classification" Type="Edm.String" Unicode="false" />
+          <Property Name="createdDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="groupTypes" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailEnabled" Type="Edm.Boolean" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesLastSyncDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSyncEnabled" Type="Edm.Boolean" />
+          <Property Name="proxyAddresses" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="renewedDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="securityEnabled" Type="Edm.Boolean" />
+          <Property Name="visibility" Type="Edm.String" Unicode="false" />
+          <Property Name="allowExternalSenders" Type="Edm.Boolean" />
+          <Property Name="autoSubscribeNewMembers" Type="Edm.Boolean" />
+          <Property Name="isSubscribedByMail" Type="Edm.Boolean" />
+          <Property Name="unseenCount" Type="Edm.Int32" />
+          <NavigationProperty Name="members" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="createdOnBehalfOf" Type="microsoft.graph.directoryObject" />
+          <NavigationProperty Name="owners" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="settings" Type="Collection(microsoft.graph.groupSetting)" ContainsTarget="true" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="threads" Type="Collection(microsoft.graph.conversationThread)" ContainsTarget="true" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="calendarView" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="events" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="conversations" Type="Collection(microsoft.graph.conversation)" ContainsTarget="true" />
+          <NavigationProperty Name="photo" Type="microsoft.graph.profilePhoto" ContainsTarget="true" />
+          <NavigationProperty Name="photos" Type="Collection(microsoft.graph.profilePhoto)" ContainsTarget="true" />
+          <NavigationProperty Name="acceptedSenders" Type="Collection(microsoft.graph.directoryObject)" ContainsTarget="true" />
+          <NavigationProperty Name="rejectedSenders" Type="Collection(microsoft.graph.directoryObject)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="sites" Type="Collection(microsoft.graph.site)" ContainsTarget="true" />
+          <NavigationProperty Name="planner" Type="microsoft.graph.plannerGroup" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+  </changes>
+</document>
