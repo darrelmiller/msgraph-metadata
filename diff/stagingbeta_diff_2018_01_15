@@ -1,0 +1,278 @@
+<document>
+  <version>stagingbeta</version>
+  <changes>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>educationClass</name>
+      <old>
+        <EntityType Name="educationClass" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="createdBy" Type="microsoft.graph.identitySet" />
+          <Property Name="classCode" Type="Edm.String" Unicode="false" />
+          <Property Name="externalName" Type="Edm.String" Unicode="false" />
+          <Property Name="externalId" Type="Edm.String" Unicode="false" />
+          <Property Name="externalSource" Type="microsoft.graph.educationExternalSource" />
+          <Property Name="term" Type="microsoft.graph.educationTerm" />
+          <NavigationProperty Name="schools" Type="Collection(microsoft.graph.educationSchool)" />
+          <NavigationProperty Name="members" Type="Collection(microsoft.graph.educationUser)" />
+          <NavigationProperty Name="teachers" Type="Collection(microsoft.graph.educationUser)" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.educationAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="educationClass" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="createdBy" Type="microsoft.graph.identitySet" />
+          <Property Name="classCode" Type="Edm.String" Unicode="false" />
+          <Property Name="externalName" Type="Edm.String" Unicode="false" />
+          <Property Name="externalId" Type="Edm.String" Unicode="false" />
+          <Property Name="externalSource" Type="microsoft.graph.educationExternalSource" />
+          <Property Name="term" Type="microsoft.graph.educationTerm" />
+          <NavigationProperty Name="schools" Type="Collection(microsoft.graph.educationSchool)" />
+          <NavigationProperty Name="members" Type="Collection(microsoft.graph.educationUser)" />
+          <NavigationProperty Name="teachers" Type="Collection(microsoft.graph.educationUser)" />
+          <NavigationProperty Name="group" Type="microsoft.graph.group" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.educationAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>educationSchool</name>
+      <old>
+        <EntityType Name="educationSchool" BaseType="microsoft.graph.educationOrganization" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="principalEmail" Type="Edm.String" Unicode="false" />
+          <Property Name="principalName" Type="Edm.String" Unicode="false" />
+          <Property Name="externalPrincipalId" Type="Edm.String" Unicode="false" />
+          <Property Name="lowestGrade" Type="Edm.String" Unicode="false" />
+          <Property Name="highestGrade" Type="Edm.String" Unicode="false" />
+          <Property Name="schoolNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="externalId" Type="Edm.String" Unicode="false" />
+          <Property Name="phone" Type="Edm.String" Unicode="false" />
+          <Property Name="fax" Type="Edm.String" Unicode="false" />
+          <Property Name="createdBy" Type="microsoft.graph.identitySet" />
+          <Property Name="address" Type="microsoft.graph.physicalAddress" />
+          <NavigationProperty Name="classes" Type="Collection(microsoft.graph.educationClass)" />
+          <NavigationProperty Name="users" Type="Collection(microsoft.graph.educationUser)" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="educationSchool" BaseType="microsoft.graph.educationOrganization" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="principalEmail" Type="Edm.String" Unicode="false" />
+          <Property Name="principalName" Type="Edm.String" Unicode="false" />
+          <Property Name="externalPrincipalId" Type="Edm.String" Unicode="false" />
+          <Property Name="lowestGrade" Type="Edm.String" Unicode="false" />
+          <Property Name="highestGrade" Type="Edm.String" Unicode="false" />
+          <Property Name="schoolNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="externalId" Type="Edm.String" Unicode="false" />
+          <Property Name="phone" Type="Edm.String" Unicode="false" />
+          <Property Name="fax" Type="Edm.String" Unicode="false" />
+          <Property Name="createdBy" Type="microsoft.graph.identitySet" />
+          <Property Name="address" Type="microsoft.graph.physicalAddress" />
+          <NavigationProperty Name="classes" Type="Collection(microsoft.graph.educationClass)" />
+          <NavigationProperty Name="users" Type="Collection(microsoft.graph.educationUser)" />
+          <NavigationProperty Name="administrativeUnit" Type="microsoft.graph.administrativeUnit" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>educationUser</name>
+      <old>
+        <EntityType Name="educationUser" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="primaryRole" Type="microsoft.graph.educationUserRole" Nullable="false" />
+          <Property Name="middleName" Type="Edm.String" Unicode="false" />
+          <Property Name="externalSource" Type="microsoft.graph.educationExternalSource" />
+          <Property Name="residenceAddress" Type="microsoft.graph.physicalAddress" />
+          <Property Name="mailingAddress" Type="microsoft.graph.physicalAddress" />
+          <Property Name="student" Type="microsoft.graph.educationStudent" />
+          <Property Name="teacher" Type="microsoft.graph.educationTeacher" />
+          <Property Name="createdBy" Type="microsoft.graph.identitySet" />
+          <Property Name="accountEnabled" Type="Edm.Boolean" />
+          <Property Name="assignedLicenses" Type="Collection(microsoft.graph.assignedLicense)" Nullable="false" />
+          <Property Name="assignedPlans" Type="Collection(microsoft.graph.assignedPlan)" Nullable="false" />
+          <Property Name="businessPhones" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="department" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="givenName" Type="Edm.String" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="mobilePhone" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordPolicies" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordProfile" Type="microsoft.graph.passwordProfile" />
+          <Property Name="officeLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="provisionedPlans" Type="Collection(microsoft.graph.provisionedPlan)" Nullable="false" />
+          <Property Name="refreshTokensValidFromDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="showInAddressList" Type="Edm.Boolean" />
+          <Property Name="surname" Type="Edm.String" Unicode="false" />
+          <Property Name="usageLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="userType" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="schools" Type="Collection(microsoft.graph.educationSchool)" />
+          <NavigationProperty Name="classes" Type="Collection(microsoft.graph.educationClass)" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.educationAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="educationUser" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="primaryRole" Type="microsoft.graph.educationUserRole" Nullable="false" />
+          <Property Name="middleName" Type="Edm.String" Unicode="false" />
+          <Property Name="externalSource" Type="microsoft.graph.educationExternalSource" />
+          <Property Name="residenceAddress" Type="microsoft.graph.physicalAddress" />
+          <Property Name="mailingAddress" Type="microsoft.graph.physicalAddress" />
+          <Property Name="student" Type="microsoft.graph.educationStudent" />
+          <Property Name="teacher" Type="microsoft.graph.educationTeacher" />
+          <Property Name="createdBy" Type="microsoft.graph.identitySet" />
+          <Property Name="accountEnabled" Type="Edm.Boolean" />
+          <Property Name="assignedLicenses" Type="Collection(microsoft.graph.assignedLicense)" Nullable="false" />
+          <Property Name="assignedPlans" Type="Collection(microsoft.graph.assignedPlan)" Nullable="false" />
+          <Property Name="businessPhones" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="department" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="givenName" Type="Edm.String" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="mobilePhone" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordPolicies" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordProfile" Type="microsoft.graph.passwordProfile" />
+          <Property Name="officeLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="provisionedPlans" Type="Collection(microsoft.graph.provisionedPlan)" Nullable="false" />
+          <Property Name="refreshTokensValidFromDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="showInAddressList" Type="Edm.Boolean" />
+          <Property Name="surname" Type="Edm.String" Unicode="false" />
+          <Property Name="usageLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="userType" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="schools" Type="Collection(microsoft.graph.educationSchool)" />
+          <NavigationProperty Name="classes" Type="Collection(microsoft.graph.educationClass)" />
+          <NavigationProperty Name="user" Type="microsoft.graph.user" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.educationAssignment)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EnumType</type>
+      <name>attributeType</name>
+      <old>
+        <EnumType Name="attributeType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="Boolean" Value="4" />
+          <Member Name="Binary" Value="3" />
+          <Member Name="Reference" Value="2" />
+          <Member Name="Integer" Value="1" />
+          <Member Name="String" Value="0" />
+        </EnumType>
+      </old>
+      <new>
+        <EnumType Name="attributeType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="DateTime" Value="5" />
+          <Member Name="Boolean" Value="4" />
+          <Member Name="Binary" Value="3" />
+          <Member Name="Reference" Value="2" />
+          <Member Name="Integer" Value="1" />
+          <Member Name="String" Value="0" />
+        </EnumType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>attributeDefinition</name>
+      <old>
+        <ComplexType Name="attributeDefinition" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="anchor" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="caseExact" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="defaultValue" Type="Edm.String" Unicode="false" />
+          <Property Name="metadata" Type="Collection(microsoft.graph.metadataEntry)" />
+          <Property Name="multivalued" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="mutability" Type="microsoft.graph.mutability" Nullable="false" />
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+          <Property Name="required" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="referencedObjects" Type="Collection(microsoft.graph.referencedObject)" />
+          <Property Name="type" Type="microsoft.graph.attributeType" Nullable="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="attributeDefinition" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="anchor" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="apiExpressions" Type="Collection(microsoft.graph.stringKeyStringValuePair)" />
+          <Property Name="caseExact" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="defaultValue" Type="Edm.String" Unicode="false" />
+          <Property Name="metadata" Type="Collection(microsoft.graph.metadataEntry)" />
+          <Property Name="multivalued" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="mutability" Type="microsoft.graph.mutability" Nullable="false" />
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+          <Property Name="required" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="referencedObjects" Type="Collection(microsoft.graph.referencedObject)" />
+          <Property Name="type" Type="microsoft.graph.attributeType" Nullable="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>educationOneRosterApiDataProvider</name>
+      <old>
+        <ComplexType Name="educationOneRosterApiDataProvider" BaseType="microsoft.graph.educationSynchronizationDataProvider" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="connectionUrl" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="clientId" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="clientSecret" Type="Edm.String" Unicode="false" />
+          <Property Name="customizations" Type="microsoft.graph.educationSynchronizationCustomizations" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="educationOneRosterApiDataProvider" BaseType="microsoft.graph.educationSynchronizationDataProvider" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="connectionUrl" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="connectionSettings" Type="microsoft.graph.educationSynchronizationConnectionSettings" Nullable="false" />
+          <Property Name="schoolsIds" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="providerName" Type="Edm.String" Unicode="false" />
+          <Property Name="customizations" Type="microsoft.graph.educationSynchronizationCustomizations" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationSynchronizationConnectionSettings</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationSynchronizationOAuth1ConnectionSettings</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>educationSynchronizationOAuth2ClientCredentialsConnectionSettings</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>objectDefinition</name>
+      <old>
+        <ComplexType Name="objectDefinition" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="attributes" Type="Collection(microsoft.graph.attributeDefinition)" />
+          <Property Name="metadata" Type="Collection(microsoft.graph.metadataEntry)" />
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="objectDefinition" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="attributes" Type="Collection(microsoft.graph.attributeDefinition)" />
+          <Property Name="metadata" Type="Collection(microsoft.graph.metadataEntry)" />
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+          <Property Name="supportedApis" Type="Collection(Edm.String)" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+  </changes>
+</document>
