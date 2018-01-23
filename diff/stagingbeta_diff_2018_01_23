@@ -1,0 +1,112 @@
+<document>
+  <version>stagingbeta</version>
+  <changes>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>classificationJobResponse</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>fileClassificationRequest</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>jobResponseBase</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>sensitiveType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>textClassificationRequest</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>caaSErrorDetails</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>detectedSensitiveContent</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>detectedSensitiveContentWrapper</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>educationOneRosterApiDataProvider</name>
+      <old>
+        <ComplexType Name="educationOneRosterApiDataProvider" BaseType="microsoft.graph.educationSynchronizationDataProvider" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="connectionUrl" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="connectionSettings" Type="microsoft.graph.educationSynchronizationConnectionSettings" Nullable="false" />
+          <Property Name="schoolsIds" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="providerName" Type="Edm.String" Unicode="false" />
+          <Property Name="customizations" Type="microsoft.graph.educationSynchronizationCustomizations" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="educationOneRosterApiDataProvider" BaseType="microsoft.graph.educationSynchronizationDataProvider" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="connectionUrl" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="clientId" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="clientSecret" Type="Edm.String" Unicode="false" />
+          <Property Name="customizations" Type="microsoft.graph.educationSynchronizationCustomizations" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>sensitiveContentEvidence</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>sensitiveContentLocation</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>ComplexType</type>
+      <name>educationSynchronizationConnectionSettings</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>ComplexType</type>
+      <name>educationSynchronizationOAuth1ConnectionSettings</name>
+    </change>
+    <change>
+      <action>Deletion</action>
+      <type>ComplexType</type>
+      <name>educationSynchronizationOAuth2ClientCredentialsConnectionSettings</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntitySet</type>
+      <name>classifyFile</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntitySet</type>
+      <name>classifyText</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntitySet</type>
+      <name>jobs</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntitySet</type>
+      <name>sensitiveTypes</name>
+    </change>
+  </changes>
+</document>
