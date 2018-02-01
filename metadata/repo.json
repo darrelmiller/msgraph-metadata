@@ -1,0 +1,16 @@
+{
+    "description":  "This repo will be a history and staging area for input metadata files used to validate and generate the client libraries. This repo will be a submodule for Graph_SDK_Pipeline.",
+    "schema":  {
+                   "office":  "1.0.0"
+               },
+    "deployedToProduction":  false,
+    "complianceTypes":  [
+
+                        ],
+    "inventoryId":  [
+
+                    ],
+    "contacts":  [
+                     "mmainer@microsoft.com"
+                 ]
+}
