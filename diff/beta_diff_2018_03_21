@@ -1,0 +1,383 @@
+<document>
+  <version>beta</version>
+  <changes>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>dataPolicyOperation</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>user</name>
+      <old>
+        <EntityType Name="user" BaseType="microsoft.graph.directoryObject" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="accountEnabled" Type="Edm.Boolean" />
+          <Property Name="assignedLicenses" Type="Collection(microsoft.graph.assignedLicense)" Nullable="false" />
+          <Property Name="assignedPlans" Type="Collection(microsoft.graph.assignedPlan)" Nullable="false" />
+          <Property Name="businessPhones" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="city" Type="Edm.String" Unicode="false" />
+          <Property Name="companyName" Type="Edm.String" Unicode="false" />
+          <Property Name="country" Type="Edm.String" Unicode="false" />
+          <Property Name="department" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceKeys" Type="Collection(microsoft.graph.deviceKey)" Nullable="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="employeeId" Type="Edm.String" Unicode="false" />
+          <Property Name="givenName" Type="Edm.String" Unicode="false" />
+          <Property Name="imAddresses" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="jobTitle" Type="Edm.String" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="mobilePhone" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesImmutableId" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesLastSyncDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="onPremisesProvisioningErrors" Type="Collection(microsoft.graph.onPremisesProvisioningError)" />
+          <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSyncEnabled" Type="Edm.Boolean" />
+          <Property Name="onPremisesDomainName" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSamAccountName" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesUserPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordPolicies" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordProfile" Type="microsoft.graph.passwordProfile" />
+          <Property Name="officeLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="postalCode" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredDataLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="provisionedPlans" Type="Collection(microsoft.graph.provisionedPlan)" Nullable="false" />
+          <Property Name="proxyAddresses" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="refreshTokensValidFromDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="showInAddressList" Type="Edm.Boolean" />
+          <Property Name="state" Type="Edm.String" Unicode="false" />
+          <Property Name="streetAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="surname" Type="Edm.String" Unicode="false" />
+          <Property Name="usageLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="userType" Type="Edm.String" Unicode="false" />
+          <Property Name="mailboxSettings" Type="microsoft.graph.mailboxSettings" />
+          <Property Name="aboutMe" Type="Edm.String" Unicode="false" />
+          <Property Name="birthday" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="hireDate" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="interests" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="mySite" Type="Edm.String" Unicode="false" />
+          <Property Name="pastProjects" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="preferredName" Type="Edm.String" Unicode="false" />
+          <Property Name="responsibilities" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="schools" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="skills" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="identityUserRisk" Type="microsoft.graph.identityUserRisk" />
+          <Property Name="deviceEnrollmentLimit" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="ownedDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="registeredDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="manager" Type="microsoft.graph.directoryObject" />
+          <NavigationProperty Name="directReports" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="createdObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="ownedObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="scopedRoleMemberOf" Type="Collection(microsoft.graph.scopedRoleMembership)" ContainsTarget="true" />
+          <NavigationProperty Name="licenseDetails" Type="Collection(microsoft.graph.licenseDetails)" ContainsTarget="true" />
+          <NavigationProperty Name="activities" Type="Collection(microsoft.graph.activity)" ContainsTarget="true" />
+          <NavigationProperty Name="outlook" Type="microsoft.graph.outlookUser" ContainsTarget="true" />
+          <NavigationProperty Name="messages" Type="Collection(microsoft.graph.message)" ContainsTarget="true" />
+          <NavigationProperty Name="joinedGroups" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
+          <NavigationProperty Name="mailFolders" Type="Collection(microsoft.graph.mailFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="calendars" Type="Collection(microsoft.graph.calendar)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarGroups" Type="Collection(microsoft.graph.calendarGroup)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarView" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="events" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="people" Type="Collection(microsoft.graph.person)" ContainsTarget="true" />
+          <NavigationProperty Name="contacts" Type="Collection(microsoft.graph.contact)" ContainsTarget="true" />
+          <NavigationProperty Name="contactFolders" Type="Collection(microsoft.graph.contactFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="inferenceClassification" Type="microsoft.graph.inferenceClassification" ContainsTarget="true" />
+          <NavigationProperty Name="photo" Type="microsoft.graph.profilePhoto" ContainsTarget="true" />
+          <NavigationProperty Name="photos" Type="Collection(microsoft.graph.profilePhoto)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="insights" Type="microsoft.graph.officeGraphInsights" ContainsTarget="true" />
+          <NavigationProperty Name="planner" Type="microsoft.graph.plannerUser" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+          <NavigationProperty Name="managedDevices" Type="Collection(microsoft.graph.managedDevice)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceEnrollmentConfigurations" Type="Collection(microsoft.graph.deviceEnrollmentConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" />
+          <NavigationProperty Name="devices" Type="Collection(microsoft.graph.device)" ContainsTarget="true" />
+          <NavigationProperty Name="joinedTeams" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceManagementTroubleshootingEvents" Type="Collection(microsoft.graph.deviceManagementTroubleshootingEvent)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="user" BaseType="microsoft.graph.directoryObject" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="accountEnabled" Type="Edm.Boolean" />
+          <Property Name="assignedLicenses" Type="Collection(microsoft.graph.assignedLicense)" Nullable="false" />
+          <Property Name="assignedPlans" Type="Collection(microsoft.graph.assignedPlan)" Nullable="false" />
+          <Property Name="businessPhones" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="city" Type="Edm.String" Unicode="false" />
+          <Property Name="companyName" Type="Edm.String" Unicode="false" />
+          <Property Name="country" Type="Edm.String" Unicode="false" />
+          <Property Name="department" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceKeys" Type="Collection(microsoft.graph.deviceKey)" Nullable="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="employeeId" Type="Edm.String" Unicode="false" />
+          <Property Name="givenName" Type="Edm.String" Unicode="false" />
+          <Property Name="imAddresses" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="jobTitle" Type="Edm.String" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="mobilePhone" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesExtensionAttributes" Type="microsoft.graph.onPremisesExtensionAttributes" />
+          <Property Name="onPremisesImmutableId" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesLastSyncDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="onPremisesProvisioningErrors" Type="Collection(microsoft.graph.onPremisesProvisioningError)" />
+          <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSyncEnabled" Type="Edm.Boolean" />
+          <Property Name="onPremisesDomainName" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSamAccountName" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesUserPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordPolicies" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordProfile" Type="microsoft.graph.passwordProfile" />
+          <Property Name="officeLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="postalCode" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredDataLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="provisionedPlans" Type="Collection(microsoft.graph.provisionedPlan)" Nullable="false" />
+          <Property Name="proxyAddresses" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="refreshTokensValidFromDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="showInAddressList" Type="Edm.Boolean" />
+          <Property Name="state" Type="Edm.String" Unicode="false" />
+          <Property Name="streetAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="surname" Type="Edm.String" Unicode="false" />
+          <Property Name="usageLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="userType" Type="Edm.String" Unicode="false" />
+          <Property Name="mailboxSettings" Type="microsoft.graph.mailboxSettings" />
+          <Property Name="aboutMe" Type="Edm.String" Unicode="false" />
+          <Property Name="birthday" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="hireDate" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="interests" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="mySite" Type="Edm.String" Unicode="false" />
+          <Property Name="pastProjects" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="preferredName" Type="Edm.String" Unicode="false" />
+          <Property Name="responsibilities" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="schools" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="skills" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="identityUserRisk" Type="microsoft.graph.identityUserRisk" />
+          <Property Name="deviceEnrollmentLimit" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="ownedDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="registeredDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="manager" Type="microsoft.graph.directoryObject" />
+          <NavigationProperty Name="directReports" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="createdObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="ownedObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="scopedRoleMemberOf" Type="Collection(microsoft.graph.scopedRoleMembership)" ContainsTarget="true" />
+          <NavigationProperty Name="licenseDetails" Type="Collection(microsoft.graph.licenseDetails)" ContainsTarget="true" />
+          <NavigationProperty Name="activities" Type="Collection(microsoft.graph.activity)" ContainsTarget="true" />
+          <NavigationProperty Name="outlook" Type="microsoft.graph.outlookUser" ContainsTarget="true" />
+          <NavigationProperty Name="messages" Type="Collection(microsoft.graph.message)" ContainsTarget="true" />
+          <NavigationProperty Name="joinedGroups" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
+          <NavigationProperty Name="mailFolders" Type="Collection(microsoft.graph.mailFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="calendars" Type="Collection(microsoft.graph.calendar)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarGroups" Type="Collection(microsoft.graph.calendarGroup)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarView" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="events" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="people" Type="Collection(microsoft.graph.person)" ContainsTarget="true" />
+          <NavigationProperty Name="contacts" Type="Collection(microsoft.graph.contact)" ContainsTarget="true" />
+          <NavigationProperty Name="contactFolders" Type="Collection(microsoft.graph.contactFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="inferenceClassification" Type="microsoft.graph.inferenceClassification" ContainsTarget="true" />
+          <NavigationProperty Name="photo" Type="microsoft.graph.profilePhoto" ContainsTarget="true" />
+          <NavigationProperty Name="photos" Type="Collection(microsoft.graph.profilePhoto)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="insights" Type="microsoft.graph.officeGraphInsights" ContainsTarget="true" />
+          <NavigationProperty Name="planner" Type="microsoft.graph.plannerUser" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+          <NavigationProperty Name="managedDevices" Type="Collection(microsoft.graph.managedDevice)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceEnrollmentConfigurations" Type="Collection(microsoft.graph.deviceEnrollmentConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" />
+          <NavigationProperty Name="devices" Type="Collection(microsoft.graph.device)" ContainsTarget="true" />
+          <NavigationProperty Name="joinedTeams" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceManagementTroubleshootingEvents" Type="Collection(microsoft.graph.deviceManagementTroubleshootingEvent)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>dataPolicyOperationStatus</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>contentTypeInfo</name>
+      <old>
+        <ComplexType Name="contentTypeInfo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="id" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="contentTypeInfo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="id" Type="Edm.String" Unicode="false" />
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>deleteAction</name>
+      <old>
+        <ComplexType Name="deleteAction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="deleteAction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="name" Type="Edm.String" Unicode="false" />
+          <Property Name="objectType" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>itemActivityTimeSet</name>
+      <old>
+        <ComplexType Name="itemActivityTimeSet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="observedDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="recordedDateTime" Type="Edm.DateTimeOffset" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="itemActivityTimeSet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="lastRecordedDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="observedDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="recordedDateTime" Type="Edm.DateTimeOffset" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>itemPreviewInfo</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>moveAction</name>
+      <old>
+        <ComplexType Name="moveAction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="From" Type="Edm.String" Unicode="false" />
+          <Property Name="to" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="moveAction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="from" Type="Edm.String" Unicode="false" />
+          <Property Name="to" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>onPremisesExtensionAttributes</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>personOrGroupColumn</name>
+      <old>
+        <ComplexType Name="personOrGroupColumn" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="allowMultipleSelection" Type="Edm.Boolean" />
+          <Property Name="displayAs" Type="Edm.String" Unicode="false" />
+          <Property Name="chooseFromType" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="personOrGroupColumn" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="allowMultipleSelection" Type="Edm.Boolean" />
+          <Property Name="chooseFromType" Type="Edm.String" Unicode="false" />
+          <Property Name="displayAs" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>renameAction</name>
+      <old>
+        <ComplexType Name="renameAction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="oldName" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="renameAction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="newName" Type="Edm.String" Unicode="false" />
+          <Property Name="oldName" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>sharepointIds</name>
+      <old>
+        <ComplexType Name="sharepointIds" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="listId" Type="Edm.String" Unicode="false" />
+          <Property Name="listItemId" Type="Edm.String" Unicode="false" />
+          <Property Name="listItemUniqueId" Type="Edm.String" Unicode="false" />
+          <Property Name="siteId" Type="Edm.String" Unicode="false" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="webId" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="sharepointIds" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="listId" Type="Edm.String" Unicode="false" />
+          <Property Name="listItemId" Type="Edm.String" Unicode="false" />
+          <Property Name="listItemUniqueId" Type="Edm.String" Unicode="false" />
+          <Property Name="siteId" Type="Edm.String" Unicode="false" />
+          <Property Name="siteUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="tenantId" Type="Edm.String" Unicode="false" />
+          <Property Name="webId" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>exportPersonalData</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>preview</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Action</type>
+      <name>validatePermission</name>
+      <old>
+        <Action Name="validatePermission" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.driveItem" />
+          <Parameter Name="challengeToken" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Parameter Name="password" Type="Edm.String" Nullable="false" Unicode="false" />
+        </Action>
+      </old>
+      <new>
+        <Action Name="validatePermission" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.driveItem" />
+          <Parameter Name="challengeToken" Type="Edm.String" Unicode="false" />
+          <Parameter Name="password" Type="Edm.String" Nullable="false" Unicode="false" />
+        </Action>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntitySet</type>
+      <name>dataPolicyOperations</name>
+    </change>
+  </changes>
+</document>
