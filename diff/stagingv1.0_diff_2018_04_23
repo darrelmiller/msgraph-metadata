@@ -1,0 +1,1596 @@
+<document>
+  <version>stagingv1.0</version>
+  <changes>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>activityHistoryItem</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>baseItemVersion</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>deviceAppManagement</name>
+      <old>
+        <EntityType Name="deviceAppManagement" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="microsoftStoreForBusinessLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="isEnabledForMicrosoftStoreForBusiness" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="microsoftStoreForBusinessLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="microsoftStoreForBusinessLastCompletedApplicationSyncTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="mobileApps" Type="Collection(microsoft.graph.mobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="mobileAppCategories" Type="Collection(microsoft.graph.mobileAppCategory)" ContainsTarget="true" />
+          <NavigationProperty Name="mobileAppConfigurations" Type="Collection(microsoft.graph.managedDeviceMobileAppConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppPolicies" Type="Collection(microsoft.graph.managedAppPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="iosManagedAppProtections" Type="Collection(microsoft.graph.iosManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="androidManagedAppProtections" Type="Collection(microsoft.graph.androidManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="defaultManagedAppProtections" Type="Collection(microsoft.graph.defaultManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="targetedManagedAppConfigurations" Type="Collection(microsoft.graph.targetedManagedAppConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="mdmWindowsInformationProtectionPolicies" Type="Collection(microsoft.graph.mdmWindowsInformationProtectionPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsInformationProtectionPolicies" Type="Collection(microsoft.graph.windowsInformationProtectionPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppStatuses" Type="Collection(microsoft.graph.managedAppStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="managedEBooks" Type="Collection(microsoft.graph.managedEBook)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="deviceAppManagement" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="microsoftStoreForBusinessLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="isEnabledForMicrosoftStoreForBusiness" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="microsoftStoreForBusinessLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="microsoftStoreForBusinessLastCompletedApplicationSyncTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="mobileApps" Type="Collection(microsoft.graph.mobileApp)" ContainsTarget="true" />
+          <NavigationProperty Name="mobileAppCategories" Type="Collection(microsoft.graph.mobileAppCategory)" ContainsTarget="true" />
+          <NavigationProperty Name="mobileAppConfigurations" Type="Collection(microsoft.graph.managedDeviceMobileAppConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="vppTokens" Type="Collection(microsoft.graph.vppToken)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppPolicies" Type="Collection(microsoft.graph.managedAppPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="iosManagedAppProtections" Type="Collection(microsoft.graph.iosManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="androidManagedAppProtections" Type="Collection(microsoft.graph.androidManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="defaultManagedAppProtections" Type="Collection(microsoft.graph.defaultManagedAppProtection)" ContainsTarget="true" />
+          <NavigationProperty Name="targetedManagedAppConfigurations" Type="Collection(microsoft.graph.targetedManagedAppConfiguration)" ContainsTarget="true" />
+          <NavigationProperty Name="mdmWindowsInformationProtectionPolicies" Type="Collection(microsoft.graph.mdmWindowsInformationProtectionPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="windowsInformationProtectionPolicies" Type="Collection(microsoft.graph.windowsInformationProtectionPolicy)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppStatuses" Type="Collection(microsoft.graph.managedAppStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="managedEBooks" Type="Collection(microsoft.graph.managedEBook)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>deviceCompliancePolicySettingStateSummary</name>
+      <old>
+        <EntityType Name="deviceCompliancePolicySettingStateSummary" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="setting" Type="Edm.String" Unicode="false" />
+          <Property Name="settingName" Type="Edm.String" Unicode="false" />
+          <Property Name="platformType" Type="microsoft.graph.policyPlatformType" Nullable="false" />
+          <Property Name="unknownDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notApplicableDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="compliantDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="remediatedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="nonCompliantDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="errorDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="conflictDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="deviceComplianceSettingStates" Type="Collection(microsoft.graph.deviceComplianceSettingState)" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="deviceCompliancePolicySettingStateSummary" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="setting" Type="Edm.String" Unicode="false" />
+          <Property Name="settingName" Type="Edm.String" Unicode="false" />
+          <Property Name="platformType" Type="microsoft.graph.policyPlatformType" Nullable="false" />
+          <Property Name="unknownDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notApplicableDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="compliantDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="remediatedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="nonCompliantDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="errorDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="conflictDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="deviceComplianceSettingStates" Type="Collection(microsoft.graph.deviceComplianceSettingState)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>driveItem</name>
+      <old>
+        <EntityType Name="driveItem" BaseType="microsoft.graph.baseItem" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="audio" Type="microsoft.graph.audio" />
+          <Property Name="content" Type="Edm.Stream" />
+          <Property Name="cTag" Type="Edm.String" Unicode="false" />
+          <Property Name="deleted" Type="microsoft.graph.deleted" />
+          <Property Name="file" Type="microsoft.graph.file" />
+          <Property Name="fileSystemInfo" Type="microsoft.graph.fileSystemInfo" />
+          <Property Name="folder" Type="microsoft.graph.folder" />
+          <Property Name="image" Type="microsoft.graph.image" />
+          <Property Name="location" Type="microsoft.graph.geoCoordinates" />
+          <Property Name="package" Type="microsoft.graph.package" />
+          <Property Name="photo" Type="microsoft.graph.photo" />
+          <Property Name="remoteItem" Type="microsoft.graph.remoteItem" />
+          <Property Name="root" Type="microsoft.graph.root" />
+          <Property Name="searchResult" Type="microsoft.graph.searchResult" />
+          <Property Name="shared" Type="microsoft.graph.shared" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <Property Name="size" Type="Edm.Int64" />
+          <Property Name="specialFolder" Type="microsoft.graph.specialFolder" />
+          <Property Name="video" Type="microsoft.graph.video" />
+          <Property Name="webDavUrl" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="children" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+          <NavigationProperty Name="listItem" Type="microsoft.graph.listItem" ContainsTarget="true" />
+          <NavigationProperty Name="permissions" Type="Collection(microsoft.graph.permission)" ContainsTarget="true" />
+          <NavigationProperty Name="thumbnails" Type="Collection(microsoft.graph.thumbnailSet)" ContainsTarget="true" />
+          <NavigationProperty Name="workbook" Type="microsoft.graph.workbook" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="driveItem" BaseType="microsoft.graph.baseItem" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="audio" Type="microsoft.graph.audio" />
+          <Property Name="content" Type="Edm.Stream" />
+          <Property Name="cTag" Type="Edm.String" Unicode="false" />
+          <Property Name="deleted" Type="microsoft.graph.deleted" />
+          <Property Name="file" Type="microsoft.graph.file" />
+          <Property Name="fileSystemInfo" Type="microsoft.graph.fileSystemInfo" />
+          <Property Name="folder" Type="microsoft.graph.folder" />
+          <Property Name="image" Type="microsoft.graph.image" />
+          <Property Name="location" Type="microsoft.graph.geoCoordinates" />
+          <Property Name="package" Type="microsoft.graph.package" />
+          <Property Name="photo" Type="microsoft.graph.photo" />
+          <Property Name="publication" Type="microsoft.graph.publicationFacet" />
+          <Property Name="remoteItem" Type="microsoft.graph.remoteItem" />
+          <Property Name="root" Type="microsoft.graph.root" />
+          <Property Name="searchResult" Type="microsoft.graph.searchResult" />
+          <Property Name="shared" Type="microsoft.graph.shared" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <Property Name="size" Type="Edm.Int64" />
+          <Property Name="specialFolder" Type="microsoft.graph.specialFolder" />
+          <Property Name="video" Type="microsoft.graph.video" />
+          <Property Name="webDavUrl" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="children" Type="Collection(microsoft.graph.driveItem)" ContainsTarget="true" />
+          <NavigationProperty Name="listItem" Type="microsoft.graph.listItem" ContainsTarget="true" />
+          <NavigationProperty Name="permissions" Type="Collection(microsoft.graph.permission)" ContainsTarget="true" />
+          <NavigationProperty Name="thumbnails" Type="Collection(microsoft.graph.thumbnailSet)" ContainsTarget="true" />
+          <NavigationProperty Name="versions" Type="Collection(microsoft.graph.driveItemVersion)" ContainsTarget="true" />
+          <NavigationProperty Name="workbook" Type="microsoft.graph.workbook" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>driveItemVersion</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>event</name>
+      <old>
+        <EntityType Name="event" BaseType="microsoft.graph.outlookItem" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="originalStartTimeZone" Type="Edm.String" Unicode="false" />
+          <Property Name="originalEndTimeZone" Type="Edm.String" Unicode="false" />
+          <Property Name="responseStatus" Type="microsoft.graph.responseStatus" />
+          <Property Name="iCalUId" Type="Edm.String" Unicode="false" />
+          <Property Name="reminderMinutesBeforeStart" Type="Edm.Int32" />
+          <Property Name="isReminderOn" Type="Edm.Boolean" />
+          <Property Name="hasAttachments" Type="Edm.Boolean" />
+          <Property Name="subject" Type="Edm.String" Unicode="false" />
+          <Property Name="body" Type="microsoft.graph.itemBody" />
+          <Property Name="bodyPreview" Type="Edm.String" Unicode="false" />
+          <Property Name="importance" Type="microsoft.graph.importance" />
+          <Property Name="sensitivity" Type="microsoft.graph.sensitivity" />
+          <Property Name="start" Type="microsoft.graph.dateTimeTimeZone" />
+          <Property Name="originalStart" Type="Edm.DateTimeOffset" />
+          <Property Name="end" Type="microsoft.graph.dateTimeTimeZone" />
+          <Property Name="location" Type="microsoft.graph.location" />
+          <Property Name="isAllDay" Type="Edm.Boolean" />
+          <Property Name="isCancelled" Type="Edm.Boolean" />
+          <Property Name="isOrganizer" Type="Edm.Boolean" />
+          <Property Name="recurrence" Type="microsoft.graph.patternedRecurrence" />
+          <Property Name="responseRequested" Type="Edm.Boolean" />
+          <Property Name="seriesMasterId" Type="Edm.String" Unicode="false" />
+          <Property Name="showAs" Type="microsoft.graph.freeBusyStatus" />
+          <Property Name="type" Type="microsoft.graph.eventType" />
+          <Property Name="attendees" Type="Collection(microsoft.graph.attendee)" />
+          <Property Name="organizer" Type="microsoft.graph.recipient" />
+          <Property Name="webLink" Type="Edm.String" Unicode="false" />
+          <Property Name="onlineMeetingUrl" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="instances" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="attachments" Type="Collection(microsoft.graph.attachment)" ContainsTarget="true" />
+          <NavigationProperty Name="singleValueExtendedProperties" Type="Collection(microsoft.graph.singleValueLegacyExtendedProperty)" ContainsTarget="true" />
+          <NavigationProperty Name="multiValueExtendedProperties" Type="Collection(microsoft.graph.multiValueLegacyExtendedProperty)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="event" BaseType="microsoft.graph.outlookItem" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="originalStartTimeZone" Type="Edm.String" Unicode="false" />
+          <Property Name="originalEndTimeZone" Type="Edm.String" Unicode="false" />
+          <Property Name="responseStatus" Type="microsoft.graph.responseStatus" />
+          <Property Name="iCalUId" Type="Edm.String" Unicode="false" />
+          <Property Name="reminderMinutesBeforeStart" Type="Edm.Int32" />
+          <Property Name="isReminderOn" Type="Edm.Boolean" />
+          <Property Name="hasAttachments" Type="Edm.Boolean" />
+          <Property Name="subject" Type="Edm.String" Unicode="false" />
+          <Property Name="body" Type="microsoft.graph.itemBody" />
+          <Property Name="bodyPreview" Type="Edm.String" Unicode="false" />
+          <Property Name="importance" Type="microsoft.graph.importance" />
+          <Property Name="sensitivity" Type="microsoft.graph.sensitivity" />
+          <Property Name="start" Type="microsoft.graph.dateTimeTimeZone" />
+          <Property Name="originalStart" Type="Edm.DateTimeOffset" />
+          <Property Name="end" Type="microsoft.graph.dateTimeTimeZone" />
+          <Property Name="location" Type="microsoft.graph.location" />
+          <Property Name="locations" Type="Collection(microsoft.graph.location)" />
+          <Property Name="isAllDay" Type="Edm.Boolean" />
+          <Property Name="isCancelled" Type="Edm.Boolean" />
+          <Property Name="isOrganizer" Type="Edm.Boolean" />
+          <Property Name="recurrence" Type="microsoft.graph.patternedRecurrence" />
+          <Property Name="responseRequested" Type="Edm.Boolean" />
+          <Property Name="seriesMasterId" Type="Edm.String" Unicode="false" />
+          <Property Name="showAs" Type="microsoft.graph.freeBusyStatus" />
+          <Property Name="type" Type="microsoft.graph.eventType" />
+          <Property Name="attendees" Type="Collection(microsoft.graph.attendee)" />
+          <Property Name="organizer" Type="microsoft.graph.recipient" />
+          <Property Name="webLink" Type="Edm.String" Unicode="false" />
+          <Property Name="onlineMeetingUrl" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="instances" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="attachments" Type="Collection(microsoft.graph.attachment)" ContainsTarget="true" />
+          <NavigationProperty Name="singleValueExtendedProperties" Type="Collection(microsoft.graph.singleValueLegacyExtendedProperty)" ContainsTarget="true" />
+          <NavigationProperty Name="multiValueExtendedProperties" Type="Collection(microsoft.graph.multiValueLegacyExtendedProperty)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>iosMobileAppConfiguration</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>listItem</name>
+      <old>
+        <EntityType Name="listItem" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="contentType" Type="microsoft.graph.contentTypeInfo" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <NavigationProperty Name="driveItem" Type="microsoft.graph.driveItem" ContainsTarget="true" />
+          <NavigationProperty Name="fields" Type="microsoft.graph.fieldValueSet" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="listItem" BaseType="microsoft.graph.baseItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="contentType" Type="microsoft.graph.contentTypeInfo" />
+          <Property Name="sharepointIds" Type="microsoft.graph.sharepointIds" />
+          <NavigationProperty Name="driveItem" Type="microsoft.graph.driveItem" ContainsTarget="true" />
+          <NavigationProperty Name="fields" Type="microsoft.graph.fieldValueSet" ContainsTarget="true" />
+          <NavigationProperty Name="versions" Type="Collection(microsoft.graph.listItemVersion)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>listItemVersion</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>mailFolder</name>
+      <old>
+        <EntityType Name="mailFolder" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="parentFolderId" Type="Edm.String" Unicode="false" />
+          <Property Name="childFolderCount" Type="Edm.Int32" />
+          <Property Name="unreadItemCount" Type="Edm.Int32" />
+          <Property Name="totalItemCount" Type="Edm.Int32" />
+          <NavigationProperty Name="messages" Type="Collection(microsoft.graph.message)" ContainsTarget="true" />
+          <NavigationProperty Name="childFolders" Type="Collection(microsoft.graph.mailFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="singleValueExtendedProperties" Type="Collection(microsoft.graph.singleValueLegacyExtendedProperty)" ContainsTarget="true" />
+          <NavigationProperty Name="multiValueExtendedProperties" Type="Collection(microsoft.graph.multiValueLegacyExtendedProperty)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="mailFolder" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="parentFolderId" Type="Edm.String" Unicode="false" />
+          <Property Name="childFolderCount" Type="Edm.Int32" />
+          <Property Name="unreadItemCount" Type="Edm.Int32" />
+          <Property Name="totalItemCount" Type="Edm.Int32" />
+          <NavigationProperty Name="messages" Type="Collection(microsoft.graph.message)" ContainsTarget="true" />
+          <NavigationProperty Name="messageRules" Type="Collection(microsoft.graph.messageRule)" ContainsTarget="true" />
+          <NavigationProperty Name="childFolders" Type="Collection(microsoft.graph.mailFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="singleValueExtendedProperties" Type="Collection(microsoft.graph.singleValueLegacyExtendedProperty)" ContainsTarget="true" />
+          <NavigationProperty Name="multiValueExtendedProperties" Type="Collection(microsoft.graph.multiValueLegacyExtendedProperty)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>managedDevice</name>
+      <old>
+        <EntityType Name="managedDevice" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="userId" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceName" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceActionResults" Type="Collection(microsoft.graph.deviceActionResult)" />
+          <Property Name="enrolledDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="lastSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="operatingSystem" Type="Edm.String" Unicode="false" />
+          <Property Name="complianceState" Type="microsoft.graph.complianceState" Nullable="false" />
+          <Property Name="jailBroken" Type="Edm.String" Unicode="false" />
+          <Property Name="managementAgent" Type="microsoft.graph.managementAgentType" Nullable="false" />
+          <Property Name="osVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="easActivated" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="easDeviceId" Type="Edm.String" Unicode="false" />
+          <Property Name="easActivationDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="azureADRegistered" Type="Edm.Boolean" />
+          <Property Name="deviceEnrollmentType" Type="microsoft.graph.deviceEnrollmentType" Nullable="false" />
+          <Property Name="activationLockBypassCode" Type="Edm.String" Unicode="false" />
+          <Property Name="emailAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="azureADDeviceId" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceRegistrationState" Type="microsoft.graph.deviceRegistrationState" Nullable="false" />
+          <Property Name="deviceCategoryDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isSupervised" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="exchangeLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="exchangeAccessState" Type="microsoft.graph.deviceManagementExchangeAccessState" Nullable="false" />
+          <Property Name="exchangeAccessStateReason" Type="microsoft.graph.deviceManagementExchangeAccessStateReason" Nullable="false" />
+          <Property Name="remoteAssistanceSessionUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="remoteAssistanceSessionErrorDetails" Type="Edm.String" Unicode="false" />
+          <Property Name="isEncrypted" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="model" Type="Edm.String" Unicode="false" />
+          <Property Name="manufacturer" Type="Edm.String" Unicode="false" />
+          <Property Name="imei" Type="Edm.String" Unicode="false" />
+          <Property Name="complianceGracePeriodExpirationDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="serialNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="phoneNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="androidSecurityPatchLevel" Type="Edm.String" Unicode="false" />
+          <Property Name="userDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="configurationManagerClientEnabledFeatures" Type="microsoft.graph.configurationManagerClientEnabledFeatures" />
+          <Property Name="wiFiMacAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceHealthAttestationState" Type="microsoft.graph.deviceHealthAttestationState" />
+          <Property Name="subscriberCarrier" Type="Edm.String" Unicode="false" />
+          <Property Name="meid" Type="Edm.String" Unicode="false" />
+          <Property Name="totalStorageSpaceInBytes" Type="Edm.Int64" Nullable="false" />
+          <Property Name="freeStorageSpaceInBytes" Type="Edm.Int64" Nullable="false" />
+          <Property Name="managedDeviceName" Type="Edm.String" Unicode="false" />
+          <Property Name="partnerReportedThreatState" Type="microsoft.graph.managedDevicePartnerReportedHealthState" Nullable="false" />
+          <NavigationProperty Name="deviceConfigurationStates" Type="Collection(microsoft.graph.deviceConfigurationState)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCategory" Type="microsoft.graph.deviceCategory" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCompliancePolicyStates" Type="Collection(microsoft.graph.deviceCompliancePolicyState)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="managedDevice" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="userId" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceName" Type="Edm.String" Unicode="false" />
+          <Property Name="managedDeviceOwnerType" Type="microsoft.graph.managedDeviceOwnerType" Nullable="false" />
+          <Property Name="deviceActionResults" Type="Collection(microsoft.graph.deviceActionResult)" />
+          <Property Name="enrolledDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="lastSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="operatingSystem" Type="Edm.String" Unicode="false" />
+          <Property Name="complianceState" Type="microsoft.graph.complianceState" Nullable="false" />
+          <Property Name="jailBroken" Type="Edm.String" Unicode="false" />
+          <Property Name="managementAgent" Type="microsoft.graph.managementAgentType" Nullable="false" />
+          <Property Name="osVersion" Type="Edm.String" Unicode="false" />
+          <Property Name="easActivated" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="easDeviceId" Type="Edm.String" Unicode="false" />
+          <Property Name="easActivationDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="azureADRegistered" Type="Edm.Boolean" />
+          <Property Name="deviceEnrollmentType" Type="microsoft.graph.deviceEnrollmentType" Nullable="false" />
+          <Property Name="activationLockBypassCode" Type="Edm.String" Unicode="false" />
+          <Property Name="emailAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="azureADDeviceId" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceRegistrationState" Type="microsoft.graph.deviceRegistrationState" Nullable="false" />
+          <Property Name="deviceCategoryDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="isSupervised" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="exchangeLastSuccessfulSyncDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="exchangeAccessState" Type="microsoft.graph.deviceManagementExchangeAccessState" Nullable="false" />
+          <Property Name="exchangeAccessStateReason" Type="microsoft.graph.deviceManagementExchangeAccessStateReason" Nullable="false" />
+          <Property Name="remoteAssistanceSessionUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="remoteAssistanceSessionErrorDetails" Type="Edm.String" Unicode="false" />
+          <Property Name="isEncrypted" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="model" Type="Edm.String" Unicode="false" />
+          <Property Name="manufacturer" Type="Edm.String" Unicode="false" />
+          <Property Name="imei" Type="Edm.String" Unicode="false" />
+          <Property Name="complianceGracePeriodExpirationDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="serialNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="phoneNumber" Type="Edm.String" Unicode="false" />
+          <Property Name="androidSecurityPatchLevel" Type="Edm.String" Unicode="false" />
+          <Property Name="userDisplayName" Type="Edm.String" Unicode="false" />
+          <Property Name="configurationManagerClientEnabledFeatures" Type="microsoft.graph.configurationManagerClientEnabledFeatures" />
+          <Property Name="wiFiMacAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="deviceHealthAttestationState" Type="microsoft.graph.deviceHealthAttestationState" />
+          <Property Name="subscriberCarrier" Type="Edm.String" Unicode="false" />
+          <Property Name="meid" Type="Edm.String" Unicode="false" />
+          <Property Name="totalStorageSpaceInBytes" Type="Edm.Int64" Nullable="false" />
+          <Property Name="freeStorageSpaceInBytes" Type="Edm.Int64" Nullable="false" />
+          <Property Name="managedDeviceName" Type="Edm.String" Unicode="false" />
+          <Property Name="partnerReportedThreatState" Type="microsoft.graph.managedDevicePartnerReportedHealthState" Nullable="false" />
+          <NavigationProperty Name="deviceConfigurationStates" Type="Collection(microsoft.graph.deviceConfigurationState)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCategory" Type="microsoft.graph.deviceCategory" ContainsTarget="true" />
+          <NavigationProperty Name="deviceCompliancePolicyStates" Type="Collection(microsoft.graph.deviceCompliancePolicyState)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>managedDeviceMobileAppConfiguration</name>
+      <old>
+        <EntityType Name="managedDeviceMobileAppConfiguration" BaseType="microsoft.graph.entity" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="targetedMobileApps" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="createdDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="version" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.managedDeviceMobileAppConfigurationAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="userStatuses" Type="Collection(microsoft.graph.managedDeviceMobileAppConfigurationUserStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStatusSummary" Type="microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary" ContainsTarget="true" />
+          <NavigationProperty Name="userStatusSummary" Type="microsoft.graph.managedDeviceMobileAppConfigurationUserSummary" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="managedDeviceMobileAppConfiguration" BaseType="microsoft.graph.entity" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="targetedMobileApps" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="createdDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="version" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.managedDeviceMobileAppConfigurationAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStatuses" Type="Collection(microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="userStatuses" Type="Collection(microsoft.graph.managedDeviceMobileAppConfigurationUserStatus)" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStatusSummary" Type="microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary" ContainsTarget="true" />
+          <NavigationProperty Name="userStatusSummary" Type="microsoft.graph.managedDeviceMobileAppConfigurationUserSummary" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>managedDeviceMobileAppConfigurationDeviceStatus</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>managedEBook</name>
+      <old>
+        <EntityType Name="managedEBook" BaseType="microsoft.graph.entity" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="publisher" Type="Edm.String" Unicode="false" />
+          <Property Name="publishedDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="largeCover" Type="microsoft.graph.mimeContent" />
+          <Property Name="createdDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="informationUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="privacyInformationUrl" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.managedEBookAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="installSummary" Type="microsoft.graph.eBookInstallSummary" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStates" Type="Collection(microsoft.graph.deviceInstallState)" />
+          <NavigationProperty Name="userStateSummary" Type="Collection(microsoft.graph.userInstallStateSummary)" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="managedEBook" BaseType="microsoft.graph.entity" Abstract="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Nullable="false" Unicode="false" />
+          <Property Name="description" Type="Edm.String" Unicode="false" />
+          <Property Name="publisher" Type="Edm.String" Unicode="false" />
+          <Property Name="publishedDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="largeCover" Type="microsoft.graph.mimeContent" />
+          <Property Name="createdDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="informationUrl" Type="Edm.String" Unicode="false" />
+          <Property Name="privacyInformationUrl" Type="Edm.String" Unicode="false" />
+          <NavigationProperty Name="assignments" Type="Collection(microsoft.graph.managedEBookAssignment)" ContainsTarget="true" />
+          <NavigationProperty Name="installSummary" Type="microsoft.graph.eBookInstallSummary" ContainsTarget="true" />
+          <NavigationProperty Name="deviceStates" Type="Collection(microsoft.graph.deviceInstallState)" ContainsTarget="true" />
+          <NavigationProperty Name="userStateSummary" Type="Collection(microsoft.graph.userInstallStateSummary)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>message</name>
+      <old>
+        <EntityType Name="message" BaseType="microsoft.graph.outlookItem" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="receivedDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="sentDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="hasAttachments" Type="Edm.Boolean" />
+          <Property Name="internetMessageId" Type="Edm.String" Unicode="false" />
+          <Property Name="subject" Type="Edm.String" Unicode="false" />
+          <Property Name="body" Type="microsoft.graph.itemBody" />
+          <Property Name="bodyPreview" Type="Edm.String" Unicode="false" />
+          <Property Name="importance" Type="microsoft.graph.importance" />
+          <Property Name="parentFolderId" Type="Edm.String" Unicode="false" />
+          <Property Name="sender" Type="microsoft.graph.recipient" />
+          <Property Name="from" Type="microsoft.graph.recipient" />
+          <Property Name="toRecipients" Type="Collection(microsoft.graph.recipient)" />
+          <Property Name="ccRecipients" Type="Collection(microsoft.graph.recipient)" />
+          <Property Name="bccRecipients" Type="Collection(microsoft.graph.recipient)" />
+          <Property Name="replyTo" Type="Collection(microsoft.graph.recipient)" />
+          <Property Name="conversationId" Type="Edm.String" Unicode="false" />
+          <Property Name="uniqueBody" Type="microsoft.graph.itemBody" />
+          <Property Name="isDeliveryReceiptRequested" Type="Edm.Boolean" />
+          <Property Name="isReadReceiptRequested" Type="Edm.Boolean" />
+          <Property Name="isRead" Type="Edm.Boolean" />
+          <Property Name="isDraft" Type="Edm.Boolean" />
+          <Property Name="webLink" Type="Edm.String" Unicode="false" />
+          <Property Name="inferenceClassification" Type="microsoft.graph.inferenceClassificationType" />
+          <NavigationProperty Name="attachments" Type="Collection(microsoft.graph.attachment)" ContainsTarget="true" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="singleValueExtendedProperties" Type="Collection(microsoft.graph.singleValueLegacyExtendedProperty)" ContainsTarget="true" />
+          <NavigationProperty Name="multiValueExtendedProperties" Type="Collection(microsoft.graph.multiValueLegacyExtendedProperty)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="message" BaseType="microsoft.graph.outlookItem" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="receivedDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="sentDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="hasAttachments" Type="Edm.Boolean" />
+          <Property Name="internetMessageId" Type="Edm.String" Unicode="false" />
+          <Property Name="internetMessageHeaders" Type="Collection(microsoft.graph.internetMessageHeader)" />
+          <Property Name="subject" Type="Edm.String" Unicode="false" />
+          <Property Name="body" Type="microsoft.graph.itemBody" />
+          <Property Name="bodyPreview" Type="Edm.String" Unicode="false" />
+          <Property Name="importance" Type="microsoft.graph.importance" />
+          <Property Name="parentFolderId" Type="Edm.String" Unicode="false" />
+          <Property Name="sender" Type="microsoft.graph.recipient" />
+          <Property Name="from" Type="microsoft.graph.recipient" />
+          <Property Name="toRecipients" Type="Collection(microsoft.graph.recipient)" />
+          <Property Name="ccRecipients" Type="Collection(microsoft.graph.recipient)" />
+          <Property Name="bccRecipients" Type="Collection(microsoft.graph.recipient)" />
+          <Property Name="replyTo" Type="Collection(microsoft.graph.recipient)" />
+          <Property Name="conversationId" Type="Edm.String" Unicode="false" />
+          <Property Name="uniqueBody" Type="microsoft.graph.itemBody" />
+          <Property Name="isDeliveryReceiptRequested" Type="Edm.Boolean" />
+          <Property Name="isReadReceiptRequested" Type="Edm.Boolean" />
+          <Property Name="isRead" Type="Edm.Boolean" />
+          <Property Name="isDraft" Type="Edm.Boolean" />
+          <Property Name="webLink" Type="Edm.String" Unicode="false" />
+          <Property Name="inferenceClassification" Type="microsoft.graph.inferenceClassificationType" />
+          <Property Name="flag" Type="microsoft.graph.followupFlag" />
+          <NavigationProperty Name="attachments" Type="Collection(microsoft.graph.attachment)" ContainsTarget="true" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="singleValueExtendedProperties" Type="Collection(microsoft.graph.singleValueLegacyExtendedProperty)" ContainsTarget="true" />
+          <NavigationProperty Name="multiValueExtendedProperties" Type="Collection(microsoft.graph.multiValueLegacyExtendedProperty)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>messageRule</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>mobileThreatDefenseConnector</name>
+      <old>
+        <EntityType Name="mobileThreatDefenseConnector" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="lastHeartbeatDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="partnerState" Type="microsoft.graph.mobileThreatPartnerTenantState" Nullable="false" />
+          <Property Name="androidEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="androidDeviceBlockedOnMissingPartnerData" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="iosDeviceBlockedOnMissingPartnerData" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="partnerUnsupportedOsVersionBlocked" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="iosEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="partnerUnresponsivenessThresholdInDays" Type="Edm.Int32" Nullable="false" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="mobileThreatDefenseConnector" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="lastHeartbeatDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="partnerState" Type="microsoft.graph.mobileThreatPartnerTenantState" Nullable="false" />
+          <Property Name="androidEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="iosEnabled" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="androidDeviceBlockedOnMissingPartnerData" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="iosDeviceBlockedOnMissingPartnerData" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="partnerUnsupportedOsVersionBlocked" Type="Edm.Boolean" Nullable="false" />
+          <Property Name="partnerUnresponsivenessThresholdInDays" Type="Edm.Int32" Nullable="false" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>outlookCategory</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>outlookUser</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>user</name>
+      <old>
+        <EntityType Name="user" BaseType="microsoft.graph.directoryObject" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="accountEnabled" Type="Edm.Boolean" />
+          <Property Name="assignedLicenses" Type="Collection(microsoft.graph.assignedLicense)" Nullable="false" />
+          <Property Name="assignedPlans" Type="Collection(microsoft.graph.assignedPlan)" Nullable="false" />
+          <Property Name="businessPhones" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="city" Type="Edm.String" Unicode="false" />
+          <Property Name="companyName" Type="Edm.String" Unicode="false" />
+          <Property Name="country" Type="Edm.String" Unicode="false" />
+          <Property Name="department" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="givenName" Type="Edm.String" Unicode="false" />
+          <Property Name="imAddresses" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="jobTitle" Type="Edm.String" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="mobilePhone" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesImmutableId" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesLastSyncDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSyncEnabled" Type="Edm.Boolean" />
+          <Property Name="passwordPolicies" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordProfile" Type="microsoft.graph.passwordProfile" />
+          <Property Name="officeLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="postalCode" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="provisionedPlans" Type="Collection(microsoft.graph.provisionedPlan)" Nullable="false" />
+          <Property Name="proxyAddresses" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="state" Type="Edm.String" Unicode="false" />
+          <Property Name="streetAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="surname" Type="Edm.String" Unicode="false" />
+          <Property Name="usageLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="userType" Type="Edm.String" Unicode="false" />
+          <Property Name="mailboxSettings" Type="microsoft.graph.mailboxSettings" />
+          <Property Name="aboutMe" Type="Edm.String" Unicode="false" />
+          <Property Name="birthday" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="hireDate" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="interests" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="mySite" Type="Edm.String" Unicode="false" />
+          <Property Name="pastProjects" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="preferredName" Type="Edm.String" Unicode="false" />
+          <Property Name="responsibilities" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="schools" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="skills" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="deviceEnrollmentLimit" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="ownedDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="registeredDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="manager" Type="microsoft.graph.directoryObject" />
+          <NavigationProperty Name="directReports" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="createdObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="ownedObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="licenseDetails" Type="Collection(microsoft.graph.licenseDetails)" ContainsTarget="true" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="messages" Type="Collection(microsoft.graph.message)" ContainsTarget="true" />
+          <NavigationProperty Name="mailFolders" Type="Collection(microsoft.graph.mailFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="calendars" Type="Collection(microsoft.graph.calendar)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarGroups" Type="Collection(microsoft.graph.calendarGroup)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarView" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="events" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="people" Type="Collection(microsoft.graph.person)" ContainsTarget="true" />
+          <NavigationProperty Name="contacts" Type="Collection(microsoft.graph.contact)" ContainsTarget="true" />
+          <NavigationProperty Name="contactFolders" Type="Collection(microsoft.graph.contactFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="inferenceClassification" Type="microsoft.graph.inferenceClassification" ContainsTarget="true" />
+          <NavigationProperty Name="photo" Type="microsoft.graph.profilePhoto" ContainsTarget="true" />
+          <NavigationProperty Name="photos" Type="Collection(microsoft.graph.profilePhoto)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="planner" Type="microsoft.graph.plannerUser" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+          <NavigationProperty Name="managedDevices" Type="Collection(microsoft.graph.managedDevice)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" />
+          <NavigationProperty Name="deviceManagementTroubleshootingEvents" Type="Collection(microsoft.graph.deviceManagementTroubleshootingEvent)" ContainsTarget="true" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="user" BaseType="microsoft.graph.directoryObject" OpenType="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="accountEnabled" Type="Edm.Boolean" />
+          <Property Name="assignedLicenses" Type="Collection(microsoft.graph.assignedLicense)" Nullable="false" />
+          <Property Name="assignedPlans" Type="Collection(microsoft.graph.assignedPlan)" Nullable="false" />
+          <Property Name="businessPhones" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="city" Type="Edm.String" Unicode="false" />
+          <Property Name="companyName" Type="Edm.String" Unicode="false" />
+          <Property Name="country" Type="Edm.String" Unicode="false" />
+          <Property Name="department" Type="Edm.String" Unicode="false" />
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="givenName" Type="Edm.String" Unicode="false" />
+          <Property Name="imAddresses" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="jobTitle" Type="Edm.String" Unicode="false" />
+          <Property Name="mail" Type="Edm.String" Unicode="false" />
+          <Property Name="mailNickname" Type="Edm.String" Unicode="false" />
+          <Property Name="mobilePhone" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesImmutableId" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesLastSyncDateTime" Type="Edm.DateTimeOffset" />
+          <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" Unicode="false" />
+          <Property Name="onPremisesSyncEnabled" Type="Edm.Boolean" />
+          <Property Name="passwordPolicies" Type="Edm.String" Unicode="false" />
+          <Property Name="passwordProfile" Type="microsoft.graph.passwordProfile" />
+          <Property Name="officeLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="postalCode" Type="Edm.String" Unicode="false" />
+          <Property Name="preferredLanguage" Type="Edm.String" Unicode="false" />
+          <Property Name="provisionedPlans" Type="Collection(microsoft.graph.provisionedPlan)" Nullable="false" />
+          <Property Name="proxyAddresses" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+          <Property Name="state" Type="Edm.String" Unicode="false" />
+          <Property Name="streetAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="surname" Type="Edm.String" Unicode="false" />
+          <Property Name="usageLocation" Type="Edm.String" Unicode="false" />
+          <Property Name="userPrincipalName" Type="Edm.String" Unicode="false" />
+          <Property Name="userType" Type="Edm.String" Unicode="false" />
+          <Property Name="mailboxSettings" Type="microsoft.graph.mailboxSettings" />
+          <Property Name="aboutMe" Type="Edm.String" Unicode="false" />
+          <Property Name="birthday" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="hireDate" Type="Edm.DateTimeOffset" Nullable="false" />
+          <Property Name="interests" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="mySite" Type="Edm.String" Unicode="false" />
+          <Property Name="pastProjects" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="preferredName" Type="Edm.String" Unicode="false" />
+          <Property Name="responsibilities" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="schools" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="skills" Type="Collection(Edm.String)" Unicode="false" />
+          <Property Name="deviceEnrollmentLimit" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="ownedDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="registeredDevices" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="manager" Type="microsoft.graph.directoryObject" />
+          <NavigationProperty Name="directReports" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="createdObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="ownedObjects" Type="Collection(microsoft.graph.directoryObject)" />
+          <NavigationProperty Name="licenseDetails" Type="Collection(microsoft.graph.licenseDetails)" ContainsTarget="true" />
+          <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
+          <NavigationProperty Name="outlook" Type="microsoft.graph.outlookUser" ContainsTarget="true" />
+          <NavigationProperty Name="messages" Type="Collection(microsoft.graph.message)" ContainsTarget="true" />
+          <NavigationProperty Name="mailFolders" Type="Collection(microsoft.graph.mailFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="calendar" Type="microsoft.graph.calendar" ContainsTarget="true" />
+          <NavigationProperty Name="calendars" Type="Collection(microsoft.graph.calendar)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarGroups" Type="Collection(microsoft.graph.calendarGroup)" ContainsTarget="true" />
+          <NavigationProperty Name="calendarView" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="events" Type="Collection(microsoft.graph.event)" ContainsTarget="true" />
+          <NavigationProperty Name="people" Type="Collection(microsoft.graph.person)" ContainsTarget="true" />
+          <NavigationProperty Name="contacts" Type="Collection(microsoft.graph.contact)" ContainsTarget="true" />
+          <NavigationProperty Name="contactFolders" Type="Collection(microsoft.graph.contactFolder)" ContainsTarget="true" />
+          <NavigationProperty Name="inferenceClassification" Type="microsoft.graph.inferenceClassification" ContainsTarget="true" />
+          <NavigationProperty Name="photo" Type="microsoft.graph.profilePhoto" ContainsTarget="true" />
+          <NavigationProperty Name="photos" Type="Collection(microsoft.graph.profilePhoto)" ContainsTarget="true" />
+          <NavigationProperty Name="drive" Type="microsoft.graph.drive" ContainsTarget="true" />
+          <NavigationProperty Name="drives" Type="Collection(microsoft.graph.drive)" ContainsTarget="true" />
+          <NavigationProperty Name="planner" Type="microsoft.graph.plannerUser" ContainsTarget="true" />
+          <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
+          <NavigationProperty Name="managedDevices" Type="Collection(microsoft.graph.managedDevice)" ContainsTarget="true" />
+          <NavigationProperty Name="managedAppRegistrations" Type="Collection(microsoft.graph.managedAppRegistration)" />
+          <NavigationProperty Name="deviceManagementTroubleshootingEvents" Type="Collection(microsoft.graph.deviceManagementTroubleshootingEvent)" ContainsTarget="true" />
+          <NavigationProperty Name="activities" Type="Collection(microsoft.graph.userActivity)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>userActivity</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntityType</type>
+      <name>userInstallStateSummary</name>
+      <old>
+        <EntityType Name="userInstallStateSummary" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="userName" Type="Edm.String" Unicode="false" />
+          <Property Name="installedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="failedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notInstalledDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="deviceStates" Type="Collection(microsoft.graph.deviceInstallState)" />
+        </EntityType>
+      </old>
+      <new>
+        <EntityType Name="userInstallStateSummary" BaseType="microsoft.graph.entity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="userName" Type="Edm.String" Unicode="false" />
+          <Property Name="installedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="failedDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <Property Name="notInstalledDeviceCount" Type="Edm.Int32" Nullable="false" />
+          <NavigationProperty Name="deviceStates" Type="Collection(microsoft.graph.deviceInstallState)" ContainsTarget="true" />
+        </EntityType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EntityType</type>
+      <name>vppToken</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>categoryColor</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>followupFlagStatus</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>locationType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>locationUniqueIdType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>managedDeviceOwnerType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>mdmAppConfigKeyType</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>messageActionFlag</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EnumType</type>
+      <name>policyPlatformType</name>
+      <old>
+        <EnumType Name="policyPlatformType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="android" Value="0" />
+          <Member Name="iOS" Value="2" />
+          <Member Name="macOS" Value="3" />
+          <Member Name="windowsPhone81" Value="4" />
+          <Member Name="windows81AndLater" Value="5" />
+          <Member Name="windows10AndLater" Value="6" />
+          <Member Name="all" Value="100" />
+        </EnumType>
+      </old>
+      <new>
+        <EnumType Name="policyPlatformType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Member Name="android" Value="0" />
+          <Member Name="iOS" Value="2" />
+          <Member Name="macOS" Value="3" />
+          <Member Name="windowsPhone81" Value="4" />
+          <Member Name="windows81AndLater" Value="5" />
+          <Member Name="windows10AndLater" Value="6" />
+          <Member Name="androidWorkProfile" Value="7" />
+          <Member Name="all" Value="100" />
+        </EnumType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>selectionLikelihoodInfo</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>status</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>timeZoneStandard</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>vppTokenState</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>EnumType</type>
+      <name>vppTokenSyncStatus</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>appConfigurationSettingItem</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>customTimeZone</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>daylightTimeZoneOffset</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>followupFlag</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>imageInfo</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>internetMessageHeader</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>location</name>
+      <old>
+        <ComplexType Name="location" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="locationEmailAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="address" Type="microsoft.graph.physicalAddress" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="location" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="displayName" Type="Edm.String" Unicode="false" />
+          <Property Name="locationEmailAddress" Type="Edm.String" Unicode="false" />
+          <Property Name="address" Type="microsoft.graph.physicalAddress" />
+          <Property Name="coordinates" Type="microsoft.graph.outlookGeoCoordinates" />
+          <Property Name="locationUri" Type="Edm.String" Unicode="false" />
+          <Property Name="locationType" Type="microsoft.graph.locationType" />
+          <Property Name="uniqueId" Type="Edm.String" Unicode="false" />
+          <Property Name="uniqueIdType" Type="microsoft.graph.locationUniqueIdType" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>mailboxSettings</name>
+      <old>
+        <ComplexType Name="mailboxSettings" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="automaticRepliesSetting" Type="microsoft.graph.automaticRepliesSetting" />
+          <Property Name="archiveFolder" Type="Edm.String" Unicode="false" />
+          <Property Name="timeZone" Type="Edm.String" Unicode="false" />
+          <Property Name="language" Type="microsoft.graph.localeInfo" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="mailboxSettings" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="automaticRepliesSetting" Type="microsoft.graph.automaticRepliesSetting" />
+          <Property Name="archiveFolder" Type="Edm.String" Unicode="false" />
+          <Property Name="timeZone" Type="Edm.String" Unicode="false" />
+          <Property Name="language" Type="microsoft.graph.localeInfo" />
+          <Property Name="workingHours" Type="microsoft.graph.workingHours" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>messageRuleActions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>messageRulePredicates</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>outlookGeoCoordinates</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>personOrGroupColumn</name>
+      <old>
+        <ComplexType Name="personOrGroupColumn" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="allowMultipleSelection" Type="Edm.Boolean" />
+          <Property Name="displayAs" Type="Edm.String" Unicode="false" />
+          <Property Name="chooseFromType" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="personOrGroupColumn" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="allowMultipleSelection" Type="Edm.Boolean" />
+          <Property Name="chooseFromType" Type="Edm.String" Unicode="false" />
+          <Property Name="displayAs" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>publicationFacet</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>scoredEmailAddress</name>
+      <old>
+        <ComplexType Name="scoredEmailAddress" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="address" Type="Edm.String" Unicode="false" />
+          <Property Name="relevanceScore" Type="Edm.Double" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="scoredEmailAddress" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="address" Type="Edm.String" Unicode="false" />
+          <Property Name="relevanceScore" Type="Edm.Double" />
+          <Property Name="selectionLikelihood" Type="microsoft.graph.selectionLikelihoodInfo" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>ComplexType</type>
+      <name>siteCollection</name>
+      <old>
+        <ComplexType Name="siteCollection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="hostname" Type="Edm.String" Unicode="false" />
+        </ComplexType>
+      </old>
+      <new>
+        <ComplexType Name="siteCollection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Property Name="hostname" Type="Edm.String" Unicode="false" />
+          <Property Name="root" Type="microsoft.graph.root" />
+        </ComplexType>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>sizeRange</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>standardTimeZoneOffset</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>timeZoneBase</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>timeZoneInformation</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>visualInfo</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>ComplexType</type>
+      <name>workingHours</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>recent</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>supportedLanguages</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>supportedTimeZones</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Function</type>
+      <name>supportedTimeZones</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Action</type>
+      <name>copyNotebook</name>
+      <old>
+        <Action Name="copyNotebook" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.notebook" />
+          <Parameter Name="siteCollectionId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="groupId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="renameAs" Type="Edm.String" Unicode="false" />
+          <Parameter Name="notebookFolder" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.onenoteOperation" />
+        </Action>
+      </old>
+      <new>
+        <Action Name="copyNotebook" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.notebook" />
+          <Parameter Name="groupId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="renameAs" Type="Edm.String" Unicode="false" />
+          <Parameter Name="notebookFolder" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteCollectionId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteId" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.onenoteOperation" />
+        </Action>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Action</type>
+      <name>copyToNotebook</name>
+      <old>
+        <Action Name="copyToNotebook" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.onenoteSection" />
+          <Parameter Name="id" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteCollectionId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="groupId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="renameAs" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.onenoteOperation" />
+        </Action>
+      </old>
+      <new>
+        <Action Name="copyToNotebook" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.onenoteSection" />
+          <Parameter Name="id" Type="Edm.String" Unicode="false" />
+          <Parameter Name="groupId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="renameAs" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteCollectionId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteId" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.onenoteOperation" />
+        </Action>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Action</type>
+      <name>copyToSection</name>
+      <old>
+        <Action Name="copyToSection" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.onenotePage" />
+          <Parameter Name="id" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteCollectionId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="groupId" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.onenoteOperation" />
+        </Action>
+      </old>
+      <new>
+        <Action Name="copyToSection" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.onenotePage" />
+          <Parameter Name="id" Type="Edm.String" Unicode="false" />
+          <Parameter Name="groupId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteCollectionId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteId" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.onenoteOperation" />
+        </Action>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Action</type>
+      <name>copyToSectionGroup</name>
+      <old>
+        <Action Name="copyToSectionGroup" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.onenoteSection" />
+          <Parameter Name="id" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteCollectionId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="groupId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="renameAs" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.onenoteOperation" />
+        </Action>
+      </old>
+      <new>
+        <Action Name="copyToSectionGroup" IsBound="true" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Parameter Name="bindingParameter" Type="microsoft.graph.onenoteSection" />
+          <Parameter Name="id" Type="Edm.String" Unicode="false" />
+          <Parameter Name="groupId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="renameAs" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteCollectionId" Type="Edm.String" Unicode="false" />
+          <Parameter Name="siteId" Type="Edm.String" Unicode="false" />
+          <ReturnType Type="microsoft.graph.onenoteOperation" />
+        </Action>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>restoreVersion</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>restoreVersion</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Action</type>
+      <name>syncLicenses</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntitySet</type>
+      <name>drives</name>
+      <old>
+        <EntitySet Name="drives" EntityType="microsoft.graph.drive" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationPropertyBinding Path="createdByUser" Target="users" />
+          <NavigationPropertyBinding Path="lastModifiedByUser" Target="users" />
+        </EntitySet>
+      </old>
+      <new>
+        <EntitySet Name="drives" EntityType="microsoft.graph.drive" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationPropertyBinding Path="items/createdByUser" Target="users" />
+          <NavigationPropertyBinding Path="items/lastModifiedByUser" Target="users" />
+        </EntitySet>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntitySet</type>
+      <name>groups</name>
+      <old>
+        <EntitySet Name="groups" EntityType="microsoft.graph.group" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationPropertyBinding Path="members" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="memberOf" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="createdOnBehalfOf" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="owners" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="settings" Target="groupSettings" />
+          <NavigationPropertyBinding Path="microsoft.graph.baseItem/createdByUser" Target="users" />
+          <NavigationPropertyBinding Path="microsoft.graph.baseItem/lastModifiedByUser" Target="users" />
+          <NavigationPropertyBinding Path="groupLifecyclePolicies" Target="groupLifecyclePolicies" />
+        </EntitySet>
+      </old>
+      <new>
+        <EntitySet Name="groups" EntityType="microsoft.graph.group" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationPropertyBinding Path="members" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="memberOf" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="createdOnBehalfOf" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="owners" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="drive/items/createdByUser" Target="users" />
+          <NavigationPropertyBinding Path="drive/items/lastModifiedByUser" Target="users" />
+        </EntitySet>
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>EntitySet</type>
+      <name>users</name>
+      <old>
+        <EntitySet Name="users" EntityType="microsoft.graph.user" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationPropertyBinding Path="ownedDevices" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="registeredDevices" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="manager" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="directReports" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="memberOf" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="createdObjects" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="ownedObjects" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="microsoft.graph.baseItem/createdByUser" Target="users" />
+          <NavigationPropertyBinding Path="microsoft.graph.baseItem/lastModifiedByUser" Target="users" />
+        </EntitySet>
+      </old>
+      <new>
+        <EntitySet Name="users" EntityType="microsoft.graph.user" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <NavigationPropertyBinding Path="ownedDevices" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="registeredDevices" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="manager" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="directReports" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="memberOf" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="createdObjects" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="ownedObjects" Target="directoryObjects" />
+          <NavigationPropertyBinding Path="drive/items/createdByUser" Target="users" />
+          <NavigationPropertyBinding Path="drive/items/lastModifiedByUser" Target="users" />
+        </EntitySet>
+      </new>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.outlookUser/masterCategories/Org.OData.Capabilities.V1.ChangeTracking</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mailFolder/messageRules/Org.OData.Capabilities.V1.ChangeTracking</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.userActivity/Org.OData.Capabilities.V1.CountRestrictions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.activityHistoryItem/Org.OData.Capabilities.V1.CountRestrictions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.outlookUser/masterCategories/Org.OData.Capabilities.V1.ExpandRestrictions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mailFolder/messageRules/Org.OData.Capabilities.V1.ExpandRestrictions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.outlookUser/masterCategories/Org.OData.Capabilities.V1.SearchRestrictions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mailFolder/messageRules/Org.OData.Capabilities.V1.SearchRestrictions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.userActivity/Org.OData.Capabilities.V1.SelectRestrictions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.activityHistoryItem/Org.OData.Capabilities.V1.SelectRestrictions</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.userActivity/Org.OData.Capabilities.V1.SkipSupported</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.activityHistoryItem/Org.OData.Capabilities.V1.SkipSupported</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.deviceAppManagement/vppTokens/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus/deviceDisplayName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus/userName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus/deviceModel/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus/complianceGracePeriodExpirationDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus/status/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus/lastReportedDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus/userPrincipalName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDeviceMobileAppConfiguration/deviceStatuses/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.iosMobileAppConfiguration/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.iosMobileAppConfiguration/encodedSettingXml/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.appConfigurationSettingItem/appConfigKey/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.appConfigurationSettingItem/appConfigKeyType/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.appConfigurationSettingItem/appConfigKeyValue/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.iosMobileAppConfiguration/settings/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedDevice/managedDeviceOwnerType/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/organizationName/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/vppTokenAccountType/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/appleId/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/expirationDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/lastSyncDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/token/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/lastModifiedDateTime/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/state/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/lastSyncStatus/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/automaticallyUpdateApps/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Addition</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.vppToken/countryOrRegion/Org.OData.Core.V1.Description</name>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileThreatDefenseConnector/lastHeartbeatDateTime/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Timestamp of last heartbeat after admin enabled option Connect to MTP" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="DateTime of last Heartbeat recieved from the Data Sync Partner" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileThreatDefenseConnector/partnerState/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Partner state of this tenant" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Data Sync Partner state for this account" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileThreatDefenseConnector/androidEnabled/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Android Toggle On or Off" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="For Android, set whether data from the data sync partner should be used during compliance evaluations" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileThreatDefenseConnector/iosEnabled/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="IOS Toggle On or Off" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="For IOS, get or set whether data from the data sync partner should be used during compliance evaluations" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileThreatDefenseConnector/androidDeviceBlockedOnMissingPartnerData/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="For Android, Allows admin to config must receive data from the data sync partner prior to being considered compliant" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileThreatDefenseConnector/iosDeviceBlockedOnMissingPartnerData/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="For IOS, Allows admin to config must receive data from the data sync partner prior to being considered compliant" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.mobileThreatDefenseConnector/partnerUnsupportedOsVersionBlocked/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Allows admin to block devices on the enabled platforms that do not meet minimum version requirements" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedAppProtection/maximumPinRetries/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Maximum number of incorrect pin retry attempts before the managed app is wiped." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+    <change>
+      <action>Change</action>
+      <type>Annotation</type>
+      <name>microsoft.graph.managedEBook/lastModifiedDateTime/Org.OData.Core.V1.Description</name>
+      <old>
+        <Annotation Term="Org.OData.Core.V1.Description" String="The date and time when teh eBook was last modified." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </old>
+      <new>
+        <Annotation Term="Org.OData.Core.V1.Description" String="The date and time when the eBook was last modified." xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      </new>
+    </change>
+  </changes>
+</document>
