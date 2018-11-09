@@ -21,11 +21,21 @@ $client.DownloadFile($url, $pathToLiveMetadata)
 $content = Format-Xml (Get-Content $pathToLiveMetadata) 
 [IO.File]::WriteAllLines($pathToLiveMetadata, $content)
 
+git status --porcelain
+
+# It takes a couple 
+Start-Sleep -Milliseconds 10000
+
 # Discover if there are changes between the downloaded file and what is in git.
-if(git status --porcelain | Where {$_ -notmatch $metadataFileName}) {
+if(git status --porcelain | Where {$_ -notmatch '^\?\?'}) {
+    Write-Host "Exit build, the metadata hasn't been updated."
     Exit # Stop running, no changes identified by git. 
 }
 
-git add $metadataFileName
-git commit -m 'Updated the metadata from downloadDiff.ps1' | Write-Host
+
+Write-Host "fileName $metadataFileName"
+
+#git checkout master
+#git add $metadataFileName
+# git commit -m 'Updated the metadata from downloadDiff.ps1' | Write-Host
 # TODO git push
