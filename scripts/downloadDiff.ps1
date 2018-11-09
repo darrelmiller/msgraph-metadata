@@ -22,21 +22,21 @@ $content = Format-Xml (Get-Content $pathToLiveMetadata)
 [IO.File]::WriteAllLines($pathToLiveMetadata, $content)
 
 # Discover if there are changes between the downloaded file and what is in git.
-$result = git status --porcelain
+[array]$result = git status --porcelain
 
+# Check for expected and unexpected changes.
 $hasUpdatedMetadata = $false
-
 if($result |Where {$_ -match '^\?\?'}){
-    Write-Error "Unexpected untracked file[s] exists"
+    Write-Error "Unexpected untracked file[s] exists. We shouldn't be adding new files via this script. Only modifying existing files."
 } 
 elseif($result |Where {$_ -notmatch '^\?\?'}) {
     Write-Host "Uncommitted changes are present."
+
     Foreach ($r in $result) {
-        Write-Host "result $r"
         
-        if($r.ToString() -like $metadataFileName) {
-            
+        if($r.Contains($metadataFileName)) {
             $hasUpdatedMetadata = $true 
+            Break
         }
     }
 
@@ -50,38 +50,12 @@ else {
     Exit
 }
 
-
-
-Write-Host "Changes are expected."    
-
-
-<#
-$result.Contains($metadataFileName)
-
-
-
-Foreach ($r in $result) {
-    if ($r -notcontains $metadataFileName)
+# Are we on master? If not, we will want are changes committed on master.
+$branch = &git rev-parse --abbrev-ref HEAD
+if ($branch -ne "master") {
+    git checkout master
 }
 
-
-
-$isTrue = $r -notcontains $metadataFileName#$result.ToString() -like $metadataFileName
-
-
-
-Write-Host "$result $isTrue"
-
-if($result.ToString() -notcontains $metadataFileName) {
-    Write-Host "Exit build, the metadata hasn't been updated." -ForegroundColor Yellow
-    Exit # Stop running, no changes identified by git. 
-}
-
-Write-Host "$metadataFileName has changes" -ForegroundColor Green
-#>
-
-
-#git checkout master
-#git add $metadataFileName
-# git commit -m 'Updated the metadata from downloadDiff.ps1' | Write-Host
-# TODO git push
+git add $metadataFileName
+git commit -m "Updated $metadataFileName from downloadDiff.ps1"
+git push origin master
