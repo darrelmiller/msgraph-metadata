@@ -58,4 +58,4 @@ if ($branch -ne "master") {
 
 git add $metadataFileName
 git commit -m "Updated $metadataFileName from downloadDiff.ps1"
-git push origin master
+git push origin master --quiet
