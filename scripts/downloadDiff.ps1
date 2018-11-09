@@ -21,46 +21,11 @@ $client.DownloadFile($url, $pathToLiveMetadata)
 $content = Format-Xml (Get-Content $pathToLiveMetadata) 
 [IO.File]::WriteAllLines($pathToLiveMetadata, $content)
 
-$result = git status --porcelain
-Write-Host "$result"
-
-
-if(git status --porcelain |Where {$_ -match $metadataFileName}) {
-    Write-Host "foudn change"
+# Discover if there are changes between the downloaded file and what is in git.
+if(git status --porcelain | Where {$_ -notmatch $metadataFileName}) {
+    Exit # Stop running, no changes identified by git. 
 }
 
-
-
-
-<#
-
-# Download the metadata from livesite. 
-$url = "http://graph.microsoft.com/{0}/`$metadata" -f $endpointVersion
-$pathToLiveMetadata = "D:\repos\Graph_Metadata\{0}_metadata.temp.xml" -f $endpointVersion # TODO: get file location via build env variable.
-$client = new-object System.Net.WebClient
-$client.Encoding = [System.Text.Encoding]::UTF8
-$client.DownloadFile($url, $pathToLiveMetadata)
-
-# Format the metadata to make it easy for us hoomans to read and perform non-tag line based diffs.
-$content = Format-Xml (Get-Content $pathToLiveMetadata) 
-[IO.File]::WriteAllLines($pathToLiveMetadata, $content)
-
-# Read last saved metadata from file.
-$pathToSavedMetadata = "{0}_metadata.xml" -f $endpointVersion
-
-# Diff the files. Exit the script if they are the same. 
-if((Get-FileHash $pathToLiveMetadata).hash  -eq (Get-FileHash $pathToSavedMetadata).hash) {
-    Write-Host "Files are the same, quit the build."
-    Exit
-}
-
-Write-Host "Files are different, let's generate some code files."
-
-# Replace the existing metadata file's content with the new metadata.
-Set-Content -Path $pathToSavedMetadata -Value (Get-Content -Path $pathToLiveMetadata)
-
-# Delete the temporary metadata file.
-Remove-Item $pathToLiveMetadata
-#>
-
-# TODO: Update the metadata repo with the new metadata file.
+git add $metadataFileName
+git commit -m 'Updated the metadata from downloadDiff.ps1' | Write-Host
+# TODO git push
