@@ -47,6 +47,9 @@ elseif($result |Where {$_ -notmatch '^\?\?'}) {
 }
 else {
     # tree is clean
+    Write-Host "No changes reported. Build is aborted as succeeded."
+    Write-Host "##vso[task.setvariable variable=agent.jobstatus;]canceled"
+    Write-Host "##vso[task.complete result=Canceled;]DONE"
     Exit
 }
 
