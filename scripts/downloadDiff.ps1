@@ -5,9 +5,8 @@ param([String]$endpointVersion)
 # Contains Format-Xml function.
 Import-Module .\scripts\utility.ps1 -Force
 
-if ($endpointVersion -ne 'v1.0' -or $endpointVersion -ne 'beta') {
-    $endpointVersion = 'v1.0'
-}
+if ($endpointVersion -eq 'v1.0' -or $endpointVersion -eq 'beta') {
+} else { $endpointVersion = 'v1.0' }
 
 # Download the metadata from livesite. 
 $url = "http://graph.microsoft.com/{0}/`$metadata" -f $endpointVersion
@@ -16,10 +15,12 @@ $pathToLiveMetadata = "D:\repos\Graph_Metadata\{0}" -f $metadataFileName # TODO:
 $client = new-object System.Net.WebClient
 $client.Encoding = [System.Text.Encoding]::UTF8
 $client.DownloadFile($url, $pathToLiveMetadata)
+Write-Host "Downloaded metadata from $url" -ForegroundColor DarkGreen
 
 # Format the metadata to make it easy for us hoomans to read and perform non-tag line based diffs.
 $content = Format-Xml (Get-Content $pathToLiveMetadata) 
 [IO.File]::WriteAllLines($pathToLiveMetadata, $content)
+Write-Host "Wrote $metadataFileName to disk." -ForegroundColor DarkGreen
 
 # Discover if there are changes between the downloaded file and what is in git.
 [array]$result = git status --porcelain
@@ -30,7 +31,7 @@ if($result |Where {$_ -match '^\?\?'}){
     Write-Error "Unexpected untracked file[s] exists. We shouldn't be adding new files via this script. Only modifying existing files."
 } 
 elseif($result |Where {$_ -notmatch '^\?\?'}) {
-    Write-Host "Uncommitted changes are present."
+    Write-Host "Uncommitted changes are present." -ForegroundColor Yellow
 
     Foreach ($r in $result) {
         
@@ -55,6 +56,7 @@ else {
 
 # Are we on master? If not, we will want are changes committed on master.
 $branch = &git rev-parse --abbrev-ref HEAD
+Write-Host "Current branch: $branch"
 if ($branch -ne "master") {
     git checkout master
 }
