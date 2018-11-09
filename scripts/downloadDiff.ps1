@@ -23,9 +23,6 @@ $content = Format-Xml (Get-Content $pathToLiveMetadata)
 
 git status --porcelain
 
-# It takes a couple 
-Start-Sleep -Milliseconds 10000
-
 # Discover if there are changes between the downloaded file and what is in git.
 if(git status --porcelain |Where {$_ -notmatch '^\?\?'}) {
     Write-Host "Exit build, the metadata hasn't been updated."
