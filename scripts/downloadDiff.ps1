@@ -24,18 +24,64 @@ $content = Format-Xml (Get-Content $pathToLiveMetadata)
 # Discover if there are changes between the downloaded file and what is in git.
 $result = git status --porcelain
 
-$isTrue = $result.ToString() -notcontains $metadataFileName
+$hasUpdatedMetadata = $false
 
-Write-Host "$result $isTrue $metadataFileName"
+if($result |Where {$_ -match '^\?\?'}){
+    Write-Error "Unexpected untracked file[s] exists"
+} 
+elseif($result |Where {$_ -notmatch '^\?\?'}) {
+    Write-Host "Uncommitted changes are present."
+    Foreach ($r in $result) {
+        Write-Host "result $r"
+        
+        if($r.ToString() -like $metadataFileName) {
+            
+            $hasUpdatedMetadata = $true 
+        }
+    }
 
-if($result.ToString().Substring($metadataFileName) -lt 0) {
-    Write-Host "Exit build, the metadata hasn't been updated."
+    if(!$hasUpdatedMetadata) {
+        Write-Error "Exit build. Uncommitted changes are present that do not match the expected file name."
+        Exit
+    }
+}
+else {
+    # tree is clean
+    Exit
+}
+
+
+
+Write-Host "Changes are expected."    
+
+
+<#
+$result.Contains($metadataFileName)
+
+
+
+Foreach ($r in $result) {
+    if ($r -notcontains $metadataFileName)
+}
+
+
+
+$isTrue = $r -notcontains $metadataFileName#$result.ToString() -like $metadataFileName
+
+
+
+Write-Host "$result $isTrue"
+
+if($result.ToString() -notcontains $metadataFileName) {
+    Write-Host "Exit build, the metadata hasn't been updated." -ForegroundColor Yellow
     Exit # Stop running, no changes identified by git. 
 }
 
-Write-Host "fileName $metadataFileName we have changes"
+Write-Host "$metadataFileName has changes" -ForegroundColor Green
+#>
 
-git checkout master
-git add $metadataFileName
+
+#git checkout master
+#git add $metadataFileName
 # git commit -m 'Updated the metadata from downloadDiff.ps1' | Write-Host
 # TODO git push
