@@ -23,12 +23,17 @@ $content = Format-Xml (Get-Content $pathToLiveMetadata)
 
 # Discover if there are changes between the downloaded file and what is in git.
 $result = git status --porcelain
-if($result -notcontains $metadataFileName) {
+
+$isTrue = $result.ToString() -notcontains $metadataFileName
+
+Write-Host "$result $isTrue $metadataFileName"
+
+if($result.ToString().Substring($metadataFileName) -lt 0) {
     Write-Host "Exit build, the metadata hasn't been updated."
     Exit # Stop running, no changes identified by git. 
 }
 
-Write-Host "fileName $metadataFileName"
+Write-Host "fileName $metadataFileName we have changes"
 
 git checkout master
 git add $metadataFileName
