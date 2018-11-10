@@ -1,13 +1,17 @@
 ﻿# This script is intended to be run from the root of the Graph_Metadata repo.
 
+# Working with git in VSTS builds
+# https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories-on-rebase
+# https://medium.com/gettimely/automating-git-merges-with-powershell-and-vsts-546ee0dc0c04
+
 param([parameter(Mandatory = $true)][String]$endpointVersion)
 
 # Contains Format-Xml function.
 Import-Module .\scripts\utility.ps1 -Force
 
 # Configure the identity
-git config --global user.name "Client Tooling Big Giant Robot"
-git config --global user.email "graphtooling@microsoft.com"
+#git config --global user.name "Client Tooling Big Giant Robot"
+#git config --global user.email "graphtooling@microsoft.com"
 
 # Are we on master? If not, we will want are changes committed on master.
 $branch = &git rev-parse --abbrev-ref HEAD
@@ -17,7 +21,7 @@ if ($branch -ne "master") {
     $branch = &git rev-parse --abbrev-ref HEAD
     Write-Host "Current branch: $branch"
     git pull origin master --allow-unrelated-histories | Write-Host
-    git merge origin origin/master | Write-Host
+    #git merge origin origin/master | Write-Host
 }
 
 # Download the metadata from livesite. 
