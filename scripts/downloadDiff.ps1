@@ -59,5 +59,7 @@ if ($branch -ne "master") {
 }
 
 git add $metadataFileName
-git commit -m "Updated $metadataFileName from downloadDiff.ps1"
+$argumentList = 'commit -m "Updated {0} from downloadDiff.ps1"' -f $metadataFileName
+$proc = Start-Process -FilePath "git.exe" -ArgumentList $argumentList -Wait -NoNewWindow;
+#git commit -m "Updated $metadataFileName from downloadDiff.ps1"
 git push origin master --quiet
