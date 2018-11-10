@@ -5,6 +5,10 @@ param([parameter(Mandatory=$true)][String]$endpointVersion)
 # Contains Format-Xml function.
 Import-Module .\scripts\utility.ps1 -Force
 
+# Configure the identity
+git config --global user.name "Client Tooling Big Giant Robot"
+git config --global user.email "graphtooling@microsoft.com"
+
 # Are we on master? If not, we will want are changes committed on master.
 $branch = &git rev-parse --abbrev-ref HEAD
 Write-Host "Current branch: $branch"
@@ -12,6 +16,7 @@ if ($branch -ne "master") {
     git checkout master
     $branch = &git rev-parse --abbrev-ref HEAD
     Write-Host "Current branch: $branch"
+    git pull origin master
 }
 
 # Download the metadata from livesite. 
