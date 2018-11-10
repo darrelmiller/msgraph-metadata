@@ -5,6 +5,15 @@ param([parameter(Mandatory=$true)][String]$endpointVersion)
 # Contains Format-Xml function.
 Import-Module .\scripts\utility.ps1 -Force
 
+# Are we on master? If not, we will want are changes committed on master.
+$branch = &git rev-parse --abbrev-ref HEAD
+Write-Host "Current branch: $branch"
+if ($branch -ne "master") {
+    git checkout master
+    $branch = &git rev-parse --abbrev-ref HEAD
+    Write-Host "Current branch: $branch"
+}
+
 # Download the metadata from livesite. 
 $url = "http://graph.microsoft.com/{0}/`$metadata" -f $endpointVersion
 $metadataFileName = "{0}_metadata.xml" -f $endpointVersion
@@ -49,13 +58,6 @@ else {
     Write-Host "##vso[task.setvariable variable=agent.jobstatus;]canceled"
     Write-Host "##vso[task.complete result=Canceled;]DONE"
     Exit
-}
-
-# Are we on master? If not, we will want are changes committed on master.
-$branch = &git rev-parse --abbrev-ref HEAD
-Write-Host "Current branch: $branch"
-if ($branch -ne "master") {
-    git checkout master
 }
 
 git add $metadataFileName
