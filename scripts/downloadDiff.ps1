@@ -13,7 +13,8 @@ git config --global user.email "graphtooling@microsoft.com"
 $branch = &git rev-parse --abbrev-ref HEAD
 Write-Host "Current branch: $branch"
 if ($branch -ne "master") {
-    git checkout master
+    $result = git checkout master
+    Write-Host "$result"
     $branch = &git rev-parse --abbrev-ref HEAD
     Write-Host "Current branch: $branch"
     git pull origin master
