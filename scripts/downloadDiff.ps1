@@ -1,6 +1,6 @@
 ﻿# This script is intended to be run from the root of the Graph_Metadata repo.
 
-param([parameter(Mandatory=$true)][String]$endpointVersion)
+param([parameter(Mandatory = $true)][String]$endpointVersion)
 
 # Contains Format-Xml function.
 Import-Module .\scripts\utility.ps1 -Force
@@ -13,11 +13,10 @@ git config --global user.email "graphtooling@microsoft.com"
 $branch = &git rev-parse --abbrev-ref HEAD
 Write-Host "Current branch: $branch"
 if ($branch -ne "master") {
-    $result = git checkout master
-    Write-Host "$result"
+    git checkout master | Write-Host
     $branch = &git rev-parse --abbrev-ref HEAD
     Write-Host "Current branch: $branch"
-    git pull origin master
+    git pull origin master | Write-Host
 }
 
 # Download the metadata from livesite. 
@@ -39,21 +38,21 @@ Write-Host "Wrote $metadataFileName to disk." -ForegroundColor DarkGreen
 
 # Check for expected and unexpected changes.
 $hasUpdatedMetadata = $false
-if($result |Where {$_ -match '^\?\?'}){
+if ($result |Where {$_ -match '^\?\?'}) {
     Write-Error "Unexpected untracked file[s] exists. We shouldn't be adding new files via this script. Only modifying existing files."
 } 
-elseif($result |Where {$_ -notmatch '^\?\?'}) {
+elseif ($result |Where {$_ -notmatch '^\?\?'}) {
     Write-Host "Uncommitted changes are present." -ForegroundColor Yellow
 
     Foreach ($r in $result) {
         
-        if($r.Contains($metadataFileName)) {
+        if ($r.Contains($metadataFileName)) {
             $hasUpdatedMetadata = $true 
             Break
         }
     }
 
-    if(!$hasUpdatedMetadata) {
+    if (!$hasUpdatedMetadata) {
         Write-Error "Exit build. Uncommitted changes are present that do not match the expected file name."
         Exit
     }
@@ -66,8 +65,8 @@ else {
     Exit
 }
 
-git add $metadataFileName
+git add $metadataFileName | Write-Host
 $argumentList = 'commit -m "Updated {0} from downloadDiff.ps1"' -f $metadataFileName
 $proc = Start-Process -FilePath "git.exe" -ArgumentList $argumentList -Wait -NoNewWindow;
-#git commit -m "Updated $metadataFileName from downloadDiff.ps1"
-git push origin master --quiet
+git commit -m "Updated $metadataFileName from downloadDiff.ps1" | Write-Host
+git push origin master | Write-Host
