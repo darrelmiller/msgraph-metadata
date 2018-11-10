@@ -16,7 +16,8 @@ if ($branch -ne "master") {
     git checkout master | Write-Host
     $branch = &git rev-parse --abbrev-ref HEAD
     Write-Host "Current branch: $branch"
-    git pull origin master | Write-Host
+    git pull origin master --allow-unrelated-histories | Write-Host
+    git merge origin origin/master | Write-Host
 }
 
 # Download the metadata from livesite. 
