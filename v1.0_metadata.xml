@@ -1265,6 +1265,46 @@
         <Member Name="administrator" Value="3" />
         <Member Name="unknownFutureValue" Value="127" />
       </EnumType>
+      <EnumType Name="teamVisibilityType">
+        <Member Name="private" Value="0" />
+        <Member Name="public" Value="1" />
+        <Member Name="hiddenMembership" Value="2" />
+        <Member Name="unknownFutureValue" Value="3" />
+      </EnumType>
+      <EnumType Name="clonableTeamParts" IsFlags="true">
+        <Member Name="apps" Value="1" />
+        <Member Name="tabs" Value="2" />
+        <Member Name="settings" Value="4" />
+        <Member Name="channels" Value="8" />
+        <Member Name="members" Value="16" />
+      </EnumType>
+      <EnumType Name="giphyRatingType">
+        <Member Name="moderate" Value="0" />
+        <Member Name="strict" Value="1" />
+        <Member Name="unknownFutureValue" Value="2" />
+      </EnumType>
+      <EnumType Name="teamsAsyncOperationType">
+        <Member Name="invalid" Value="0" />
+        <Member Name="cloneTeam" Value="1" />
+        <Member Name="archiveTeam" Value="2" />
+        <Member Name="unarchiveTeam" Value="3" />
+        <Member Name="createTeam" Value="4" />
+        <Member Name="unknownFutureValue" Value="5" />
+      </EnumType>
+      <EnumType Name="teamsAsyncOperationStatus">
+        <Member Name="invalid" Value="0" />
+        <Member Name="notStarted" Value="1" />
+        <Member Name="inProgress" Value="2" />
+        <Member Name="succeeded" Value="3" />
+        <Member Name="failed" Value="4" />
+        <Member Name="unknownFutureValue" Value="5" />
+      </EnumType>
+      <EnumType Name="teamsAppDistributionMethod">
+        <Member Name="store" Value="0" />
+        <Member Name="organization" Value="1" />
+        <Member Name="sideloaded" Value="2" />
+        <Member Name="unknownFutureValue" Value="3" />
+      </EnumType>
       <EntityType Name="entity" Abstract="true">
         <Key>
           <PropertyRef Name="id" />
@@ -1392,6 +1432,7 @@
         <Property Name="autoSubscribeNewMembers" Type="Edm.Boolean" />
         <Property Name="isSubscribedByMail" Type="Edm.Boolean" />
         <Property Name="unseenCount" Type="Edm.Int32" />
+        <Property Name="isArchived" Type="Edm.Boolean" />
         <NavigationProperty Name="members" Type="Collection(microsoft.graph.directoryObject)" />
         <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
         <NavigationProperty Name="createdOnBehalfOf" Type="microsoft.graph.directoryObject" />
@@ -1413,6 +1454,7 @@
         <NavigationProperty Name="planner" Type="microsoft.graph.plannerGroup" ContainsTarget="true" />
         <NavigationProperty Name="onenote" Type="microsoft.graph.onenote" ContainsTarget="true" />
         <NavigationProperty Name="groupLifecyclePolicies" Type="Collection(microsoft.graph.groupLifecyclePolicy)" ContainsTarget="true" />
+        <NavigationProperty Name="team" Type="microsoft.graph.team" ContainsTarget="true" />
       </EntityType>
       <ComplexType Name="onPremisesProvisioningError">
         <Property Name="value" Type="Edm.String" />
@@ -1557,6 +1599,17 @@
         <Property Name="groupLifetimeInDays" Type="Edm.Int32" />
         <Property Name="managedGroupTypes" Type="Edm.String" />
         <Property Name="alternateNotificationEmails" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="team" BaseType="microsoft.graph.entity" OpenType="true">
+        <Property Name="webUrl" Type="Edm.String" />
+        <Property Name="memberSettings" Type="microsoft.graph.teamMemberSettings" />
+        <Property Name="guestSettings" Type="microsoft.graph.teamGuestSettings" />
+        <Property Name="messagingSettings" Type="microsoft.graph.teamMessagingSettings" />
+        <Property Name="funSettings" Type="microsoft.graph.teamFunSettings" />
+        <Property Name="isArchived" Type="Edm.Boolean" />
+        <NavigationProperty Name="channels" Type="Collection(microsoft.graph.channel)" ContainsTarget="true" />
+        <NavigationProperty Name="installedApps" Type="Collection(microsoft.graph.teamsAppInstallation)" ContainsTarget="true" />
+        <NavigationProperty Name="operations" Type="Collection(microsoft.graph.teamsAsyncOperation)" ContainsTarget="true" />
       </EntityType>
       <EntityType Name="contract" BaseType="microsoft.graph.directoryObject" OpenType="true">
         <Property Name="contractType" Type="Edm.String" />
@@ -1709,6 +1762,7 @@
         <NavigationProperty Name="activities" Type="Collection(microsoft.graph.userActivity)" ContainsTarget="true" />
         <NavigationProperty Name="insights" Type="microsoft.graph.officeGraphInsights" ContainsTarget="true" />
         <NavigationProperty Name="settings" Type="microsoft.graph.userSettings" ContainsTarget="true" />
+        <NavigationProperty Name="joinedTeams" Type="Collection(microsoft.graph.group)" ContainsTarget="true" />
       </EntityType>
       <ComplexType Name="assignedLicense">
         <Property Name="disabledPlans" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -5689,6 +5743,82 @@
         <Property Name="lastAccessedDateTime" Type="Edm.DateTimeOffset" />
         <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset" />
       </ComplexType>
+      <EntityType Name="appCatalogs" BaseType="microsoft.graph.entity">
+        <NavigationProperty Name="teamsApps" Type="Collection(microsoft.graph.teamsApp)" ContainsTarget="true" />
+      </EntityType>
+      <EntityType Name="teamsApp" BaseType="microsoft.graph.entity">
+        <Property Name="externalId" Type="Edm.String" />
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="distributionMethod" Type="microsoft.graph.teamsAppDistributionMethod" Nullable="false" />
+        <NavigationProperty Name="appDefinitions" Type="Collection(microsoft.graph.teamsAppDefinition)" />
+      </EntityType>
+      <ComplexType Name="teamMemberSettings">
+        <Property Name="allowCreateUpdateChannels" Type="Edm.Boolean" />
+        <Property Name="allowDeleteChannels" Type="Edm.Boolean" />
+        <Property Name="allowAddRemoveApps" Type="Edm.Boolean" />
+        <Property Name="allowCreateUpdateRemoveTabs" Type="Edm.Boolean" />
+        <Property Name="allowCreateUpdateRemoveConnectors" Type="Edm.Boolean" />
+      </ComplexType>
+      <ComplexType Name="teamGuestSettings">
+        <Property Name="allowCreateUpdateChannels" Type="Edm.Boolean" />
+        <Property Name="allowDeleteChannels" Type="Edm.Boolean" />
+      </ComplexType>
+      <ComplexType Name="teamMessagingSettings">
+        <Property Name="allowUserEditMessages" Type="Edm.Boolean" />
+        <Property Name="allowUserDeleteMessages" Type="Edm.Boolean" />
+        <Property Name="allowOwnerDeleteMessages" Type="Edm.Boolean" />
+        <Property Name="allowTeamMentions" Type="Edm.Boolean" />
+        <Property Name="allowChannelMentions" Type="Edm.Boolean" />
+      </ComplexType>
+      <ComplexType Name="teamFunSettings">
+        <Property Name="allowGiphy" Type="Edm.Boolean" />
+        <Property Name="giphyContentRating" Type="microsoft.graph.giphyRatingType" />
+        <Property Name="allowStickersAndMemes" Type="Edm.Boolean" />
+        <Property Name="allowCustomMemes" Type="Edm.Boolean" />
+      </ComplexType>
+      <EntityType Name="channel" BaseType="microsoft.graph.entity">
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="description" Type="Edm.String" />
+        <NavigationProperty Name="tabs" Type="Collection(microsoft.graph.teamsTab)" ContainsTarget="true" />
+      </EntityType>
+      <EntityType Name="teamsAppInstallation" BaseType="microsoft.graph.entity">
+        <NavigationProperty Name="teamsApp" Type="microsoft.graph.teamsApp" />
+        <NavigationProperty Name="teamsAppDefinition" Type="microsoft.graph.teamsAppDefinition" />
+      </EntityType>
+      <EntityType Name="teamsAsyncOperation" BaseType="microsoft.graph.entity" OpenType="true">
+        <Property Name="operationType" Type="microsoft.graph.teamsAsyncOperationType" Nullable="false" />
+        <Property Name="createdDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="status" Type="microsoft.graph.teamsAsyncOperationStatus" Nullable="false" />
+        <Property Name="lastActionDateTime" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="attemptsCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="targetResourceId" Type="Edm.String" />
+        <Property Name="targetResourceLocation" Type="Edm.String" />
+        <Property Name="error" Type="microsoft.graph.operationError" />
+      </EntityType>
+      <ComplexType Name="teamClassSettings">
+        <Property Name="notifyGuardiansAboutAssignments" Type="Edm.Boolean" />
+      </ComplexType>
+      <EntityType Name="teamsAppDefinition" BaseType="microsoft.graph.entity">
+        <Property Name="teamsAppId" Type="Edm.String" />
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="version" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="teamsTab" BaseType="microsoft.graph.entity">
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="webUrl" Type="Edm.String" />
+        <Property Name="configuration" Type="microsoft.graph.teamsTabConfiguration" />
+        <NavigationProperty Name="teamsApp" Type="microsoft.graph.teamsApp" />
+      </EntityType>
+      <ComplexType Name="teamsTabConfiguration" OpenType="true">
+        <Property Name="entityId" Type="Edm.String" />
+        <Property Name="contentUrl" Type="Edm.String" />
+        <Property Name="removeUrl" Type="Edm.String" />
+        <Property Name="websiteUrl" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="operationError">
+        <Property Name="code" Type="Edm.String" />
+        <Property Name="message" Type="Edm.String" />
+      </ComplexType>
       <Action Name="getByIds" IsBound="true" EntitySetPath="bindingParameter">
         <Parameter Name="bindingParameter" Type="Collection(microsoft.graph.directoryObject)" Nullable="false" />
         <Parameter Name="ids" Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
@@ -5721,6 +5851,10 @@
         <Parameter Name="bindingParameter" Type="microsoft.graph.directoryObject" Nullable="false" />
         <Parameter Name="securityEnabledOnly" Type="Edm.Boolean" />
         <ReturnType Type="Collection(Edm.String)" Nullable="false" Unicode="false" />
+      </Action>
+      <Action Name="forceDelete" IsBound="true">
+        <Parameter Name="bindingParameter" Type="microsoft.graph.domain" Nullable="false" />
+        <Parameter Name="disableUserAccounts" Type="Edm.Boolean" />
       </Action>
       <Action Name="assignLicense" IsBound="true">
         <Parameter Name="bindingParameter" Type="microsoft.graph.user" Nullable="false" />
@@ -9415,6 +9549,25 @@
         <Parameter Name="activities" Type="Collection(microsoft.graph.userActivity)" />
         <ReturnType Type="Collection(microsoft.graph.userActivity)" />
       </Function>
+      <Action Name="clone" IsBound="true">
+        <Parameter Name="bindingParameter" Type="microsoft.graph.team" />
+        <Parameter Name="displayName" Type="Edm.String" Unicode="false" />
+        <Parameter Name="description" Type="Edm.String" Unicode="false" />
+        <Parameter Name="mailNickname" Type="Edm.String" Unicode="false" />
+        <Parameter Name="classification" Type="Edm.String" Unicode="false" />
+        <Parameter Name="visibility" Type="microsoft.graph.teamVisibilityType" Nullable="false" />
+        <Parameter Name="partsToClone" Type="microsoft.graph.clonableTeamParts" Nullable="false" />
+      </Action>
+      <Action Name="archive" IsBound="true">
+        <Parameter Name="bindingParameter" Type="microsoft.graph.team" />
+        <Parameter Name="shouldSetSpoSiteReadOnlyForMembers" Type="Edm.Boolean" />
+      </Action>
+      <Action Name="unarchive" IsBound="true">
+        <Parameter Name="bindingParameter" Type="microsoft.graph.team" />
+      </Action>
+      <Action Name="upgrade" IsBound="true">
+        <Parameter Name="bindingParameter" Type="microsoft.graph.teamsAppInstallation" />
+      </Action>
       <Term Name="conflictBehavior" Type="Edm.String" AppliesTo="microsoft.graph.driveItem" />
       <Term Name="downloadUrl" Type="Edm.String" AppliesTo="microsoft.graph.driveItem" />
       <Term Name="sourceUrl" Type="Edm.String" AppliesTo="microsoft.graph.driveItem" />
@@ -9469,6 +9622,7 @@
           <NavigationPropertyBinding Path="invitedUser" Target="users" />
         </EntitySet>
         <EntitySet Name="groupLifecyclePolicies" EntityType="microsoft.graph.groupLifecyclePolicy" />
+        <EntitySet Name="teams" EntityType="microsoft.graph.team" />
         <Singleton Name="me" Type="microsoft.graph.user">
           <NavigationPropertyBinding Path="ownedDevices" Target="directoryObjects" />
           <NavigationPropertyBinding Path="registeredDevices" Target="directoryObjects" />
@@ -9497,6 +9651,7 @@
         <Singleton Name="deviceAppManagement" Type="microsoft.graph.deviceAppManagement" />
         <Singleton Name="deviceManagement" Type="microsoft.graph.deviceManagement" />
         <Singleton Name="Security" Type="microsoft.graph.security" />
+        <Singleton Name="appCatalogs" Type="microsoft.graph.appCatalogs" />
       </EntityContainer>
       <Annotations Target="microsoft.graph.directoryObject">
         <Annotation Term="Org.OData.Capabilities.V1.ExpandRestrictions">
