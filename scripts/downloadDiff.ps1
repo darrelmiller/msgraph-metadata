@@ -9,11 +9,7 @@ param([parameter(Mandatory = $true)][String]$endpointVersion)
 # Contains Format-Xml function.
 Import-Module .\scripts\utility.ps1 -Force
 
-# Configure the identity
-#git config --global user.name "Client Tooling Big Giant Robot"
-#git config --global user.email "graphtooling@microsoft.com"
-
-# Are we on master? If not, we will want are changes committed on master.
+# Are we on master? If not, we will want our changes committed on master.
 $branch = &git rev-parse --abbrev-ref HEAD
 Write-Host "Current branch: $branch"
 if ($branch -ne "master") {
@@ -21,7 +17,6 @@ if ($branch -ne "master") {
     $branch = &git rev-parse --abbrev-ref HEAD
     Write-Host "Current branch: $branch"
     git pull origin master --allow-unrelated-histories | Write-Host
-    #git merge origin origin/master | Write-Host
 }
 
 # Download the metadata from livesite. 
@@ -42,13 +37,13 @@ Write-Host "Wrote $metadataFileName to disk." -ForegroundColor DarkGreen
 [array]$result = git status --porcelain
 
 # Check for expected and unexpected changes.
-$hasUpdatedMetadata = $false
 if ($result |Where {$_ -match '^\?\?'}) {
     Write-Error "Unexpected untracked file[s] exists. We shouldn't be adding new files via this script. Only modifying existing files."
 } 
 elseif ($result |Where {$_ -notmatch '^\?\?'}) {
     Write-Host "Uncommitted changes are present." -ForegroundColor Yellow
 
+    $hasUpdatedMetadata = $false
     Foreach ($r in $result) {
         
         if ($r.Contains($metadataFileName)) {
@@ -71,7 +66,5 @@ else {
 }
 
 git add $metadataFileName | Write-Host
-$argumentList = 'commit -m "Updated {0} from downloadDiff.ps1"' -f $metadataFileName
-$proc = Start-Process -FilePath "git.exe" -ArgumentList $argumentList -Wait -NoNewWindow;
 git commit -m "Updated $metadataFileName from downloadDiff.ps1" | Write-Host
 git push origin master | Write-Host
