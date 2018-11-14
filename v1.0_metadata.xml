@@ -9,7 +9,6 @@
         <Member Name="wednesday" Value="3" />
         <Member Name="thursday" Value="4" />
         <Member Name="friday" Value="5" />
-        <Member Name="saturday" Value="6" />
       </EnumType>
       <EnumType Name="automaticRepliesStatus">
         <Member Name="disabled" Value="0" />
