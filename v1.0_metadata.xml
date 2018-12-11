@@ -1340,6 +1340,7 @@
         <Property Name="operatingSystemVersion" Type="Edm.String" />
         <Property Name="physicalIds" Type="Collection(Edm.String)" Nullable="false" />
         <Property Name="trustType" Type="Edm.String" />
+        <NavigationProperty Name="memberOf" Type="Collection(microsoft.graph.directoryObject)" />
         <NavigationProperty Name="registeredOwners" Type="Collection(microsoft.graph.directoryObject)" />
         <NavigationProperty Name="registeredUsers" Type="Collection(microsoft.graph.directoryObject)" />
         <NavigationProperty Name="extensions" Type="Collection(microsoft.graph.extension)" ContainsTarget="true" />
